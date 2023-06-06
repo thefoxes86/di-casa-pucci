@@ -73,7 +73,7 @@ export default function Post({ post, posts, preview }) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async ({
+export const getStaticProps = async ({
   params,
   preview = false,
   previewData,

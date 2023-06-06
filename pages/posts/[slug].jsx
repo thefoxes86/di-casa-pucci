@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps = async ({
   }
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths = async () => {
   const allPosts = await getAllPostsWithSlug()
 
   return {
