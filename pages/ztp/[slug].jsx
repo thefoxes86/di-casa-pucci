@@ -65,7 +65,6 @@ export default function Ztp({ post, posts, preview }) {
             </article>
 
             <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
           </>
         )}
       </Container>
@@ -84,7 +83,6 @@ export const getStaticProps = async ({
     props: {
       preview,
       post: data.ctpDobermann,
-      posts: data.ctpDobermanns,
     },
     revalidate: 10,
   }
@@ -94,7 +92,7 @@ export const getStaticPaths = async () => {
   const allPosts = await getAllDobermansWithSlug()
 
   return {
-    paths: allPosts.edges.map(({ node }) => `/dobermans/${node.slug}`) || [],
+    paths: allPosts.edges.map(({ node }) => `/ztp/${node.slug}`) || [],
     fallback: true,
   }
 }
