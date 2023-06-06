@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/dog-three.jsx", "components/menu-toggle.jsx", "components/intro.jsx", "pages/korung/[slug].jsx", "pages/dobermann/[slug].jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/dog-three.jsx", "components/menu-toggle.jsx", "components/intro.jsx", "pages/korung/[slug].jsx", "pages/dobermann/[slug].jsx", "pages/posts/[slug].jsx", "pages/ztp/[slug].jsx"],
   "exclude": ["node_modules"]
 }

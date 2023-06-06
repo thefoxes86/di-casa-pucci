@@ -37,24 +37,24 @@ export default function Post({ post, posts, preview }) {
                 </title>
                 <meta
                   property="og:image"
-                  content={post.featuredImage?.node.sourceUrl}
+                  content={post?.featuredImage?.node?.sourceUrl}
                 />
               </Head>
               <PostHeader
-                title={post.title}
-                coverImage={post.featuredImage}
-                date={post.date}
-                author={post.author}
-                categories={post.categories}
+                title={post?.title}
+                coverImage={post?.featuredImage}
+                date={post?.date}
+                author={post?.author}
+                categories={post?.categories}
               />
-              <PostBody content={post.content} />
+              <PostBody content={post?.content} />
               <footer>
-                {post.tags.edges.length > 0 && <Tags tags={post.tags} />}
+                {post?.tags?.edges?.length > 0 && <Tags tags={post?.tags} />}
               </footer>
             </article>
 
             <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+            {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
           </>
         )}
       </Container>
@@ -72,8 +72,8 @@ export const getStaticProps = async ({
   return {
     props: {
       preview,
-      post: data.post,
-      posts: data.posts,
+      post: data?.post,
+      posts: data?.posts,
     },
     revalidate: 10,
   }
@@ -83,7 +83,7 @@ export const getStaticPaths = async () => {
   const allPosts = await getAllPostsWithSlug()
 
   return {
-    paths: allPosts.edges.map(({ node }) => `/posts/${node.slug}`) || [],
+    paths: allPosts?.edges?.map(({ node }) => `/posts/${node?.slug}`) || [],
     fallback: true,
   }
 }

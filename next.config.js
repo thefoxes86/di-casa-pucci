@@ -15,6 +15,7 @@ module.exports = {
       '2.gravatar.com',
       'secure.gravatar.com',
       'www.dicasapucci.com',
+      'placehold.co',
     ],
   },
 }

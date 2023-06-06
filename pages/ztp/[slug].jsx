@@ -44,22 +44,22 @@ export default function Ztp({ post, posts, preview }) {
                 </title>
                 <meta
                   property="og:image"
-                  content={post.featuredImage?.node.sourceUrl}
+                  content={post?.featuredImage?.node?.sourceUrl}
                 />
               </Head>
               <PostHeader
-                title={post.title}
-                coverImage={post.featuredImage}
-                date={post.date}
-                author={post.author || null}
-                categories={post.categories || null}
+                title={post?.title}
+                coverImage={post?.featuredImage}
+                date={post?.date}
+                author={post?.author || null}
+                categories={post?.categories || null}
               />
-              <DogDetails data={post.schedaDobermann} />
-              <DogThree schedaDobermann={post.schedaDobermann} />
-              <PostBody content={post.content} />
+              <DogDetails data={post?.schedaDobermann} />
+              <DogThree schedaDobermann={post?.schedaDobermann} />
+              <PostBody content={post?.content} />
               <footer>
                 {post?.tags?.edges?.length > 0 && (
-                  <Tags tags={post.tags || null} />
+                  <Tags tags={post?.tags || null} />
                 )}
               </footer>
             </article>
@@ -92,7 +92,7 @@ export const getStaticPaths = async () => {
   const allPosts = await getAllDobermansWithSlug()
 
   return {
-    paths: allPosts.edges.map(({ node }) => `/ztp/${node.slug}`) || [],
+    paths: allPosts?.edges?.map(({ node }) => `/ztp/${node?.slug}`) || [],
     fallback: true,
   }
 }

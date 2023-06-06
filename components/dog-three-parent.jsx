@@ -6,7 +6,10 @@ const DogThreeParent = ({ data }) => {
   return (
     <div className="parents-dog__item">
       <Image
-        src={data?.featuredImage?.node.sourceUrl || 'https://placehold.co/400'}
+        src={
+          data?.featuredImage?.node.sourceUrl ||
+          'https://www.dicasapucci.com/wp-content/uploads/2023/06/woocommerce-placeholder.png'
+        }
         className="parents-dog__image"
         alt={data?.title}
         width={100}

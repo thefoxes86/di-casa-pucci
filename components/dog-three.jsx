@@ -10,7 +10,10 @@ const DogThree = ({ schedaDobermann, primaryDog }) => {
     <div className="dog__three">
       <div className="primary-dog">
         <Image
-          src={primaryDog?.image.node.sourceUrl || 'https://placehold.co/400'}
+          src={
+            primaryDog?.image?.node?.sourceUrl ||
+            'https://www.dicasapucci.com/wp-content/uploads/2023/06/woocommerce-placeholder.png'
+          }
           className="primary-dog__image"
           alt={primaryDog?.name}
           width={100}

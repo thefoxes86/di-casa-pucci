@@ -14,7 +14,6 @@ import DogDetails from '../../components/dog-details'
 
 export default function Dobermann({ post, preview }) {
   const router = useRouter()
-  console.log('post', post)
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
@@ -34,14 +33,14 @@ export default function Dobermann({ post, preview }) {
                 </title>
                 <meta
                   property="og:image"
-                  content={post.featuredImage?.node.sourceUrl}
+                  content={post?.featuredImage?.node?.sourceUrl}
                 />
               </Head>
               <PostHeader
                 title={post?.schedaDobermann?.dobNome}
-                sesso={post.schedaDobermann.dobSex.name}
-                allevatore={post.schedaDobermann.dobAllevatore}
-                coverImage={post.featuredImage}
+                sesso={post.schedaDobermann?.dobSex?.name}
+                allevatore={post?.schedaDobermann?.dobAllevatore}
+                coverImage={post?.featuredImage}
               />
               <DogDetails data={post.schedaDobermann} />
               <DogThree
@@ -51,9 +50,9 @@ export default function Dobermann({ post, preview }) {
                   sesso: post?.schedaDobermann?.dobSex?.name,
                   allevatore: post?.schedaDobermann?.dobAllevatore,
                 }}
-                schedaDobermann={post.schedaDobermann}
+                schedaDobermann={post?.schedaDobermann}
               />
-              <PostBody content={post.content} />
+              <PostBody content={post?.content} />
             </article>
           </>
         )}
@@ -72,7 +71,7 @@ export const getStaticProps = async ({
   return {
     props: {
       preview,
-      post: data.ctpDobermann,
+      post: data?.ctpDobermann,
     },
     revalidate: 10,
   }
@@ -82,7 +81,7 @@ export const getStaticPaths = async () => {
   const allPosts = await getAllDobermansWithSlug()
 
   return {
-    paths: allPosts.edges.map(({ node }) => `/dobermann/${node.slug}`) || [],
+    paths: allPosts.edges.map(({ node }) => `/dobermann/${node?.slug}`) || [],
     fallback: true,
   }
 }
