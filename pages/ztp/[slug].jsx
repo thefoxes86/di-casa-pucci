@@ -21,7 +21,7 @@ import { CMS_NAME } from '../../lib/constants'
 import DogThree from '../../components/dog-three'
 import DogDetails from '../../components/dog-details'
 
-export default function Post({ post, posts, preview }) {
+export default function Ztp({ post, posts, preview }) {
   const router = useRouter()
   const morePosts = posts?.edges
 
@@ -90,7 +90,7 @@ export const getStaticProps = async ({
   }
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths = async () => {
   const allPosts = await getAllDobermansWithSlug()
 
   return {

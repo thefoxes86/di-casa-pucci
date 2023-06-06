@@ -12,7 +12,7 @@ import { CMS_NAME } from '../../lib/constants'
 import DogThree from '../../components/dog-three'
 import DogDetails from '../../components/dog-details'
 
-export default function Post({ post, preview }) {
+export default function Dobermann({ post, preview }) {
   const router = useRouter()
   console.log('post', post)
 

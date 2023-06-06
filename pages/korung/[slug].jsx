@@ -21,7 +21,7 @@ import { CMS_NAME } from '../../lib/constants'
 import DogThree from '../../components/dog-three'
 import DogDetails from '../../components/dog-details'
 
-export default function Post({ post, posts, preview }) {
+export default function Korung({ post, posts, preview }) {
   const router = useRouter()
   const morePosts = posts?.edges
 
