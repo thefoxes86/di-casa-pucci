@@ -3,25 +3,71 @@ import { EXAMPLE_PATH } from '../lib/constants'
 
 export default function Footer() {
   return (
-    <footer className="bg-accent-1 border-t border-accent-2">
+    <footer className=" border-t border-accent-2 bg-black">
       <Container>
         <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
+          <h3 className="text-lg font-bold tracking-tighter leading-tight text-center lg:text-left mb-0 lg:pr-4 lg:w-1/2">
+            LE CERTIFICAZIONI
           </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs/basic-features/pages"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Read Documentation
-            </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
+          <div className="flex flex-wrap content__certificazioni p-4">
+            <div className="w-1/4 flex flex-col items-center justify-center px-4">
+              <img
+                src="https://www.dicasapucci.com/wp-content/uploads/2023/05/logo-hi@2x.png"
+                alt="certificazione 1"
+              />
+              <p className="font-thin py-3 text-center text-xs h-20">
+                Associazione Italiana Amatori Dobermann
+              </p>
+            </div>
+            <div className="w-1/4 flex flex-col items-center justify-center px-4">
+              <img
+                src="https://www.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_IDC_Logo@2x@2x.png"
+                alt="certificazione 1"
+              />
+              <p className="font-thin py-3 text-center text-xs h-20">
+                Internationaler Dobermann Club
+              </p>
+            </div>
+            <div className="w-1/4 flex flex-col items-center justify-center px-4">
+              <img
+                src="https://www.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_FCI_Logo@2x@2x.png"
+                alt="certificazione 1"
+              />
+              <p className="font-thin py-3 text-center text-xs h-20">
+                Federation Cynologique Internationale
+              </p>
+            </div>
+            <div className="w-1/4 flex flex-col items-center justify-center px-4">
+              <img
+                src="https://www.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_ENCI_Logo@2x@2x.png"
+                alt="certificazione 1"
+              />
+              <p className="font-thin py-3 text-center text-xs h-20">
+                Ente Nazionale Cinofilia Italiana
+              </p>
+            </div>
+          </div>
+          <div className="w-100 flex flex-col items-center justify-center mt-10">
+            <div className="flex justify-around mb-6">
+              <p className="pr-2 text-right">Face</p>
+              <p className="pl-2 text-left">Insta</p>
+            </div>
+            <p className="font-bold m-0 p-0 text-center">Di Casa Pucci</p>
+            <p className="font-thin m-0 p-0 text-center">P.Iva: 01598700498</p>
+            <p className="font-thin m-0 p-0 text-center">
+              Via Ferrara, 138 - 55054 Stiava (LU)
+            </p>
+            <p className="font-thin m-0 p-0 text-center">+39 348 43 95 808</p>
+            <p className="font-thin m-0 p-0 text-center">
+              info@dicasapucci.com
+            </p>
+            <p className="font-thin mt-2 p-0 text-center">© Copyright 2023</p>
+            <p className="font-thin m-0 p-0 text-center">
+              Privacy & Cookie Policy
+            </p>
+            <p className="font-thin mt-2 p-0 text-center">
+              Credits: xdesigners.it
+            </p>
           </div>
         </div>
       </Container>

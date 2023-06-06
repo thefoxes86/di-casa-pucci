@@ -14,6 +14,17 @@
 
 /* Your own custom utilities */
 
+:root {
+  --grey-color: #8C8B8B;
+  --secondary-color: #2B2B2B;
+  --background-primary-color: #2B2B2B;
+}
+
+body {
+  @apply text-white;
+  background-color: var(--background-primary-color);
+}
+
 .has-text-align-left {
   @apply text-left;
 }
@@ -101,4 +112,350 @@
 
 .wp-block-media-text {
   @apply grid grid-cols-2 gap-4;
+}
+
+.page-loader {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HOME PAGE */
+.hero_header_home_container {
+  @apply w-screen h-screen flex overflow-hidden;
+}
+.hero_header_home {
+  @apply w-screen h-screen flex flex-wrap justify-center items-end bg-cover bg-center overflow-hidden relative px-0 mx-0 pb-32 overflow-hidden;
+  background-image: url('https://www.dicasapucci.com/wp-content/uploads/2023/05/cane-di-razza-doberman-su-sfondo-nero-messa-a-fuoco-selettiva.png');
+}
+
+.hero_header_home__content {
+  @apply text-white font-thin text-4xl text-center;
+}
+
+.wrapper_line div div {
+  overflow: hidden;
+  height: auto;
+}
+
+.section__content {
+  @apply z-10 relative;
+}
+
+.section__content__wrapper-line {
+  @apply w-full px-6;
+}
+.section__content__wrapper-line-full {
+  @apply w-full;
+}
+
+.section__content__wrapper-quote {
+  @apply w-full flex flex-wrap justify-center items-center py-6 px-12;
+}
+
+
+
+
+.section__content__wrapper-text {
+  @apply w-full text-center py-10 px-6 italic text-lg;
+}
+
+.section__content__wrapper-text p {
+ @apply font-thin
+}
+
+.section__content__wrapper-cta {
+  @apply flex items-center justify-center py-6 px-6;
+}
+
+
+/* PAGE */
+.page-content {
+  @apply w-full py-6 mt-14;
+}
+
+.page-content h1 {
+  @apply text-center text-4xl uppercase font-light mb-8;
+}
+.page-content h2 {
+  @apply text-center text-2xl uppercase font-light mb-8;
+}
+
+.page-content p {
+  @apply text-center text-base font-light mb-8 italic ;
+}
+
+.category-content {
+  @apply flex justify-around items-center gap-2 mb-6;
+}
+.category-content {
+  @apply text-center;
+}
+
+.category-content .content-image {
+  @apply w-24 h-24 relative mb-4;
+}
+
+/* MENU  */
+
+.menu_container {
+  @apply w-screen flex flex-wrap justify-between px-4 items-center absolute bg-black top-0 h-12 z-50;
+  color: var(--grey-color)
+}
+.menu_container .menu_box_line {
+  @apply w-6 h-6 relative flex flex-col justify-around items-center;
+}
+.menu_container .menu_box_line .menu_line {
+  @apply w-full bg-white;
+  height: 1px;
+}
+
+.menu_container .menu_icon {
+  @apply flex flex-wrap justify-center items-center;
+}
+
+.menu_container .menu {
+  @apply flex h-0 absolute top-12 left-0 w-full bg-black z-10 flex-col justify-start items-end pr-4 overflow-hidden ;
+}
+.menu_container  .menu-item {
+  @apply flex flex-wrap justify-end items-center uppercase py-2;
+}
+
+.menu_container .menu-item a {
+  @apply text-black no-underline py-2 px-4;
+}
+
+.menu_container .menu-item a:hover {
+  @apply text-blue-500;
+}
+
+.menu_container .menu-item a.active {
+  @apply text-blue-500;
+}
+
+.menu_container .menu-item a.active:hover {
+  @apply text-blue-500;
+}
+
+/* BUTTON  */
+
+.btn {
+  @apply text-white no-underline font-light text-lg text-center uppercase py-4 px-8 -skew-x-12 transition-all duration-300 ease-in-out;
+}
+
+.btn-little {
+  @apply text-white no-underline font-light text-sm text-center uppercase py-1 px-2 -skew-x-12 transition-all duration-300 ease-in-out;
+}
+
+.btn-little::after, .btn::after {
+  @apply block w-0 h-full transition-all duration-300 ease-in-out absolute left-0 top-0 z-0;
+  background-color: rgba(255, 255, 255, 0.4);
+  content: '';
+}
+
+.btn-little:hover::after, .btn:hover::after {
+  @apply w-full;
+}
+
+.btn-primary, .btn-secondary, .btn-little  {
+  @apply bg-transparent ;
+  border: 1px solid var(--grey-color);
+}
+
+.filtering__buttons {
+  @apply flex flex-wrap justify-center items-center gap-4;
+}
+
+.filtering__buttons button {
+  @apply text-white no-underline font-light text-sm text-center -skew-x-12 uppercase py-1 px-2 transition-all duration-300 ease-in-out bg-transparent;
+  border: 1px solid var(--grey-color);
+}
+
+.filtering__buttons button.active {
+  @apply bg-black;
+}
+
+
+/* IMAGE */
+
+.react-parallax-bgimage {
+  @apply w-auto object-cover;
+}
+.react-parallax-content > div{
+  @apply flex flex-wrap justify-center items-end text-center;
+}
+.text-parallax-image {
+  @apply flex flex-col w-full justify-center items-center gap-0 text-4xl uppercase mb-4;
+}
+
+.scroll_component {
+  @apply absolute z-0;
+}
+
+
+/* SWIPER  */
+
+
+.mySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.container_swiper_item {
+  @apply flex flex-col justify-center items-center gap-4;
+}
+
+.container_swiper_item img {
+  @apply w-64 h-64 object-cover;
+}
+
+.container_swiper_item span {
+  @apply font-thin text-xs;
+}
+
+.container_swiper_item h3 {
+  @apply uppercase font-semibold text-xl;
+}
+.container_swiper_item p {
+  @apply text-lg font-thin;
+}
+
+.swiper-slide-next, .swiper-slide-prev {
+  @apply opacity-30;
+}
+.swiper-button-next::after, .swiper-button-prev::after {
+  @apply text-white
+}
+
+
+/* PAGE LIST  */
+
+.filtering__list {
+  @apply flex flex-wrap justify-center items-start gap-4 px-0 relative;
+}
+
+.filtering__list .filtering__list__item {
+  @apply w-1/4 h-auto relative;
+}
+
+.filtering__list .filtering__list__item img {
+  @apply w-28 h-28 object-cover relative;
+}
+
+.filtering__list .filtering__list__item p.name {
+  @apply mt-2 mb-0 text-center text-sm font-bold uppercase;
+}
+
+.filtering__list .filtering__list__item p.allevamento {
+  @apply text-center text-xs font-thin mt-0 mb-1 not-italic;
+}
+.filtering__list .filtering__list__item .sex {
+  @apply w-3 h-3 object-contain m-auto;
+}
+
+
+/* ZOOM  */
+
+.zoom__title {
+  @apply text-center text-4xl uppercase font-light mb-0 px-6;
+  margin-bottom: 0 !important;
+}
+
+.header__zoom_detail {
+  @apply flex flex-wrap justify-center items-center flex-col gap-1;
+}
+.header__zoom_detail .header__zoom_detail__icon-sex {
+  @apply w-4 h-4 object-contain;
+}
+
+.dog__detail {
+  @apply mt-6;
+}
+
+.dog__detail p {
+  @apply text-sm mb-0 not-italic;
+}
+.dog__detail_general {
+  @apply flex flex-wrap justify-center items-start gap-1 flex-col px-6 mb-3;
+}
+
+.dog__detail_score {
+  @apply flex flex-wrap justify-center items-start gap-1 flex-col bg-black px-6 py-6 w-full
+}
+
+.dog__three {
+  @apply mt-6;
+}
+
+.primary-dog {
+  @apply flex flex-wrap justify-center flex-col items-center gap-1;
+}
+
+.primary-dog .primary-dog__name, .parents-dog .parents-dog__name {
+  @apply text-center text-sm uppercase font-bold mt-2 mb-0;
+}
+.primary-dog .primary-dog__allevatore, .parents-dog .parents-dog__allevatore{
+  @apply text-center text-xs italic font-thin mt-0 mb-1;
+}
+
+.primary-dog .primary-dog__image {
+  @apply w-32 h-32 object-cover m-auto;
+}
+.primary-dog .primary-dog__icon-sex, .parents-dog .parents-dog__icon-sex {
+  @apply w-4 h-4 object-contain m-auto;
+}
+
+.parents-dog {
+  @apply flex justify-around items-center gap-4;
+}
+.parents-dog .parents-dog__item {
+  @apply flex flex-wrap justify-center items-center gap-1 flex-col;
+}
+
+.parents-dog .parents-dog__image {
+  @apply w-20 h-20 object-cover;
+}
+
+.three-line__item {
+  @apply w-full h-4 block relative mt-4;
+}
+
+.three-line__item::after { 
+  @apply h-4 absolute bg-white top-0; 
+  content: '';
+  width: 1px;
+  left: 50%;
+}
+
+.three-line__item-horizontal {
+  @apply w-1/2 block relative bg-white m-auto text-center mb-4;
+  height: 1px;
+}
+
+.three-line__item-horizontal::after { 
+  @apply h-4 absolute bg-white top-0; 
+  content: '';
+  width: 1px;
+  left: 0;
+}
+.three-line__item-horizontal::before { 
+  @apply h-4 absolute bg-white top-0; 
+  content: '';
+  width: 1px;
+  right: 0;
 }
