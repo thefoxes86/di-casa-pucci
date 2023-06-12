@@ -35,7 +35,7 @@ export default function Allevamento({ data, preview }) {
             <div>
               <div className="content-image">
                 <Image
-                  src="https://www.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
+                  src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-28@2x.png"
                   alt="Dobermans"
                   layout="fill"
                   objectFit="contain"
@@ -49,7 +49,7 @@ export default function Allevamento({ data, preview }) {
             <div>
               <div className="content-image">
                 <Image
-                  src="https://www.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
+                  src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-29@2x.png"
                   alt="ZTP"
                   layout="fill"
                   objectFit="contain"
@@ -63,7 +63,7 @@ export default function Allevamento({ data, preview }) {
             <div>
               <div className="content-image">
                 <Image
-                  src="https://www.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
+                  src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-30@2x.png"
                   alt="KÖRUNG"
                   layout="fill"
                   objectFit="contain"

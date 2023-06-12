@@ -72,6 +72,7 @@ const MenuItem = ({ children, ...props }) => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           key={index}
+          onClick={props.toggleOpen}
         >
           <Link
             className="menu-item"

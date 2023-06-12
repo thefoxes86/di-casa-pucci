@@ -175,7 +175,7 @@ body {
 
 /* PAGE */
 .page-content {
-  @apply w-full py-6 mt-14;
+  @apply w-full pt-6 mt-14;
 }
 
 .page-content h1 {
@@ -203,7 +203,7 @@ body {
 /* MENU  */
 
 .menu_container {
-  @apply w-screen flex flex-wrap justify-between px-4 items-center absolute bg-black top-0 h-12 z-50;
+  @apply w-screen flex flex-wrap justify-between px-4 items-center bg-black top-0 h-12 z-50 fixed;
   color: var(--grey-color)
 }
 .menu_container .menu_box_line {
@@ -244,11 +244,11 @@ body {
 /* BUTTON  */
 
 .btn {
-  @apply text-white no-underline font-light text-lg text-center uppercase py-4 px-8 -skew-x-12 transition-all duration-300 ease-in-out;
+  @apply text-white no-underline font-light text-lg text-center uppercase py-4 px-8 transition-all duration-300 ease-in-out;
 }
 
 .btn-little {
-  @apply text-white no-underline font-light text-sm text-center uppercase py-1 px-2 -skew-x-12 transition-all duration-300 ease-in-out;
+  @apply text-white no-underline font-light text-sm text-center uppercase py-1 px-2 transition-all duration-300 ease-in-out;
 }
 
 .btn-little::after, .btn::after {
@@ -262,7 +262,7 @@ body {
 }
 
 .btn-primary, .btn-secondary, .btn-little  {
-  @apply bg-transparent ;
+  @apply bg-transparent relative;
   border: 1px solid var(--grey-color);
 }
 
@@ -271,7 +271,7 @@ body {
 }
 
 .filtering__buttons button {
-  @apply text-white no-underline font-light text-sm text-center -skew-x-12 uppercase py-1 px-2 transition-all duration-300 ease-in-out bg-transparent;
+  @apply text-white no-underline font-light text-sm text-center uppercase py-1 px-2 transition-all duration-300 ease-in-out bg-transparent;
   border: 1px solid var(--grey-color);
 }
 
@@ -421,14 +421,21 @@ body {
 }
 
 .parents-dog {
-  @apply flex justify-around items-center gap-4;
+  @apply flex justify-around items-start gap-4;
 }
 .parents-dog .parents-dog__item {
+  @apply w-1/4;
+}
+.parents-dog .parents-dog__item a {
   @apply flex flex-wrap justify-center items-center gap-1 flex-col;
 }
 
 .parents-dog .parents-dog__image {
   @apply w-20 h-20 object-cover;
+}
+
+.three-line {
+  @apply relative;
 }
 
 .three-line__item {
@@ -459,3 +466,18 @@ body {
   width: 1px;
   right: 0;
 }
+
+
+.icon-plus {
+  @apply w-6 h-6 flex justify-center items-center object-contain text-center transition-all duration-300 ease-in-out text-xs;
+  border: 1px solid white;
+  border-radius: 100%;
+}
+
+/* FOOTER  */
+
+footer.footer p {
+  font-size: 12px;
+  line-height: 16px;
+}
+

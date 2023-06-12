@@ -61,11 +61,10 @@ const FilteringList = ({ data, type }) => {
                   width="100%"
                 />
                 <motion.p className="name">
-                  {item?.node?.schedaDobermann?.dobNome || 'SENZA NOME'}
+                  {item?.node?.schedaDobermann?.dobNome || 'n/a'}
                 </motion.p>
                 <motion.p className="allevamento">
-                  {item?.node?.schedaDobermann?.dobAllevatore ||
-                    'senza allevatore'}
+                  {item?.node?.schedaDobermann?.dobAllevatore || 'n/a'}
                 </motion.p>
                 <Image
                   src={

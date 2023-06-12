@@ -1,5 +1,5 @@
 const API_URL = process.env.WORDPRESS_API_URL
-import {ctpDobermannFieldsFragment, dobMadreFieldsFragment, dobPadreFieldsFragment, schedaDobermanFieldsFragment} from './fragments'
+import {ctpDobermannFieldsFragment, dobParentsFieldsFragment, schedaDobermanFieldsFragment} from './fragments'
 
 async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
   const headers = { 'Content-Type': 'application/json' }
@@ -378,14 +378,13 @@ export async function getDobermanAndMorePosts(slug, preview, previewData) {
   const data = await fetchAPI(
     `
     ${ctpDobermannFieldsFragment}
-    ${dobMadreFieldsFragment}
-    ${dobPadreFieldsFragment}
+    ${dobParentsFieldsFragment}
     ${schedaDobermanFieldsFragment}
     query DobermanBySlug($id: ID!, $idType: Ctp_dobermannIdType!) {
       ctpDobermann(id: $id, idType: $idType) {
         ...ctpDobermannFields
         ...schedaDobermanFields
-        content
+        ...dobParentsFields
       }
       
     }

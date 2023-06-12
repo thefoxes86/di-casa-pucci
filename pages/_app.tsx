@@ -11,9 +11,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     // Used for page transition
     const start = () => {
+      console.log('Animate Start')
       setLoading(true)
     }
     const end = () => {
+      console.log('Animate End')
       setLoading(false)
     }
     Router.events.on('routeChangeStart', start)
@@ -26,12 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [])
   return (
-    <AnimatePresence
-      mode="wait"
-      initial={false}
-      onExitComplete={() => window.scrollTo(0, 0)}
-    >
-      {/* {loading ? <PageLoader /> : <Component {...pageProps} />} */}
+    <AnimatePresence onExitComplete={() => window.scrollTo(0, 0)}>
       <Component {...pageProps} />
     </AnimatePresence>
   )

@@ -11,6 +11,12 @@ import { getAllDobermansWithSlug, getDobermanAndMorePosts } from '../../lib/api'
 import { CMS_NAME } from '../../lib/constants'
 import DogThree from '../../components/dog-three'
 import DogDetails from '../../components/dog-details'
+import ScrollParallaxComponent from '../../components/scroll-parallax-component'
+import VirgoletteDestra from '../../public/images/virgolette-destra.svg'
+import VirgoletteSinistra from '../../public/images/virgolette-sinistra.svg'
+import ParallaxImage from '../../components/parallax-image'
+import Button from '../../components/button'
+import Scrivici from '../../components/scrivici'
 
 export default function Dobermann({ post, preview }) {
   const router = useRouter()
@@ -52,6 +58,57 @@ export default function Dobermann({ post, preview }) {
                 }}
                 schedaDobermann={post?.schedaDobermann}
               />
+
+              <div className="section__content__wrapper-cta bg-black !py-20 !mt-16">
+                <Button link="/allevamento" type="secondary">
+                  TORNA ALL'ALLEVAMENTO
+                </Button>
+              </div>
+
+              <div className="section__content__wrapper-line-full">
+                <ParallaxImage
+                  src="https://www.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
+                  alt="hero"
+                  height={400}
+                >
+                  <div className="text-parallax-image">
+                    <span className="font-light">VINCENTI,</span>
+                    <span className="font-bold">SI DIVENTA.</span>
+                  </div>
+                </ParallaxImage>
+              </div>
+
+              <ScrollParallaxComponent
+                className="right-0"
+                color="#000"
+                src={VirgoletteDestra}
+                offset={100}
+              />
+              <ScrollParallaxComponent
+                className="left-0"
+                color="#000"
+                src={VirgoletteSinistra}
+                offset={80}
+              />
+              <div className="section__content mt-20">
+                <p className="text-center mb-0 !font-bold !mb-0">
+                  Inseguiamo la perfezione
+                </p>
+                <p className="text-center mt-0">
+                  studiando attentamente ogni accoppiamento
+                </p>
+              </div>
+              <div className="section__content__wrapper-cta">
+                <Button link="/accoppiamento" type="secondary">
+                  L'ACCOPPIAMENGTO
+                </Button>
+              </div>
+              <div className="section__content">
+                <div className="section__content__wrapper-line-full py-6 bg-black">
+                  <Scrivici text="Siamo pronti a rispondere alle vostre domande e sempre disponibili a un incontro conoscitivo." />
+                </div>
+              </div>
+
               <PostBody content={post?.content} />
             </article>
           </>

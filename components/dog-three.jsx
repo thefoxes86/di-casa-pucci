@@ -3,6 +3,7 @@ import Image from 'next/image'
 import IcoMaschio from '../public/images/ico_maschio.svg'
 import IcoFemmina from '../public/images/ico_femmina.svg'
 import DogThreeParent from './dog-three-parent'
+import DogThreeDetailed from './dog-three-detailed'
 
 const DogThree = ({ schedaDobermann, primaryDog }) => {
   console.log('schedaDobermann', schedaDobermann)
@@ -12,7 +13,7 @@ const DogThree = ({ schedaDobermann, primaryDog }) => {
         <Image
           src={
             primaryDog?.image?.node?.sourceUrl ||
-            'https://www.dicasapucci.com/wp-content/uploads/2023/06/woocommerce-placeholder.png'
+            'https://www.dicasapucci.com/wp-content/themes/casapucci/img/placeholder-pedigree2.jpg'
           }
           className="primary-dog__image"
           alt={primaryDog?.name}
@@ -21,12 +22,12 @@ const DogThree = ({ schedaDobermann, primaryDog }) => {
         />
         <p
           className="primary-dog__name"
-          dangerouslySetInnerHTML={{ __html: primaryDog?.name || 'SENZA NOME' }}
+          dangerouslySetInnerHTML={{ __html: primaryDog?.name || 'n/a' }}
         />
         <p
           className="primary-dog__allevatore"
           dangerouslySetInnerHTML={{
-            __html: primaryDog?.allevatore || 'senza allevatore',
+            __html: primaryDog?.allevatore || 'n/a',
           }}
         />
         <Image
@@ -45,64 +46,8 @@ const DogThree = ({ schedaDobermann, primaryDog }) => {
         <DogThreeParent data={schedaDobermann?.dobPadre} />
         <DogThreeParent data={schedaDobermann?.dobMadre} />
       </div>
-      <div className="parents-dog">
-        <DogThreeParent data={schedaDobermann?.dobPadre} />
-        <DogThreeParent data={schedaDobermann?.dobPadre} />
-      </div>
-      <p>
-        Madre:{' '}
-        <Link
-          href={`/dobermans/${schedaDobermann?.dobMadre?.slug}`}
-          dangerouslySetInnerHTML={{ __html: schedaDobermann?.dobMadre?.title }}
-        ></Link>
-      </p>
-      <p>
-        Nonna:{' '}
-        <Link
-          href={`/dobermans/${schedaDobermann?.dobMadre?.schedaDobermann?.dobMadre?.slug}`}
-          dangerouslySetInnerHTML={{
-            __html: schedaDobermann?.dobMadre?.schedaDobermann?.dobMadre?.title,
-          }}
-        ></Link>
-      </p>
-      <p>
-        BisNonna:{' '}
-        <Link
-          href={`/dobermans/${schedaDobermann?.dobMadre?.schedaDobermann?.dobMadre?.schedaDobermann?.dobMadre?.slug}`}
-          dangerouslySetInnerHTML={{
-            __html:
-              schedaDobermann?.dobMadre?.schedaDobermann?.dobMadre
-                ?.schedaDobermann?.dobMadre?.title,
-          }}
-        ></Link>
-      </p>
-      <p>
-        Padre:{' '}
-        <Link
-          href={`/dobermans/${schedaDobermann?.dobPadre?.slug}`}
-          dangerouslySetInnerHTML={{ __html: schedaDobermann?.dobPadre?.title }}
-        ></Link>
-      </p>
-      <p>
-        Nonno:{' '}
-        <Link
-          href={`/dobermans/${schedaDobermann?.dobPadre?.schedaDobermann?.dobPadre?.slug}`}
-          dangerouslySetInnerHTML={{
-            __html: schedaDobermann?.dobPadre?.schedaDobermann?.dobPadre?.title,
-          }}
-        ></Link>
-      </p>
-      <p>
-        BisNonno:{' '}
-        <Link
-          href={`/dobermans/${schedaDobermann?.dobPadre?.schedaDobermann?.dobPadre?.schedaDobermann?.dobPadre?.slug}`}
-          dangerouslySetInnerHTML={{
-            __html:
-              schedaDobermann?.dobPadre?.schedaDobermann?.dobPadre
-                ?.schedaDobermann?.dobPadre?.title,
-          }}
-        ></Link>
-      </p>
+
+      <DogThreeDetailed data={schedaDobermann} />
     </div>
   )
 }

@@ -49,7 +49,7 @@ const Menu = () => {
         animate={isOpen ? 'open' : 'closed'}
         variants={navbar}
       >
-        <MenuItem />
+        <MenuItem toggleOpen={toggleOpen} />
       </motion.div>
     </motion.div>
   )
