@@ -23,7 +23,7 @@ export default function Accoppiamento({ data, preview }) {
         <title>{`${data.title}`}</title>
       </Head>
 
-      <Container data={data}>
+      <Container>
         <h1 dangerouslySetInnerHTML={{ __html: data.title }}></h1>
         <p dangerouslySetInnerHTML={{ __html: data.content }}></p>
         <div className="section__content">

@@ -1,8 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import PageLoader from './pageLoader'
+import { useEffect } from 'react'
 
-export default function Container({ children, data }) {
-  console.log('ANIMATE CONATINER')
+export default function Container({ children }) {
+  useEffect(() => {
+    console.log('MOUNT ANIMATE CONATINER')
+    return () => console.log('UNMOUNT ANIMATE CONATINER')
+  }, [])
   return (
     <AnimatePresence>
       <motion.div
