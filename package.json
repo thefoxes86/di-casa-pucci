@@ -15,6 +15,7 @@
     "css-filter-converter": "^1.0.109",
     "date-fns": "^2.28.0",
     "framer-motion": "^10.12.12",
+    "moment": "^2.29.4",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -61,7 +61,7 @@ export async function getContacts(preview) {
 export async function getAbout(preview) {
   const data = await fetchAPI(`
   {
-    page(id: 385, idType: DATABASE_ID) {
+    page(id: 4048, idType: DATABASE_ID) {
       content(format: RENDERED)
       title(format: RENDERED)
       slug
@@ -87,7 +87,7 @@ export async function getAllevamento(preview) {
 export async function getAddestramento(preview) {
   const data = await fetchAPI(`
   {
-    page(id: 480, idType: DATABASE_ID) {
+    page(id: 4043, idType: DATABASE_ID) {
       content(format: RENDERED)
       title(format: RENDERED)
       slug
@@ -141,7 +141,7 @@ export async function getAllDobermansWithSlug() {
   return data?.ctpDobermanns
 }
 
-export async function getAllPostsForHome(preview) {
+export async function getAllPosts(preview) {
   const data = await fetchAPI(
     `
     query AllPosts {
@@ -224,11 +224,11 @@ export async function getAllDobermann(preview) {
   return data?.ctpDobermanns
 }
 
-export async function getAllDobermansForHome(preview) {
+export async function getAllCuccioli(preview) {
   const data = await fetchAPI(
     `
-    query AllDobermans {
-      ctpDobermanns(first: 20, where: { orderby: { field: DATE, order: DESC } }) {
+    query AllCucciolis {
+      cptCucciolis(first: 1000) {
         edges {
           node {
             title
@@ -237,6 +237,16 @@ export async function getAllDobermansForHome(preview) {
             featuredImage {
               node {
                 sourceUrl
+              }
+            }
+            schedaDobermann {
+              dobNome
+              dobAllevatore
+              dobRiconoscimenti
+              dobSex {
+                name
+                slug
+                sessoId
               }
             }
           }
@@ -252,8 +262,9 @@ export async function getAllDobermansForHome(preview) {
     }
   )
 
-  return data?.ctpDobermanns
+  return data?.cptCucciolis
 }
+
 
 export async function getPostAndMorePosts(slug, preview, previewData) {
   const postPreview = preview && previewData?.post
@@ -263,77 +274,19 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
     ? Number(slug) === postPreview.id
     : slug === postPreview.slug
   const isDraft = isSamePost && postPreview?.status === 'draft'
-  const isRevision = isSamePost && postPreview?.status === 'publish'
+  
   const data = await fetchAPI(
-    `
-    fragment AuthorFields on User {
-      name
-      firstName
-      lastName
-      avatar {
-        url
-      }
-    }
-    fragment PostFields on Post {
-      title
-      excerpt
-      slug
-      date
-      featuredImage {
-        node {
-          sourceUrl
-        }
-      }
-      author {
-        node {
-          ...AuthorFields
-        }
-      }
-      categories {
-        edges {
-          node {
-            name
-          }
-        }
-      }
-      tags {
-        edges {
-          node {
-            name
-          }
-        }
-      }
-    }
+    ` 
     query PostBySlug($id: ID!, $idType: PostIdType!) {
       post(id: $id, idType: $idType) {
-        ...PostFields
+        title
+        excerpt
+        slug
+        date
         content
-        ${
-          // Only some of the fields of a revision are considered as there are some inconsistencies
-          isRevision
-            ? `
-        revisions(first: 1, where: { orderby: { field: MODIFIED, order: DESC } }) {
-          edges {
-            node {
-              title
-              excerpt
-              content
-              author {
-                node {
-                  ...AuthorFields
-                }
-              }
-            }
-          }
-        }
-        `
-            : ''
-        }
-      }
-      posts(first: 3, where: { orderby: { field: DATE, order: DESC } }) {
-        edges {
+        featuredImage {
           node {
-            ...PostFields
+            sourceUrl
           }
         }
       }
@@ -350,18 +303,6 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
   // Draft posts may not have an slug
   if (isDraft) data.post.slug = postPreview.id
   // Apply a revision (changes in a published post)
-  if (isRevision && data.post.revisions) {
-    const revision = data.post.revisions.edges[0]?.node
-
-    if (revision) Object.assign(data.post, revision)
-    delete data.post.revisions
-  }
-
-  // Filter out the main post
-  data.posts.edges = data.posts.edges.filter(({ node }) => node.slug !== slug)
-  // If there are still 3 posts, remove the last one
-  if (data.posts.edges.length > 2) data.posts.edges.pop()
-
   return data
 }
 
@@ -406,11 +347,50 @@ export async function getDobermanAndMorePosts(slug, preview, previewData) {
     if (revision) Object.assign(data.ctpDobermann, revision)
     delete data.ctpDobermann.revisions
   }
+}
 
-
-
-
-
+export async function getAllDobermansForHome(preview) {
+  const data = await fetchAPI(
+    `
+    query AllDobermans {
+      ctpDobermanns(first: 20, where: { orderby: { field: DATE, order: DESC } }) {
+        edges {
+          node {
+            title
+            slug
+            date
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
+          }
+        }
+      }
+      posts(first: 3, where: { orderby: { field: DATE, order: DESC } }) {
+        edges {
+          node {
+            title
+            excerpt
+            slug
+            date
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
+          }
+        }
+      }
+    }
+  `,
+    {
+      variables: {
+        onlyEnabled: !preview,
+        preview,
+      },
+    }
+  )
 
   return data
 }

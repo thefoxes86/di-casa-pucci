@@ -7,7 +7,7 @@ import VirgoletteDestra from '../public/images/virgolette-destra.svg'
 import VirgoletteSinistra from '../public/images/virgolette-sinistra.svg'
 import Slider from './slider'
 
-const BodyHome = () => {
+const BodyHome = ({ data }) => {
   return (
     <AnimatePresence>
       <div className="body-home">
@@ -167,7 +167,7 @@ const BodyHome = () => {
           </div>
           <div className="section__content">
             <div className="section__content__wrapper-line-full py-6 ">
-              <Slider />
+              <Slider data={data} />
             </div>
           </div>
           <div className="section__content bg-black ">

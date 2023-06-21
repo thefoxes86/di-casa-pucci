@@ -5,13 +5,7 @@ import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
-import {
-  getAllDobermansForHome,
-  getAllPostsForHome,
-  getAbout,
-  getAddestramento,
-  getAccoppiamento,
-} from '../lib/api'
+import { getAccoppiamento } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
 import Slider from '../components/slider'
 import Scrivici from '../components/scrivici'

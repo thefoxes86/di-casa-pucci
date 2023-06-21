@@ -200,6 +200,10 @@ body {
   @apply w-24 h-24 relative mb-4;
 }
 
+.img_asterisco {
+  @apply m-auto;
+}
+
 /* MENU  */
 
 .menu_container {
@@ -346,7 +350,7 @@ body {
 /* PAGE LIST  */
 
 .filtering__list {
-  @apply flex flex-wrap justify-center items-start gap-4 px-0 relative;
+  @apply flex flex-wrap justify-center items-start gap-4 px-0 relative mb-12;
 }
 
 .filtering__list .filtering__list__item {

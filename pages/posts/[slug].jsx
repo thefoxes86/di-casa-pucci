@@ -1,18 +1,20 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
-import { GetStaticPaths, GetStaticProps } from 'next'
+
 import Container from '../../components/container'
-import PostBody from '../../components/post-body'
-import MoreStories from '../../components/more-stories'
-import Header from '../../components/header'
-import PostHeader from '../../components/post-header'
-import SectionSeparator from '../../components/section-separator'
+
 import Layout from '../../components/layout'
 import PostTitle from '../../components/post-title'
-import Tags from '../../components/tags'
+
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
-import { CMS_NAME } from '../../lib/constants'
+
+import ParallaxImage from '../../components/parallax-image'
+import Button from '../../components/button'
+import VirgoletteDestra from '../../public/images/virgolette-destra.svg'
+import VirgoletteSinistra from '../../public/images/virgolette-sinistra.svg'
+import Scrivici from '../../components/scrivici'
+import ScrollParallaxComponent from '../../components/scroll-parallax-component'
 
 export default function Post({ post, posts, preview }) {
   const router = useRouter()
@@ -25,36 +27,96 @@ export default function Post({ post, posts, preview }) {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
             <article>
               <Head>
-                <title>
-                  {`${post.title} | Next.js Blog Example with ${CMS_NAME}`}
-                </title>
+                <title>{`${post.title}`}</title>
                 <meta
                   property="og:image"
                   content={post?.featuredImage?.node?.sourceUrl}
                 />
               </Head>
-              <PostHeader
-                title={post?.title}
-                coverImage={post?.featuredImage}
-                date={post?.date}
-                author={post?.author}
-                categories={post?.categories}
+              <div className="section__content">
+                <div className="section__content__wrapper-line-full">
+                  <ParallaxImage
+                    src={post?.featuredImage?.node?.sourceUrl}
+                    alt="hero"
+                    height={400}
+                  >
+                    <div className="text-parallax-image">
+                      <span
+                        className="font-light"
+                        dangerouslySetInnerHTML={{ __html: post?.title }}
+                      ></span>
+                    </div>
+                  </ParallaxImage>
+                </div>
+              </div>
+              <div className="section__content">
+                <div className="section__content__wrapper-line-full px-6 my-6">
+                  <p dangerouslySetInnerHTML={{ __html: post?.content }}></p>
+                </div>
+              </div>
+              <div className="section__content">
+                <div className="section__content__wrapper-cta">
+                  <Button link="/news" type="secondary">
+                    TORNA ALLE NEWS
+                  </Button>
+                </div>
+                <div className="section__content"></div>
+                <div className="section__content__wrapper-line-full">
+                  <ParallaxImage
+                    src="https://www.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
+                    alt="hero"
+                    height={400}
+                  >
+                    <div className="text-parallax-image">
+                      <span className="font-light">VINCENTI,</span>
+                      <span className="font-bold">SI DIVENTA.</span>
+                    </div>
+                  </ParallaxImage>
+                </div>
+              </div>
+              <ScrollParallaxComponent
+                className="right-0"
+                color="#2B2B2B"
+                src={VirgoletteDestra}
+                offset={100}
               />
-              <PostBody content={post?.content} />
-              <footer>
-                {post?.tags?.edges?.length > 0 && <Tags tags={post?.tags} />}
-              </footer>
-            </article>
+              <ScrollParallaxComponent
+                className="left-0"
+                color="#2B2B2B"
+                src={VirgoletteSinistra}
+                offset={80}
+              />
+              <div className="section__content">
+                <div className="section__content__wrapper-line bg-black">
+                  <div className="section__content__wrapper-text">
+                    <p className="font-semibold">
+                      Insieme al centro sportivo{' '}
+                      <span className="font-bold w-100 flex text-center justify-center">
+                        ABC100 Working Dog Club
+                      </span>{' '}
+                      prepariamo i vostri cani alla vittoria.
+                    </p>
+                  </div>
+                  <div className="section__content__wrapper-cta">
+                    <Button link="/cuccioli" type="secondary">
+                      CUCCIOLI
+                    </Button>
+                  </div>
+                </div>
+              </div>
 
-            <SectionSeparator />
-            {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
+              <div className="section__content">
+                <div className="section__content__wrapper-line-full py-6 bg-black">
+                  <Scrivici text="Siamo pronti a rispondere alle vostre domande e sempre disponibili a un incontro conoscitivo." />
+                </div>
+              </div>
+            </article>
           </>
         )}
       </Container>
@@ -73,7 +135,6 @@ export const getStaticProps = async ({
     props: {
       preview,
       post: data?.post,
-      posts: data?.posts,
     },
     revalidate: 10,
   }

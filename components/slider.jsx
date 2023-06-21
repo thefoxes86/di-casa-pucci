@@ -1,13 +1,16 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
+import Link from 'next/link'
 import { Navigation } from 'swiper'
+import moment from 'moment'
 
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/navigation'
 import Button from './button'
 
-const Slider = () => {
+const Slider = ({ data }) => {
+  console.log('NEWS', data)
   return (
     <>
       <Swiper
@@ -19,42 +22,28 @@ const Slider = () => {
         navigation={true}
         modules={[Navigation]}
       >
-        <SwiperSlide>
-          <div className="container_swiper_item">
-            <img
-              src="https://www.dicasapucci.com/wp-content/uploads/2023/05/cani1.png"
-              alt="hero"
-            />
-            <span>29 gen 2023</span>
-            <h3>Sono nati i cuccioli Nagini</h3>
+        {data?.edges
+          ? data?.edges.map((item, index) => (
+              <SwiperSlide>
+                <Link href={`/posts/${item.node?.slug}`}>
+                  <div className="container_swiper_item">
+                    <img
+                      src={item.node?.featuredImage?.node?.sourceUrl || ''}
+                      alt="hero"
+                    />
+                    <span>{moment(item.node?.date).format()}</span>
+                    <h3>{item.node?.title}</h3>
 
-            <p>Sono nati i cuccioli della nostra canetta prefeirta</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="container_swiper_item">
-            <img
-              src="https://www.dicasapucci.com/wp-content/uploads/2023/05/cani1.png"
-              alt="hero"
-            />
-            <span>29 gen 2023</span>
-            <h3>Sono nati i cuccioli Nagini</h3>
-
-            <p>Sono nati i cuccioli della nostra canetta prefeirta</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="container_swiper_item">
-            <img
-              src="https://www.dicasapucci.com/wp-content/uploads/2023/05/cani1.png"
-              alt="hero"
-            />
-            <span>29 gen 2023</span>
-            <h3>Sono nati i cuccioli Nagini</h3>
-
-            <p>Sono nati i cuccioli della nostra canetta prefeirta</p>
-          </div>
-        </SwiperSlide>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: item.node?.excerpt.substring(0, 100) + ' ...',
+                      }}
+                    ></p>
+                  </div>
+                </Link>
+              </SwiperSlide>
+            ))
+          : 'Non ci sono post'}
       </Swiper>
       <div className="py-6 text-center">
         <Button type="primary" link="/news">
