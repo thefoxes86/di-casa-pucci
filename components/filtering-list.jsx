@@ -32,6 +32,7 @@ const FilteringList = ({ data, type }) => {
   }
 
   useEffect(() => {
+    console.log('RENDER LIST')
     setDisplayData(data)
   }, [data])
 
@@ -49,7 +50,7 @@ const FilteringList = ({ data, type }) => {
               initial={{ transform: 'translateY(0)', opacity: 0 }}
               animate={{ transform: 'translateY(10px)', opacity: 1 }}
               exit={{ transform: 'translateY(0)', opacity: 0 }}
-              transition={{ type: 'spring', duration: 0.5, delay: i * 0.1 }}
+              transition={{ type: 'spring', duration: 0.5, delay: i * 0.01 }}
             >
               <Link href={`/dobermann/${item?.node?.slug}`}>
                 <motion.img

@@ -10,6 +10,7 @@ import VirgoletteDestra from '../public/images/virgolette-destra.svg'
 import VirgoletteSinistra from '../public/images/virgolette-sinistra.svg'
 import Scrivici from '../components/scrivici'
 import FilteringList from '../components/filtering-list'
+
 export default function Allevamento({ data, preview }) {
   return (
     <Layout preview={false}>

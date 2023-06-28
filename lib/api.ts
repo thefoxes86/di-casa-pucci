@@ -1,5 +1,6 @@
-const API_URL = process.env.WORDPRESS_API_URL
+import { ApolloClient, InMemoryCache } from '@apollo/client'
 import {ctpDobermannFieldsFragment, dobParentsFieldsFragment, schedaDobermanFieldsFragment} from './fragments'
+const API_URL = process.env.WORDPRESS_API_URL
 
 async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
   const headers = { 'Content-Type': 'application/json' }
@@ -394,3 +395,37 @@ export async function getAllDobermansForHome(preview) {
 
   return data
 }
+
+export async function sendMail(subject, body, mutationId = 'contact') {
+  const fromAddress = 'noreply@yourwebsite.com';
+  const toAddress = 'nicola.volpi86@gmail.com';
+  const data = await fetchAPI(
+    `
+		mutation SendEmail($input: SendEmailInput!) {
+			sendEmail(input: $input) {
+				message
+				origin
+				sent
+			}
+		}
+	`,
+    {
+      variables: {
+        input: {
+          clientMutationId: mutationId,
+          from: fromAddress,
+          to: toAddress,
+          body: body,
+          subject: subject,
+        },
+      },
+    }
+  );
+
+  return data?.sendEmail;
+}
+
+export const client = new ApolloClient({
+  uri: API_URL,
+  cache: new InMemoryCache(),
+})
