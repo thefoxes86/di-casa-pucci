@@ -122,7 +122,7 @@ export default function Allevamento({ data, preview }) {
         </div>
         <div className="section__content">
           <div className="section__content__wrapper-line-full py-6 ">
-            <Slider />
+            <Slider data={data} />
           </div>
         </div>
         <div className="section__content">

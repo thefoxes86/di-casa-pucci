@@ -119,9 +119,8 @@ export default function Contacts({ data, preview }) {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2875.3062937800123!2d10.314571176787597!3d43.890922637022335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d59ef75cca759f%3A0x7ccda47bf9328a8b!2sAllevamento%20Dobermann%20Di%20Casa%20Pucci!5e0!3m2!1sit!2sit!4v1687939388215!5m2!1sit!2sit"
                 width="600"
                 height="450"
-                allowFullScreen=""
+                allowFullScreen
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </div>

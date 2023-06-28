@@ -22,7 +22,7 @@ export default function Accoppiamento({ data, preview }) {
         <p dangerouslySetInnerHTML={{ __html: data.content }}></p>
         <div className="section__content">
           <div className="section__content__wrapper-line-full py-6 ">
-            <Slider />
+            <Slider data={data} />
           </div>
         </div>
         <div className="section__content">
