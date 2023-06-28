@@ -348,6 +348,7 @@ export async function getDobermanAndMorePosts(slug, preview, previewData) {
     if (revision) Object.assign(data.ctpDobermann, revision)
     delete data.ctpDobermann.revisions
   }
+  return data
 }
 
 export async function getAllDobermansForHome(preview) {

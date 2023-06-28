@@ -48,7 +48,7 @@ export default function Dobermann({ post, preview }) {
                 allevatore={post?.schedaDobermann?.dobAllevatore}
                 coverImage={post?.featuredImage}
               />
-              <DogDetails data={post.schedaDobermann} />
+              <DogDetails data={post?.schedaDobermann} />
               <DogThree
                 primaryDog={{
                   name: post?.schedaDobermann?.dobNome,
@@ -124,7 +124,7 @@ export const getStaticProps = async ({
   previewData,
 }) => {
   const data = await getDobermanAndMorePosts(params?.slug, preview, previewData)
-
+  console.log('SERIALIZAING', data)
   return {
     props: {
       preview,
