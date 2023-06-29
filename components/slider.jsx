@@ -10,7 +10,6 @@ import 'swiper/css/navigation'
 import Button from './button'
 
 const Slider = ({ data }) => {
-  console.log('NEWS', data)
   return (
     <>
       <Swiper
@@ -22,34 +21,38 @@ const Slider = ({ data }) => {
         navigation={true}
         modules={[Navigation]}
       >
-        {data?.edges
-          ? data?.edges.map((item, index) => (
-              <SwiperSlide>
-                <Link href={`/posts/${item.node?.slug}`}>
-                  <div className="container_swiper_item">
-                    <img
-                      src={item.node?.featuredImage?.node?.sourceUrl || ''}
-                      alt="hero"
-                    />
-                    <span>{moment(item.node?.date).format()}</span>
-                    <h3>{item.node?.title}</h3>
+        {data?.edges ? (
+          data?.edges.map((item, index) => (
+            <SwiperSlide>
+              <Link href={`/posts/${item.node?.slug}`}>
+                <div className="container_swiper_item">
+                  <img
+                    src={item.node?.featuredImage?.node?.sourceUrl || ''}
+                    alt="hero"
+                  />
+                  <span>{moment(item.node?.date).format()}</span>
+                  <h3>{item.node?.title}</h3>
 
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: item.node?.excerpt.substring(0, 100) + ' ...',
-                      }}
-                    ></p>
-                  </div>
-                </Link>
-              </SwiperSlide>
-            ))
-          : 'Non ci sono post'}
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: item.node?.excerpt.substring(0, 100) + ' ...',
+                    }}
+                  ></p>
+                </div>
+              </Link>
+            </SwiperSlide>
+          ))
+        ) : (
+          <div className="text-center">Non ci sono post</div>
+        )}
       </Swiper>
-      <div className="py-6 text-center">
-        <Button type="primary" link="/news">
-          TUTTE LE NEWS
-        </Button>
-      </div>
+      {data?.edges ? (
+        <div className="py-6 text-center">
+          <Button type="primary" link="/news">
+            TUTTE LE NEWS
+          </Button>
+        </div>
+      ) : null}
     </>
   )
 }

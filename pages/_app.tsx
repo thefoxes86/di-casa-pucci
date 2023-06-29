@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 const variants = {
   initialState: {
-    clipPath: 'inset(0 0 100% 0)',
+    clipPath: 'inset(-100px)',
     opacity: 0,
   },
   animateState: {

@@ -175,7 +175,7 @@ body {
 
 /* PAGE */
 .page-content {
-  @apply w-full mt-14;
+  @apply w-full mt-10 pt-6;
 }
 
 .page-content h1 {
@@ -205,7 +205,9 @@ body {
 }
 
 /* MENU  */
-
+.overlay_menu {
+  @apply w-screen h-screen fixed top-0 left-0;
+}
 .menu_container {
   @apply w-screen flex flex-wrap justify-between px-4 items-center bg-black top-0 h-12 z-50 fixed;
   color: var(--grey-color)

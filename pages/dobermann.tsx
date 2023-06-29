@@ -20,12 +20,12 @@ export default function Allevamento({ data, preview }) {
       </Head>
 
       <Container>
-        <AnimateSection className="section__content">
+        <div className="section__content">
           <h1 dangerouslySetInnerHTML={{ __html: 'DOBERMANN' }}></h1>
-        </AnimateSection>
-        <AnimateSection className="section__content">
+        </div>
+        <div className="section__content">
           <FilteringList type="dobermann" data={data.edges} />
-        </AnimateSection>
+        </div>
         <ScrollParallaxComponent
           className="right-0"
           color="#2B2B2B"
