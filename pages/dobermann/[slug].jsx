@@ -17,6 +17,7 @@ import VirgoletteSinistra from '../../public/images/virgolette-sinistra.svg'
 import ParallaxImage from '../../components/parallax-image'
 import Button from '../../components/button'
 import Scrivici from '../../components/scrivici'
+import AnimateSection from '../../components/animateSection'
 
 export default function Dobermann({ post, preview }) {
   const router = useRouter()
@@ -59,13 +60,13 @@ export default function Dobermann({ post, preview }) {
                 schedaDobermann={post?.schedaDobermann}
               />
 
-              <div className="section__content__wrapper-cta bg-black !py-20 !mt-16">
+              <AnimateSection className="section__content__wrapper-cta bg-black !py-20 !mt-16">
                 <Button link="/allevamento" type="secondary">
                   TORNA ALL'ALLEVAMENTO
                 </Button>
-              </div>
+              </AnimateSection>
 
-              <div className="section__content__wrapper-line-full">
+              <AnimateSection className="section__content__wrapper-line-full">
                 <ParallaxImage
                   src="https://www.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
                   alt="hero"
@@ -76,7 +77,7 @@ export default function Dobermann({ post, preview }) {
                     <span className="font-bold">SI DIVENTA.</span>
                   </div>
                 </ParallaxImage>
-              </div>
+              </AnimateSection>
 
               <ScrollParallaxComponent
                 className="right-0"
@@ -90,24 +91,24 @@ export default function Dobermann({ post, preview }) {
                 src={VirgoletteSinistra}
                 offset={80}
               />
-              <div className="section__content mt-20">
+              <AnimateSection className="section__content mt-20">
                 <p className="text-center mb-0 !font-bold !mb-0">
                   Inseguiamo la perfezione
                 </p>
                 <p className="text-center mt-0">
                   studiando attentamente ogni accoppiamento
                 </p>
-              </div>
-              <div className="section__content__wrapper-cta">
+              </AnimateSection>
+              <AnimateSection className="section__content__wrapper-cta">
                 <Button link="/accoppiamento" type="secondary">
                   L'ACCOPPIAMENGTO
                 </Button>
-              </div>
-              <div className="section__content">
+              </AnimateSection>
+              <AnimateSection className="section__content">
                 <div className="section__content__wrapper-line-full py-6 bg-black">
                   <Scrivici text="Siamo pronti a rispondere alle vostre domande e sempre disponibili a un incontro conoscitivo." />
                 </div>
-              </div>
+              </AnimateSection>
 
               <PostBody content={post?.content} />
             </article>

@@ -1,11 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { SplitText } from '@cyriacbr/react-split-text'
+
 import Button from './button'
 import ParallaxImage from './parallax-image'
 import ScrollParallaxComponent from './scroll-parallax-component'
 import VirgoletteDestra from '../public/images/virgolette-destra.svg'
 import VirgoletteSinistra from '../public/images/virgolette-sinistra.svg'
 import Slider from './slider'
+import AnimateSection from './animateSection'
 
 const BodyHome = ({ data }) => {
   return (
@@ -24,7 +25,13 @@ const BodyHome = ({ data }) => {
             src={VirgoletteSinistra}
             offset={50}
           />
-          <div className="section__content">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9 }}
+            viewport={{ amount: 0.5 }}
+            className="section__content"
+          >
             <div className="section__content__wrapper-line">
               <div className="section__content__wrapper-text">
                 <p>
@@ -38,8 +45,8 @@ const BodyHome = ({ data }) => {
                 <Button link="/allevamento">I NOSTRI DOBERMANN</Button>
               </div>
             </div>
-          </div>
-          <div className="section__content__wrapper-line-full">
+          </motion.div>
+          <AnimateSection className="section__content__wrapper-line-full">
             <ParallaxImage
               src="https://www.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
               alt="hero"
@@ -50,7 +57,7 @@ const BodyHome = ({ data }) => {
                 <span className="font-bold">SI NASCE.</span>
               </div>
             </ParallaxImage>
-          </div>
+          </AnimateSection>
           <ScrollParallaxComponent
             className="right-0"
             color="#2B2B2B"
@@ -63,7 +70,7 @@ const BodyHome = ({ data }) => {
             src={VirgoletteSinistra}
             offset={80}
           />
-          <div className="section__content">
+          <AnimateSection className="section__content">
             <div className="section__content__wrapper-line bg-black">
               <div className="section__content__wrapper-text">
                 <p>
@@ -78,8 +85,8 @@ const BodyHome = ({ data }) => {
                 </Button>
               </div>
             </div>
-          </div>
-          <div className="section__content">
+          </AnimateSection>
+          <AnimateSection className="section__content">
             <div className="section__content__wrapper-line-full">
               <ParallaxImage
                 src="https://www.dicasapucci.com/wp-content/uploads/2023/05/Accoppiamento@2x.png"
@@ -92,7 +99,7 @@ const BodyHome = ({ data }) => {
                 </div>
               </ParallaxImage>
             </div>
-          </div>
+          </AnimateSection>
           <ScrollParallaxComponent
             className="right-0"
             color="#000"
@@ -105,7 +112,7 @@ const BodyHome = ({ data }) => {
             src={VirgoletteSinistra}
             offset={80}
           />
-          <div className="section__content">
+          <AnimateSection className="section__content">
             <div className="section__content__wrapper-line">
               <div className="section__content__wrapper-text">
                 <p className="font-semibold">
@@ -119,9 +126,9 @@ const BodyHome = ({ data }) => {
                 </Button>
               </div>
             </div>
-          </div>
+          </AnimateSection>
 
-          <div className="section__content">
+          <AnimateSection className="section__content">
             <div className="section__content__wrapper-line-full">
               <ParallaxImage
                 src="https://www.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
@@ -134,7 +141,7 @@ const BodyHome = ({ data }) => {
                 </div>
               </ParallaxImage>
             </div>
-          </div>
+          </AnimateSection>
           <ScrollParallaxComponent
             className="right-0"
             color="#2B2B2B"
@@ -147,7 +154,7 @@ const BodyHome = ({ data }) => {
             src={VirgoletteSinistra}
             offset={80}
           />
-          <div className="section__content">
+          <AnimateSection className="section__content">
             <div className="section__content__wrapper-line bg-black">
               <div className="section__content__wrapper-text">
                 <p className="font-semibold">
@@ -164,13 +171,13 @@ const BodyHome = ({ data }) => {
                 </Button>
               </div>
             </div>
-          </div>
-          <div className="section__content">
+          </AnimateSection>
+          <AnimateSection className="section__content">
             <div className="section__content__wrapper-line-full py-6 ">
               <Slider data={data} />
             </div>
-          </div>
-          <div className="section__content bg-black ">
+          </AnimateSection>
+          <AnimateSection className="section__content bg-black ">
             <div className="section__content__wrapper-line py-6 text-center">
               <img
                 src="https://www.dicasapucci.com/wp-content/uploads/2023/05/three-nation-logo.png"
@@ -186,7 +193,7 @@ const BodyHome = ({ data }) => {
                 I PROGETTI SOSTENIBILI
               </Button>
             </div>
-          </div>
+          </AnimateSection>
         </motion.section>
       </div>
     </AnimatePresence>

@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
 import Slider from '../components/slider'
 import Scrivici from '../components/scrivici'
+import AnimateSection from '../components/animateSection'
 
 export default function News({ data, preview }) {
   return (
@@ -16,16 +17,16 @@ export default function News({ data, preview }) {
       <Container>
         <h1 dangerouslySetInnerHTML={{ __html: 'NEWS' }}></h1>
         <p dangerouslySetInnerHTML={{ __html: data?.content }}></p>
-        <div className="section__content">
+        <AnimateSection className="section__content">
           <div className="section__content__wrapper-line-full py-6 ">
             <Slider data={data} />
           </div>
-        </div>
-        <div className="section__content mt-10">
+        </AnimateSection>
+        <AnimateSection className="section__content mt-10">
           <div className="section__content__wrapper-line-full py-6 bg-black">
             <Scrivici text="Siamo pronti a rispondere alle vostre domande e sempre disponibili a un incontro conoscitivo." />
           </div>
-        </div>
+        </AnimateSection>
       </Container>
     </Layout>
   )

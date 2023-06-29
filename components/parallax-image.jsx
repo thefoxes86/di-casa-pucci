@@ -1,4 +1,5 @@
 import { Parallax } from 'react-parallax'
+import { motion } from 'framer-motion'
 
 const ParallaxImage = props => {
   return (

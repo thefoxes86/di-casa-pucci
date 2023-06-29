@@ -175,7 +175,7 @@ body {
 
 /* PAGE */
 .page-content {
-  @apply w-full pt-6 mt-14;
+  @apply w-full mt-14;
 }
 
 .page-content h1 {
@@ -358,7 +358,7 @@ body {
 }
 
 .filtering__list .filtering__list__item img {
-  @apply w-28 h-28 object-cover relative;
+  @apply w-28 h-28 object-cover relative text-center;
 }
 
 .filtering__list .filtering__list__item p.name {

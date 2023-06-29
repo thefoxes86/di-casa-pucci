@@ -10,6 +10,7 @@ import VirgoletteDestra from '../public/images/virgolette-destra.svg'
 import VirgoletteSinistra from '../public/images/virgolette-sinistra.svg'
 import Scrivici from '../components/scrivici'
 import FilteringList from '../components/filtering-list'
+import AnimateSection from '../components/animateSection'
 export default function Cuccioli({ data, preview }) {
   return (
     <Layout preview={false}>
@@ -18,7 +19,7 @@ export default function Cuccioli({ data, preview }) {
       </Head>
 
       <Container>
-        <div className="section__content">
+        <AnimateSection className="section__content">
           <h1 dangerouslySetInnerHTML={{ __html: 'CUCCIOLI' }}></h1>
           <h2>
             {' '}
@@ -29,12 +30,12 @@ export default function Cuccioli({ data, preview }) {
             Fin dalla nascita selezioniamo i Dobermann migliori secondo
             Benessere, Forza e Bellezza.
           </p>
-        </div>
-        <div className="section__content">
+        </AnimateSection>
+        <AnimateSection className="section__content">
           <FilteringList type="dobermann" data={data.edges} />
-        </div>
+        </AnimateSection>
 
-        <div className="section__content">
+        <AnimateSection className="section__content">
           <div className="section__content__wrapper-line bg-black">
             <div className="section__content__wrapper-text">
               <p>
@@ -45,9 +46,9 @@ export default function Cuccioli({ data, preview }) {
               </p>
             </div>
           </div>
-        </div>
+        </AnimateSection>
 
-        <div className="section__content">
+        <AnimateSection className="section__content">
           <div className="section__content__wrapper-line-full">
             <ParallaxImage
               src="https://www.dicasapucci.com/wp-content/uploads/2023/05/cani2.png"
@@ -60,7 +61,7 @@ export default function Cuccioli({ data, preview }) {
               </div>
             </ParallaxImage>
           </div>
-        </div>
+        </AnimateSection>
         <ScrollParallaxComponent
           className="right-0"
           color="#000"
@@ -74,7 +75,7 @@ export default function Cuccioli({ data, preview }) {
           offset={80}
         />
 
-        <div className="section__content">
+        <AnimateSection className="section__content">
           <div className="section__content__wrapper-line">
             <div className="section__content__wrapper-text">
               <p>
@@ -88,13 +89,13 @@ export default function Cuccioli({ data, preview }) {
               </Button>
             </div>
           </div>
-        </div>
+        </AnimateSection>
 
-        <div className="section__content">
+        <AnimateSection className="section__content">
           <div className="section__content__wrapper-line-full py-6 bg-black">
             <Scrivici text="Siamo pronti a rispondere alle vostre domande e sempre disponibili a un incontro conoscitivo." />
           </div>
-        </div>
+        </AnimateSection>
       </Container>
     </Layout>
   )

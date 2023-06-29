@@ -1,35 +1,43 @@
 import { AppProps } from 'next/app'
 import '../styles/index.css'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import Router from 'next/router'
-import PageLoader from '../components/pageLoader'
+
+const variants = {
+  initialState: {
+    clipPath: 'inset(0 0 100% 0)',
+    opacity: 0,
+  },
+  animateState: {
+    clipPath: 'inset(-100px)',
+    opacity: 1,
+  },
+  exitState: {
+    clipPath: 'inset(100% 0 100% 0)',
+    opacity: 0,
+  },
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false)
 
-  useEffect(() => {
-    // Used for page transition
-    const start = () => {
-      console.log('Animate Start')
-      setLoading(true)
-    }
-    const end = () => {
-      console.log('Animate End')
-      setLoading(false)
-    }
-    Router.events.on('routeChangeStart', start)
-    Router.events.on('routeChangeComplete', end)
-    Router.events.on('routeChangeError', end)
-    return () => {
-      Router.events.off('routeChangeStart', start)
-      Router.events.off('routeChangeComplete', end)
-      Router.events.off('routeChangeError', end)
-    }
-  }, [])
+  useEffect(() => {}, [])
   return (
-    <AnimatePresence onExitComplete={() => window.scrollTo(0, 0)}>
-      <Component {...pageProps} />
+    <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
+      <motion.div
+        key={Math.random() * 100}
+        initial="initialState"
+        animate="animateState"
+        className="mx-auto page-content"
+        exit="exitState"
+        variants={variants}
+        transition={{
+          ease: 'easeInOut',
+          duration: 1,
+        }}
+      >
+        <Component {...pageProps} />
+      </motion.div>
     </AnimatePresence>
   )
 }

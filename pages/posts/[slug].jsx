@@ -15,6 +15,7 @@ import VirgoletteDestra from '../../public/images/virgolette-destra.svg'
 import VirgoletteSinistra from '../../public/images/virgolette-sinistra.svg'
 import Scrivici from '../../components/scrivici'
 import ScrollParallaxComponent from '../../components/scroll-parallax-component'
+import AnimateSection from '../../components/animateSection'
 
 export default function Post({ post, posts, preview }) {
   const router = useRouter()
@@ -39,7 +40,7 @@ export default function Post({ post, posts, preview }) {
                   content={post?.featuredImage?.node?.sourceUrl}
                 />
               </Head>
-              <div className="section__content">
+              <AnimateSection className="section__content">
                 <div className="section__content__wrapper-line-full">
                   <ParallaxImage
                     src={post?.featuredImage?.node?.sourceUrl}
@@ -54,13 +55,13 @@ export default function Post({ post, posts, preview }) {
                     </div>
                   </ParallaxImage>
                 </div>
-              </div>
-              <div className="section__content">
+              </AnimateSection>
+              <AnimateSection className="section__content">
                 <div className="section__content__wrapper-line-full px-6 my-6">
                   <p dangerouslySetInnerHTML={{ __html: post?.content }}></p>
                 </div>
-              </div>
-              <div className="section__content">
+              </AnimateSection>
+              <AnimateSection className="section__content">
                 <div className="section__content__wrapper-cta">
                   <Button link="/news" type="secondary">
                     TORNA ALLE NEWS
@@ -79,7 +80,7 @@ export default function Post({ post, posts, preview }) {
                     </div>
                   </ParallaxImage>
                 </div>
-              </div>
+              </AnimateSection>
               <ScrollParallaxComponent
                 className="right-0"
                 color="#2B2B2B"
@@ -92,7 +93,7 @@ export default function Post({ post, posts, preview }) {
                 src={VirgoletteSinistra}
                 offset={80}
               />
-              <div className="section__content">
+              <AnimateSection className="section__content">
                 <div className="section__content__wrapper-line bg-black">
                   <div className="section__content__wrapper-text">
                     <p className="font-semibold">
@@ -109,13 +110,13 @@ export default function Post({ post, posts, preview }) {
                     </Button>
                   </div>
                 </div>
-              </div>
+              </AnimateSection>
 
-              <div className="section__content">
+              <AnimateSection className="section__content">
                 <div className="section__content__wrapper-line-full py-6 bg-black">
                   <Scrivici text="Siamo pronti a rispondere alle vostre domande e sempre disponibili a un incontro conoscitivo." />
                 </div>
-              </div>
+              </AnimateSection>
             </article>
           </>
         )}

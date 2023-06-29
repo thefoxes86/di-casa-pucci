@@ -11,6 +11,7 @@ import VirgoletteDestra from '../public/images/virgolette-destra.svg'
 import VirgoletteSinistra from '../public/images/virgolette-sinistra.svg'
 import Slider from '../components/slider'
 import Scrivici from '../components/scrivici'
+import AnimateSection from '../components/animateSection'
 
 export default function Allevamento({ data, preview }) {
   return (
@@ -32,7 +33,7 @@ export default function Allevamento({ data, preview }) {
           </p>
           <div className="category-content">
             {/* Dobermans */}
-            <div>
+            <AnimateSection>
               <div className="content-image">
                 <Image
                   src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-28@2x.png"
@@ -44,9 +45,9 @@ export default function Allevamento({ data, preview }) {
               <Button link="/dobermann" type="little">
                 DOBERMAN
               </Button>
-            </div>
+            </AnimateSection>
             {/* ZTP */}
-            <div>
+            <AnimateSection>
               <div className="content-image">
                 <Image
                   src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-29@2x.png"
@@ -58,9 +59,9 @@ export default function Allevamento({ data, preview }) {
               <Button link="/ztp" type="little">
                 ZTP
               </Button>
-            </div>
+            </AnimateSection>
             {/* KÖRUNG */}
-            <div>
+            <AnimateSection>
               <div className="content-image">
                 <Image
                   src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-30@2x.png"
@@ -72,11 +73,11 @@ export default function Allevamento({ data, preview }) {
               <Button link="/korung" type="little">
                 KÖRUNG
               </Button>
-            </div>
+            </AnimateSection>
           </div>
           <p dangerouslySetInnerHTML={{ __html: data.content }}></p>
         </div>
-        <div className="section__content">
+        <AnimateSection className="section__content">
           <div className="section__content__wrapper-line-full">
             <ParallaxImage
               src="https://www.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
@@ -89,7 +90,7 @@ export default function Allevamento({ data, preview }) {
               </div>
             </ParallaxImage>
           </div>
-        </div>
+        </AnimateSection>
         <ScrollParallaxComponent
           className="right-0"
           color="#2B2B2B"
@@ -102,7 +103,7 @@ export default function Allevamento({ data, preview }) {
           src={VirgoletteSinistra}
           offset={80}
         />
-        <div className="section__content">
+        <AnimateSection className="section__content">
           <div className="section__content__wrapper-line bg-black">
             <div className="section__content__wrapper-text">
               <p className="font-semibold">
@@ -119,17 +120,17 @@ export default function Allevamento({ data, preview }) {
               </Button>
             </div>
           </div>
-        </div>
-        <div className="section__content">
+        </AnimateSection>
+        <AnimateSection className="section__content">
           <div className="section__content__wrapper-line-full py-6 ">
             <Slider data={data} />
           </div>
-        </div>
-        <div className="section__content">
+        </AnimateSection>
+        <AnimateSection className="section__content">
           <div className="section__content__wrapper-line-full py-6 bg-black">
             <Scrivici text="Siamo pronti a rispondere alle vostre domande e sempre disponibili a un incontro conoscitivo." />
           </div>
-        </div>
+        </AnimateSection>
       </Container>
     </Layout>
   )

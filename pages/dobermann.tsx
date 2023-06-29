@@ -10,6 +10,7 @@ import VirgoletteDestra from '../public/images/virgolette-destra.svg'
 import VirgoletteSinistra from '../public/images/virgolette-sinistra.svg'
 import Scrivici from '../components/scrivici'
 import FilteringList from '../components/filtering-list'
+import AnimateSection from '../components/animateSection'
 
 export default function Allevamento({ data, preview }) {
   return (
@@ -19,12 +20,12 @@ export default function Allevamento({ data, preview }) {
       </Head>
 
       <Container>
-        <div className="section__content">
+        <AnimateSection className="section__content">
           <h1 dangerouslySetInnerHTML={{ __html: 'DOBERMANN' }}></h1>
-        </div>
-        <div className="section__content">
+        </AnimateSection>
+        <AnimateSection className="section__content">
           <FilteringList type="dobermann" data={data.edges} />
-        </div>
+        </AnimateSection>
         <ScrollParallaxComponent
           className="right-0"
           color="#2B2B2B"
@@ -37,7 +38,7 @@ export default function Allevamento({ data, preview }) {
           src={VirgoletteSinistra}
           offset={80}
         />
-        <div className="section__content">
+        <AnimateSection className="section__content">
           <div className="section__content__wrapper-line-full">
             <ParallaxImage
               src="https://www.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
@@ -50,9 +51,9 @@ export default function Allevamento({ data, preview }) {
               </div>
             </ParallaxImage>
           </div>
-        </div>
+        </AnimateSection>
 
-        <div className="section__content">
+        <AnimateSection className="section__content">
           <div className="section__content__wrapper-line bg-black">
             <div className="section__content__wrapper-cta">
               <Button link="/allevamento" type="secondary">
@@ -60,13 +61,13 @@ export default function Allevamento({ data, preview }) {
               </Button>
             </div>
           </div>
-        </div>
+        </AnimateSection>
 
-        <div className="section__content">
+        <AnimateSection className="section__content">
           <div className="section__content__wrapper-line-full py-6 bg-black">
             <Scrivici text="Siamo pronti a rispondere alle vostre domande e sempre disponibili a un incontro conoscitivo." />
           </div>
-        </div>
+        </AnimateSection>
       </Container>
     </Layout>
   )

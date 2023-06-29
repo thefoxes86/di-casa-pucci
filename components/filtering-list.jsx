@@ -41,47 +41,45 @@ const FilteringList = ({ data, type }) => {
       <FilteringButtons active={active} handleClick={handleCategoryClick} />
 
       <div className="filtering__list">
-        <AnimatePresence>
-          {displayData?.map((item, i) => (
-            <motion.div
-              className="filtering__list__item"
-              key={i}
-              layout
-              initial={{ transform: 'translateY(0)', opacity: 0 }}
-              animate={{ transform: 'translateY(10px)', opacity: 1 }}
-              exit={{ transform: 'translateY(0)', opacity: 0 }}
-              transition={{ type: 'spring', duration: 0.5, delay: i * 0.01 }}
-            >
-              <Link href={`/dobermann/${item?.node?.slug}`}>
-                <motion.img
-                  src={
-                    item?.node?.featuredImage?.node?.sourceUrl ||
-                    'https://placehold.co/400'
-                  }
-                  alt="nothing"
-                  width="100%"
-                />
-                <motion.p className="name">
-                  {item?.node?.schedaDobermann?.dobNome || 'n/a'}
-                </motion.p>
-                <motion.p className="allevamento">
-                  {item?.node?.schedaDobermann?.dobAllevatore || 'n/a'}
-                </motion.p>
-                <Image
-                  src={
-                    item?.node?.schedaDobermann?.dobSex?.name === 'Maschio'
-                      ? IcoMaschio
-                      : IcoFemmina
-                  }
-                  className="sex"
-                  alt="Sesso"
-                  width={50}
-                  height={50}
-                />
-              </Link>
-            </motion.div>
-          ))}
-        </AnimatePresence>
+        {displayData?.map((item, i) => (
+          <motion.div
+            className="filtering__list__item"
+            key={i}
+            layout
+            initial={{ transform: 'translateY(0)', opacity: 0 }}
+            animate={{ transform: 'translateY(10px)', opacity: 1 }}
+            exit={{ transform: 'translateY(0)', opacity: 0 }}
+            transition={{ type: 'spring', duration: 0.2, delay: i * 0.05 }}
+          >
+            <Link href={`/dobermann/${item?.node?.slug}`}>
+              <motion.img
+                src={
+                  item?.node?.featuredImage?.node?.sourceUrl ||
+                  'https://www.dicasapucci.com/wp-content/themes/casapucci/img/placeholder-pedigree2.jpg'
+                }
+                alt="nothing"
+                width="100%"
+              />
+              <motion.p className="name">
+                {item?.node?.schedaDobermann?.dobNome || 'n/a'}
+              </motion.p>
+              <motion.p className="allevamento">
+                {item?.node?.schedaDobermann?.dobAllevatore || 'n/a'}
+              </motion.p>
+              <Image
+                src={
+                  item?.node?.schedaDobermann?.dobSex?.name === 'Maschio'
+                    ? IcoMaschio
+                    : IcoFemmina
+                }
+                className="sex"
+                alt="Sesso"
+                width={50}
+                height={50}
+              />
+            </Link>
+          </motion.div>
+        ))}
       </div>
     </div>
   )

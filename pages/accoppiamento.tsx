@@ -1,14 +1,12 @@
 import Head from 'next/head'
 import { GetStaticProps } from 'next'
 import Container from '../components/container'
-import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
+import { motion } from 'framer-motion'
 import Layout from '../components/layout'
 import { getAccoppiamento } from '../lib/api'
-import { CMS_NAME } from '../lib/constants'
 import Slider from '../components/slider'
 import Scrivici from '../components/scrivici'
+import AnimateSection from '../components/animateSection'
 
 export default function Accoppiamento({ data, preview }) {
   return (
@@ -20,16 +18,16 @@ export default function Accoppiamento({ data, preview }) {
       <Container>
         <h1 dangerouslySetInnerHTML={{ __html: data.title }}></h1>
         <p dangerouslySetInnerHTML={{ __html: data.content }}></p>
-        <div className="section__content">
+        <AnimateSection className="section__content">
           <div className="section__content__wrapper-line-full py-6 ">
             <Slider data={data} />
           </div>
-        </div>
-        <div className="section__content">
+        </AnimateSection>
+        <AnimateSection className="section__content">
           <div className="section__content__wrapper-line-full py-6 bg-black">
             <Scrivici text="Siamo pronti a rispondere alle vostre domande e sempre disponibili a un incontro conoscitivo." />
           </div>
-        </div>
+        </AnimateSection>
       </Container>
     </Layout>
   )
