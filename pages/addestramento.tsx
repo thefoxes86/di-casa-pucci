@@ -24,7 +24,8 @@ export default function Addestramento({ data, preview }) {
         <div className="px-6">
           <h1 dangerouslySetInnerHTML={{ __html: data.title }}></h1>
           <h2>
-            LA VITTORIA È<span className="font-bold"> DI CASA PUCCI</span>
+            <span className="block w-100"> LA VITTORIA È</span>
+            <span className="font-bold"> DI CASA PUCCI</span>
           </h2>
           <p dangerouslySetInnerHTML={{ __html: data.content }}></p>
         </div>

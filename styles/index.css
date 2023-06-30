@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap');
 @tailwind base;
 
 /* Write your own custom base styles here */
@@ -11,7 +13,6 @@
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */
-
 /* Your own custom utilities */
 
 :root {
@@ -23,7 +24,9 @@
 body {
   @apply text-white;
   background-color: var(--background-primary-color);
+  font-family: 'Raleway', sans-serif;
 }
+
 
 .has-text-align-left {
   @apply text-left;

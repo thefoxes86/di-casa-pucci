@@ -53,7 +53,7 @@ const BodyHome = ({ data }) => {
               height={400}
             >
               <div className="text-parallax-image">
-                <span className="font-light">FORTI E SANI</span>
+                <span className="font-light">FORTI E SANI,</span>
                 <span className="font-bold">SI NASCE.</span>
               </div>
             </ParallaxImage>
@@ -94,7 +94,7 @@ const BodyHome = ({ data }) => {
                 height={400}
               >
                 <div className="text-parallax-image">
-                  <span className="font-light">LA PERFEZIONE</span>
+                  <span className="font-light">LA PERFEZIONE,</span>
                   <span className="font-bold">S’INSEGUE.</span>
                 </div>
               </ParallaxImage>
@@ -136,7 +136,7 @@ const BodyHome = ({ data }) => {
                 height={400}
               >
                 <div className="text-parallax-image">
-                  <span className="font-light">VINCENTI</span>
+                  <span className="font-light">VINCENTI,</span>
                   <span className="font-bold">SI DIVENTA.</span>
                 </div>
               </ParallaxImage>

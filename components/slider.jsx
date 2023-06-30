@@ -30,7 +30,7 @@ const Slider = ({ data }) => {
                     src={item.node?.featuredImage?.node?.sourceUrl || ''}
                     alt="hero"
                   />
-                  <span>{moment(item.node?.date).format()}</span>
+                  <span>{moment(item.node?.date).format('D-M-Y')}</span>
                   <h3>{item.node?.title}</h3>
 
                   <p
