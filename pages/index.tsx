@@ -23,7 +23,6 @@ export default function Index({ data, preview }) {
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const data = await getAllDobermansForHome(preview)
-  console.log('HOME', data)
 
   return {
     props: { data, preview },

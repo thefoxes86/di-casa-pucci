@@ -111,12 +111,6 @@ export default function Post({ post, posts, preview }) {
                   </div>
                 </div>
               </AnimateSection>
-
-              <AnimateSection className="section__content">
-                <div className="section__content__wrapper-line-full py-6 bg-black">
-                  <Scrivici text="Siamo pronti a rispondere alle vostre domande e sempre disponibili a un incontro conoscitivo." />
-                </div>
-              </AnimateSection>
             </article>
           </>
         )}

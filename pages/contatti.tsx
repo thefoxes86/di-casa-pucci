@@ -57,8 +57,10 @@ export default function Contacts({ data, preview }) {
       </Head>
 
       <Container>
-        <h1 dangerouslySetInnerHTML={{ __html: data.title }}></h1>
-        <p dangerouslySetInnerHTML={{ __html: data.content }}></p>
+        <div className="px-6">
+          <h1 dangerouslySetInnerHTML={{ __html: data.title }}></h1>
+          <p dangerouslySetInnerHTML={{ __html: 'testo da revisionare' }}></p>
+        </div>
         <AnimateSection className="section__content">
           <div className="section__content__wrapper-line">
             <div>

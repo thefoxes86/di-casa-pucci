@@ -21,7 +21,7 @@ export default function Allevamento({ data, preview }) {
       </Head>
 
       <Container>
-        <div className="section__content">
+        <div className="px-6">
           <h1 dangerouslySetInnerHTML={{ __html: data.title }}></h1>
           <h2>
             L'ECCELLENZA DELLA RAZZA È
@@ -31,6 +31,8 @@ export default function Allevamento({ data, preview }) {
             I Dobermann del nostro allevamento sono stati selezionati con amore
             e devozione, sono il frutto della nostra esperienza professionale
           </p>
+        </div>
+        <div className="section__content">
           <div className="category-content">
             {/* Dobermans */}
             <AnimateSection>
@@ -124,11 +126,6 @@ export default function Allevamento({ data, preview }) {
         <AnimateSection className="section__content">
           <div className="section__content__wrapper-line-full py-6 ">
             <Slider data={data} />
-          </div>
-        </AnimateSection>
-        <AnimateSection className="section__content">
-          <div className="section__content__wrapper-line-full py-6 bg-black">
-            <Scrivici text="Siamo pronti a rispondere alle vostre domande e sempre disponibili a un incontro conoscitivo." />
           </div>
         </AnimateSection>
       </Container>

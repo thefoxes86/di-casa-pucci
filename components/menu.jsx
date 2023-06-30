@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import MenuToggle from './menu-toggle'
 import MenuItem from './menu-item'
 import { useCycle } from 'framer-motion'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -49,9 +49,16 @@ const navbar = {
 }
 
 const Menu = () => {
-  const containerRef = useRef(null)
   const [isOpen, toggleOpen] = useCycle(false, true)
+  useEffect(() => {
+    const body = document.querySelector('body')
 
+    if (isOpen) {
+      body.classList.add('overflow-hidden')
+    } else {
+      body.classList.remove('overflow-hidden')
+    }
+  }, [isOpen])
   return (
     <>
       <motion.div

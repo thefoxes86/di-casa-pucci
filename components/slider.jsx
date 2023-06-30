@@ -43,7 +43,7 @@ const Slider = ({ data }) => {
             </SwiperSlide>
           ))
         ) : (
-          <div className="text-center">Non ci sono post</div>
+          <div className="text-center"></div>
         )}
       </Swiper>
       {data?.edges ? (

@@ -19,18 +19,21 @@ export default function Cuccioli({ data, preview }) {
       </Head>
 
       <Container>
-        <AnimateSection className="section__content">
+        <div className="px-6">
           <h1 dangerouslySetInnerHTML={{ __html: 'CUCCIOLI' }}></h1>
           <h2>
             {' '}
-            LA FORZA E IL BENESSERE SONO{' '}
-            <span className="font-bold"> DI CASA PUCCI</span>{' '}
+            LA FORZA E IL BENESSERE
+            <span className="block w-100">
+              SONO <span className="font-bold"> DI CASA PUCCI</span>
+            </span>
           </h2>
           <p>
             Fin dalla nascita selezioniamo i Dobermann migliori secondo
             Benessere, Forza e Bellezza.
           </p>
-        </AnimateSection>
+        </div>
+
         <AnimateSection className="section__content">
           <FilteringList type="dobermann" data={data.edges} />
         </AnimateSection>
@@ -51,7 +54,7 @@ export default function Cuccioli({ data, preview }) {
         <AnimateSection className="section__content">
           <div className="section__content__wrapper-line-full">
             <ParallaxImage
-              src="https://www.dicasapucci.com/wp-content/uploads/2023/05/cani2.png"
+              src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Accoppiamento.png"
               alt="hero"
               height={400}
             >
@@ -88,12 +91,6 @@ export default function Cuccioli({ data, preview }) {
                 L'ACCOPPIAMENTO
               </Button>
             </div>
-          </div>
-        </AnimateSection>
-
-        <AnimateSection className="section__content">
-          <div className="section__content__wrapper-line-full py-6 bg-black">
-            <Scrivici text="Siamo pronti a rispondere alle vostre domande e sempre disponibili a un incontro conoscitivo." />
           </div>
         </AnimateSection>
       </Container>

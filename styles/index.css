@@ -126,12 +126,19 @@ body {
 
 /* HOME PAGE */
 .hero_header_home_container {
-  @apply w-screen h-screen flex overflow-hidden;
+  @apply w-screen h-screen flex overflow-hidden -mt-4;
 }
 .hero_header_home {
-  @apply w-screen h-screen flex flex-wrap justify-center items-end bg-cover bg-center overflow-hidden relative px-0 mx-0 pb-32 overflow-hidden;
+  @apply w-screen h-screen flex flex-wrap justify-center items-end !bg-cover bg-center overflow-hidden relative px-0 mx-0 pb-32;
   background-image: url('https://www.dicasapucci.com/wp-content/uploads/2023/05/cane-di-razza-doberman-su-sfondo-nero-messa-a-fuoco-selettiva.png');
 }
+
+.hero_header_home__arrow {
+  @apply flex flex-col justify-around items-center absolute bottom-12 left-0 w-full h-12;
+}
+.hero_header_home__arrow img:last-child {
+  @apply -mt-8;
+} 
 
 .hero_header_home__content {
   @apply text-white font-thin text-4xl text-center;
@@ -144,6 +151,10 @@ body {
 
 .section__content {
   @apply z-10 relative;
+}
+
+.page-content p img {
+  display: initial;
 }
 
 .section__content__wrapper-line {
@@ -165,11 +176,11 @@ body {
 }
 
 .section__content__wrapper-text p {
- @apply font-thin
+ @apply font-thin !mb-0
 }
 
 .section__content__wrapper-cta {
-  @apply flex items-center justify-center py-6 px-6;
+  @apply flex items-center justify-center pb-6 pt-1 px-6;
 }
 
 
@@ -179,10 +190,10 @@ body {
 }
 
 .page-content h1 {
-  @apply text-center text-4xl uppercase font-light mb-8;
+  @apply text-center text-3xl uppercase font-light mb-8;
 }
 .page-content h2 {
-  @apply text-center text-2xl uppercase font-light mb-8;
+  @apply text-center text-xl uppercase font-light mb-8;
 }
 
 .page-content p {
@@ -225,32 +236,37 @@ body {
 }
 
 .menu_container .menu {
-  @apply flex h-0 absolute top-12 left-0 w-full bg-black z-10 flex-col justify-start items-end pr-4 overflow-hidden ;
+  @apply flex h-0 absolute top-12 left-0 w-full bg-black z-10 flex-col justify-start items-end pr-4 overflow-hidden;
 }
-.menu_container  .menu-item {
+
+.menu_container  .menu-item:last-child {
+  @apply pb-6;
+}
+
+.menu_container  .menu-item__link {
   @apply flex flex-wrap justify-end items-center uppercase py-2;
 }
 
-.menu_container .menu-item a {
+.menu_container .menu-item__link a {
   @apply text-black no-underline py-2 px-4;
 }
 
-.menu_container .menu-item a:hover {
+.menu_container .menu-item__link a:hover {
   @apply text-blue-500;
 }
 
-.menu_container .menu-item a.active {
+.menu_container .menu-item__link a.active {
   @apply text-blue-500;
 }
 
-.menu_container .menu-item a.active:hover {
+.menu_container .menu-item__link a.active:hover {
   @apply text-blue-500;
 }
 
 /* BUTTON  */
 
 .btn {
-  @apply text-white no-underline font-light text-lg text-center uppercase py-4 px-8 transition-all duration-300 ease-in-out;
+  @apply text-white no-underline font-light text-lg text-center uppercase py-3 px-6 transition-all duration-300 ease-in-out;
 }
 
 .btn-little {
@@ -299,7 +315,7 @@ body {
 }
 
 .scroll_component {
-  @apply absolute z-0;
+  @apply absolute z-20;
 }
 
 
@@ -514,6 +530,28 @@ label {
   @apply w-6 h-6 flex justify-center items-center object-contain text-center transition-all duration-300 ease-in-out text-xs;
   border: 1px solid white;
   border-radius: 100%;
+}
+
+/* NEWS */
+
+.news_container {
+  @apply flex flex-wrap justify-center items-start gap-4 px-0 relative mb-12;
+}
+
+.news_container .news_item {
+  @apply w-1/3 h-auto relative;
+}
+
+.news_container .news_item img {
+  @apply w-28 h-28 object-cover relative text-center;
+}
+
+.news_container .news_item h3 {
+  @apply text-sm text-center;
+}
+.news_container .news_item span {
+  @apply text-xs text-center italic block my-2;
+  color: var(--grey-color);
 }
 
 /* FOOTER  */

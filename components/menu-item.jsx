@@ -3,35 +3,31 @@ import { motion } from 'framer-motion'
 
 const itemsMenu = [
   {
-    name: 'Home',
-    link: '/',
+    name: "L'Allevamento",
+    link: '/allevamento',
   },
   {
     name: 'I Cuccioli',
     link: '/cuccioli',
   },
-
   {
-    name: "L'Allevamento",
-    link: '/allevamento',
+    name: "L'Accoppiamento",
+    link: '/accoppiamento',
   },
   {
     name: "L'Addestramento",
     link: '/addestramento',
   },
   {
-    name: "L'Accoppiamento",
-    link: '/accoppiamento',
+    name: 'Le News',
+    link: '/news',
   },
 
   {
     name: 'Di Casa Pucci',
-    link: '/chi-siamo',
+    link: '/di-casa-pucci',
   },
-  {
-    name: 'Le News',
-    link: '/news',
-  },
+
   {
     name: 'Contatti',
     link: '/contatti',
@@ -68,6 +64,7 @@ const MenuItem = ({ children, ...props }) => {
     <motion.div variants={variantsContainer}>
       {itemsMenu.map((item, index) => (
         <motion.div
+          className="menu-item"
           variants={variantsItem}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
@@ -75,7 +72,7 @@ const MenuItem = ({ children, ...props }) => {
           onClick={props.toggleOpen}
         >
           <Link
-            className="menu-item"
+            className="menu-item__link"
             href={item.link}
             dangerouslySetInnerHTML={{ __html: item.name }}
           ></Link>

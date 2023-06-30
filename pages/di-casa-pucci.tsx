@@ -21,15 +21,17 @@ export default function About({ data, preview }) {
       </Head>
 
       <Container>
-        <h1 dangerouslySetInnerHTML={{ __html: data.title }}></h1>
-        <p
-          className="px-12"
-          dangerouslySetInnerHTML={{ __html: data.content }}
-        ></p>
+        <div className="px-6">
+          <h1 dangerouslySetInnerHTML={{ __html: data.title }}></h1>
+          <p
+            className="px-12"
+            dangerouslySetInnerHTML={{ __html: data.content }}
+          ></p>
+        </div>
 
         <AnimateSection className="section__content__wrapper-line-full mt-16">
           <ParallaxImage
-            src="https://www.dicasapucci.com/wp-content/uploads/2023/05/cane-di-razza-doberman-su-sfondo-nero-messa-a-fuoco-selettiva.png"
+            src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Lallevalemto.png"
             alt="hero"
             height={400}
           >
@@ -66,11 +68,6 @@ export default function About({ data, preview }) {
                 I NOSTRI DOBERMANN
               </Button>
             </div>
-          </div>
-        </AnimateSection>
-        <AnimateSection className="section__content mt-10">
-          <div className="section__content__wrapper-line-full py-6 bg-black">
-            <Scrivici text="Siamo pronti a rispondere alle vostre domande e sempre disponibili a un incontro conoscitivo." />
           </div>
         </AnimateSection>
       </Container>

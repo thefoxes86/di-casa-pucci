@@ -5,7 +5,7 @@ const AnimateSection = props => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9 }}
-      viewport={{ amount: 0.5 }}
+      viewport={{ amount: 0.3 }}
       {...props}
     >
       {props.children}

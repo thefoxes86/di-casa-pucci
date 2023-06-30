@@ -53,7 +53,7 @@ const BodyHome = ({ data }) => {
               height={400}
             >
               <div className="text-parallax-image">
-                <span className="font-light">FORTI E SANI,</span>
+                <span className="font-light">FORTI E SANI</span>
                 <span className="font-bold">SI NASCE.</span>
               </div>
             </ParallaxImage>
@@ -81,7 +81,7 @@ const BodyHome = ({ data }) => {
               </div>
               <div className="section__content__wrapper-cta">
                 <Button link="/cuccioli" type="secondary">
-                  CUCCIOLI
+                  I NOSTRI CUCCIOLI
                 </Button>
               </div>
             </div>
@@ -89,12 +89,12 @@ const BodyHome = ({ data }) => {
           <AnimateSection className="section__content">
             <div className="section__content__wrapper-line-full">
               <ParallaxImage
-                src="https://www.dicasapucci.com/wp-content/uploads/2023/05/Accoppiamento@2x.png"
+                src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Accoppiamento.png"
                 alt="hero"
                 height={400}
               >
                 <div className="text-parallax-image">
-                  <span className="font-light">LA PERFEZIONE,</span>
+                  <span className="font-light">LA PERFEZIONE</span>
                   <span className="font-bold">S’INSEGUE.</span>
                 </div>
               </ParallaxImage>
@@ -122,7 +122,7 @@ const BodyHome = ({ data }) => {
               </div>
               <div className="section__content__wrapper-cta">
                 <Button link="/accoppiamento" type="primary">
-                  ACCOPPIAMENTO
+                  L'ACCOPPIAMENTO
                 </Button>
               </div>
             </div>
@@ -136,7 +136,7 @@ const BodyHome = ({ data }) => {
                 height={400}
               >
                 <div className="text-parallax-image">
-                  <span className="font-light">VINCENTI,</span>
+                  <span className="font-light">VINCENTI</span>
                   <span className="font-bold">SI DIVENTA.</span>
                 </div>
               </ParallaxImage>
@@ -166,8 +166,8 @@ const BodyHome = ({ data }) => {
                 </p>
               </div>
               <div className="section__content__wrapper-cta">
-                <Button link="/cuccioli" type="secondary">
-                  CUCCIOLI
+                <Button link="/addestramento" type="secondary">
+                  L'ADDESTRAMENTO
                 </Button>
               </div>
             </div>
@@ -177,19 +177,22 @@ const BodyHome = ({ data }) => {
               <Slider data={data} />
             </div>
           </AnimateSection>
-          <AnimateSection className="section__content bg-black ">
+          <AnimateSection className="section__content bg-black">
             <div className="section__content__wrapper-line py-6 text-center">
               <img
                 src="https://www.dicasapucci.com/wp-content/uploads/2023/05/three-nation-logo.png"
                 alt="quote"
               />
-              <p className="font-thin py-3">
+              <p className="font-thin py-3 !mb-0">
                 Amiamo i nostri cani come il nostro pianeta, per questo
                 investiamo ogni anno in nuove piantagioni.
               </p>
             </div>
             <div className="section__content__wrapper-cta">
-              <Button link="#" type="secondary">
+              <Button
+                link="https://tree-nation.com/it/profilo/di-casa-pucci"
+                type="secondary"
+              >
                 I PROGETTI SOSTENIBILI
               </Button>
             </div>
