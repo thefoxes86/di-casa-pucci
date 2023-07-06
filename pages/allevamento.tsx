@@ -79,21 +79,22 @@ export default function Allevamento({ data, preview }) {
           </div>
           <p dangerouslySetInnerHTML={{ __html: data.content }}></p>
         </div>
-        <AnimateSection className="section__content">
-          <div className="section__content__wrapper-line-full">
-            <ParallaxImage
-              src="https://www.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
-              alt="hero"
-              height={400}
-            >
-              <div className="text-parallax-image">
-                <span className="font-light">VINCENTI,</span>
-                <span className="font-bold">SI DIVENTA.</span>
-              </div>
-            </ParallaxImage>
-          </div>
-        </AnimateSection>
-        <ScrollParallaxComponent
+        <div className="section__content__wrapper__container">
+          <AnimateSection className="section__content">
+            <div className="section__content__wrapper-line-full">
+              <ParallaxImage
+                src="https://www.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
+                alt="hero"
+                height={400}
+              >
+                <div className="text-parallax-image">
+                  <span className="font-light">VINCENTI,</span>
+                  <span className="font-bold">SI DIVENTA.</span>
+                </div>
+              </ParallaxImage>
+            </div>
+          </AnimateSection>
+          {/* <ScrollParallaxComponent
           className="right-0"
           color="#2B2B2B"
           src={VirgoletteDestra}
@@ -104,25 +105,26 @@ export default function Allevamento({ data, preview }) {
           color="#2B2B2B"
           src={VirgoletteSinistra}
           offset={80}
-        />
-        <AnimateSection className="section__content">
-          <div className="section__content__wrapper-line bg-black">
-            <div className="section__content__wrapper-text">
-              <p className="font-semibold">
-                Insieme al centro sportivo{' '}
-                <span className="font-bold w-100 flex text-center justify-center">
-                  ABC100 Working Dog Club
-                </span>{' '}
-                prepariamo i vostri cani alla vittoria.
-              </p>
+        /> */}
+          <AnimateSection className="section__content">
+            <div className="section__content__wrapper-line bg-black-content">
+              <div className="section__content__wrapper-text">
+                <p className="font-semibold">
+                  Insieme al centro sportivo{' '}
+                  <span className="font-bold w-100 flex text-center justify-center">
+                    ABC100 Working Dog Club
+                  </span>{' '}
+                  prepariamo i vostri cani alla vittoria.
+                </p>
+              </div>
+              <div className="section__content__wrapper-cta">
+                <Button link="/cuccioli" type="secondary">
+                  CUCCIOLI
+                </Button>
+              </div>
             </div>
-            <div className="section__content__wrapper-cta">
-              <Button link="/cuccioli" type="secondary">
-                CUCCIOLI
-              </Button>
-            </div>
-          </div>
-        </AnimateSection>
+          </AnimateSection>
+        </div>
         <AnimateSection className="section__content">
           <div className="section__content__wrapper-line-full py-6 ">
             <Slider data={data} />

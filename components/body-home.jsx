@@ -13,7 +13,7 @@ const BodyHome = ({ data }) => {
     <AnimatePresence>
       <div className="body-home">
         <motion.section className="body-home__section">
-          <ScrollParallaxComponent
+          {/* <ScrollParallaxComponent
             className="right-0"
             color="#000"
             src={VirgoletteDestra}
@@ -24,14 +24,9 @@ const BodyHome = ({ data }) => {
             color="#000"
             src={VirgoletteSinistra}
             offset={50}
-          />
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-            viewport={{ amount: 0.5 }}
-            className="section__content"
-          >
+          /> */}
+
+          <AnimateSection className="section__content__wrapper-line-full">
             <div className="section__content__wrapper-line">
               <div className="section__content__wrapper-text">
                 <p>
@@ -45,139 +40,112 @@ const BodyHome = ({ data }) => {
                 <Button link="/allevamento">I NOSTRI DOBERMANN</Button>
               </div>
             </div>
-          </motion.div>
-          <AnimateSection className="section__content__wrapper-line-full">
-            <ParallaxImage
-              src="https://www.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
-              alt="hero"
-              height={400}
-            >
-              <div className="text-parallax-image">
-                <span className="font-light">FORTI E SANI,</span>
-                <span className="font-bold">SI NASCE.</span>
-              </div>
-            </ParallaxImage>
           </AnimateSection>
-          <ScrollParallaxComponent
-            className="right-0"
-            color="#2B2B2B"
-            src={VirgoletteDestra}
-            offset={100}
-          />
-          <ScrollParallaxComponent
-            className="left-0"
-            color="#2B2B2B"
-            src={VirgoletteSinistra}
-            offset={80}
-          />
-          <AnimateSection className="section__content">
-            <div className="section__content__wrapper-line bg-black">
-              <div className="section__content__wrapper-text">
-                <p>
-                  Ricerchiamo la massima espressione dell’eleganza, della
-                  fierezza e della bellezza,{' '}
-                  <span className="font-bold"> fin dalla nascita</span>.
-                </p>
-              </div>
-              <div className="section__content__wrapper-cta">
-                <Button link="/cuccioli" type="secondary">
-                  I NOSTRI CUCCIOLI
-                </Button>
-              </div>
-            </div>
-          </AnimateSection>
-          <AnimateSection className="section__content">
-            <div className="section__content__wrapper-line-full">
+          <div className="section__content__wrapper__container__inverse">
+            <AnimateSection className="section__content section__content__wrapper-line-full">
               <ParallaxImage
-                src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Accoppiamento.png"
+                src="https://www.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
                 alt="hero"
                 height={400}
               >
                 <div className="text-parallax-image">
-                  <span className="font-light">LA PERFEZIONE,</span>
-                  <span className="font-bold">S’INSEGUE.</span>
+                  <span className="font-light">FORTI E SANI,</span>
+                  <span className="font-bold">SI NASCE.</span>
                 </div>
               </ParallaxImage>
-            </div>
-          </AnimateSection>
-          <ScrollParallaxComponent
-            className="right-0"
-            color="#000"
-            src={VirgoletteDestra}
-            offset={100}
-          />
-          <ScrollParallaxComponent
-            className="left-0"
-            color="#000"
-            src={VirgoletteSinistra}
-            offset={80}
-          />
-          <AnimateSection className="section__content">
-            <div className="section__content__wrapper-line">
-              <div className="section__content__wrapper-text">
-                <p className="font-semibold">
-                  <span className="font-bold">Inseguiamo la perfezione</span>{' '}
-                  studiando attentamente ogni accoppiamento.
-                </p>
-              </div>
-              <div className="section__content__wrapper-cta">
-                <Button link="/accoppiamento" type="primary">
-                  L'ACCOPPIAMENTO
-                </Button>
-              </div>
-            </div>
-          </AnimateSection>
+            </AnimateSection>
 
-          <AnimateSection className="section__content">
-            <div className="section__content__wrapper-line-full">
-              <ParallaxImage
-                src="https://www.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
-                alt="hero"
-                height={400}
-              >
-                <div className="text-parallax-image">
-                  <span className="font-light">VINCENTI,</span>
-                  <span className="font-bold">SI DIVENTA.</span>
+            <AnimateSection className="section__content">
+              <div className="section__content__wrapper-line bg-black-content">
+                <div className="section__content__wrapper-text">
+                  <p>
+                    Ricerchiamo la massima espressione dell’eleganza, della
+                    fierezza e della bellezza,{' '}
+                    <span className="font-bold"> fin dalla nascita</span>.
+                  </p>
                 </div>
-              </ParallaxImage>
-            </div>
-          </AnimateSection>
-          <ScrollParallaxComponent
-            className="right-0"
-            color="#2B2B2B"
-            src={VirgoletteDestra}
-            offset={100}
-          />
-          <ScrollParallaxComponent
-            className="left-0"
-            color="#2B2B2B"
-            src={VirgoletteSinistra}
-            offset={80}
-          />
-          <AnimateSection className="section__content">
-            <div className="section__content__wrapper-line bg-black">
-              <div className="section__content__wrapper-text">
-                <p className="font-semibold">
-                  Insieme al centro sportivo{' '}
-                  <span className="font-bold w-100 flex text-center justify-center">
-                    ABC100 Working Dog Club
-                  </span>{' '}
-                  prepariamo i vostri cani alla vittoria.
-                </p>
+                <div className="section__content__wrapper-cta">
+                  <Button link="/cuccioli" type="secondary">
+                    I NOSTRI CUCCIOLI
+                  </Button>
+                </div>
               </div>
-              <div className="section__content__wrapper-cta">
-                <Button link="/addestramento" type="secondary">
-                  L'ADDESTRAMENTO
-                </Button>
+            </AnimateSection>
+          </div>
+          <div className="section__content__wrapper__container">
+            <AnimateSection className="section__content">
+              <div className="section__content__wrapper-line-full">
+                <ParallaxImage
+                  src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Accoppiamento.png"
+                  alt="hero"
+                  height={400}
+                >
+                  <div className="text-parallax-image">
+                    <span className="font-light">LA PERFEZIONE,</span>
+                    <span className="font-bold">S’INSEGUE.</span>
+                  </div>
+                </ParallaxImage>
               </div>
-            </div>
-          </AnimateSection>
+            </AnimateSection>
+
+            <AnimateSection className="section__content">
+              <div className="section__content__wrapper-line">
+                <div className="section__content__wrapper-text">
+                  <p className="font-semibold">
+                    <span className="font-bold">Inseguiamo la perfezione</span>{' '}
+                    studiando attentamente ogni accoppiamento.
+                  </p>
+                </div>
+                <div className="section__content__wrapper-cta">
+                  <Button link="/accoppiamento" type="primary">
+                    L'ACCOPPIAMENTO
+                  </Button>
+                </div>
+              </div>
+            </AnimateSection>
+          </div>
+          <div className="section__content__wrapper__container__inverse">
+            <AnimateSection className="section__content">
+              <div className="section__content__wrapper-line-full">
+                <ParallaxImage
+                  src="https://www.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
+                  alt="hero"
+                  height={400}
+                >
+                  <div className="text-parallax-image">
+                    <span className="font-light">VINCENTI,</span>
+                    <span className="font-bold">SI DIVENTA.</span>
+                  </div>
+                </ParallaxImage>
+              </div>
+            </AnimateSection>
+
+            <AnimateSection className="section__content">
+              <div className="section__content__wrapper-line bg-black-content">
+                <div className="section__content__wrapper-text">
+                  <p className="font-semibold">
+                    Insieme al centro sportivo{' '}
+                    <span className="font-bold w-100 flex text-center justify-center">
+                      ABC100 Working Dog Club
+                    </span>{' '}
+                    prepariamo i vostri cani alla vittoria.
+                  </p>
+                </div>
+                <div className="section__content__wrapper-cta">
+                  <Button link="/addestramento" type="secondary">
+                    L'ADDESTRAMENTO
+                  </Button>
+                </div>
+              </div>
+            </AnimateSection>
+          </div>
+
           <AnimateSection className="section__content">
             <div className="section__content__wrapper-line-full py-6 ">
               <Slider data={data} />
             </div>
           </AnimateSection>
-          <AnimateSection className="section__content bg-black">
+          <AnimateSection className="section__content bg-black-content-content">
             <div className="section__content__wrapper-line py-6 text-center">
               <img
                 src="https://www.dicasapucci.com/wp-content/uploads/2023/05/three-nation-logo.png"

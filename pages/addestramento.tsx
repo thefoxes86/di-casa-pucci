@@ -34,19 +34,20 @@ export default function Addestramento({ data, preview }) {
             <Gallery />
           </div>
         </div>
-        <AnimateSection className="section__content__wrapper-line-full mt-16">
-          <ParallaxImage
-            src="https://www.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
-            alt="hero"
-            height={400}
-          >
-            <div className="text-parallax-image">
-              <span className="font-light">FORTI E SANI,</span>
-              <span className="font-bold">SI NASCE.</span>
-            </div>
-          </ParallaxImage>
-        </AnimateSection>
-        <ScrollParallaxComponent
+        <div className="section__content__wrapper__container__inverse">
+          <AnimateSection className="section__content section__content__wrapper-line-full mt-16">
+            <ParallaxImage
+              src="https://www.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
+              alt="hero"
+              height={400}
+            >
+              <div className="text-parallax-image">
+                <span className="font-light">FORTI E SANI,</span>
+                <span className="font-bold">SI NASCE.</span>
+              </div>
+            </ParallaxImage>
+          </AnimateSection>
+          {/* <ScrollParallaxComponent
           className="right-0"
           color="#2B2B2B"
           src={VirgoletteDestra}
@@ -57,23 +58,24 @@ export default function Addestramento({ data, preview }) {
           color="#2B2B2B"
           src={VirgoletteSinistra}
           offset={80}
-        />
-        <AnimateSection className="section__content">
-          <div className="section__content__wrapper-line bg-black">
-            <div className="section__content__wrapper-text">
-              <p>
-                Ricerchiamo la massima espressione dell’eleganza, della fierezza
-                e della bellezza,{' '}
-                <span className="font-bold"> fin dalla nascita</span>.
-              </p>
+        /> */}
+          <AnimateSection className="section__content">
+            <div className="section__content__wrapper-line bg-black-content">
+              <div className="section__content__wrapper-text">
+                <p>
+                  Ricerchiamo la massima espressione dell’eleganza, della
+                  fierezza e della bellezza,{' '}
+                  <span className="font-bold"> fin dalla nascita</span>.
+                </p>
+              </div>
+              <div className="section__content__wrapper-cta">
+                <Button link="/cuccioli" type="secondary">
+                  I NOSTRI CUCCIOLI
+                </Button>
+              </div>
             </div>
-            <div className="section__content__wrapper-cta">
-              <Button link="/cuccioli" type="secondary">
-                I NOSTRI CUCCIOLI
-              </Button>
-            </div>
-          </div>
-        </AnimateSection>
+          </AnimateSection>
+        </div>
       </Container>
     </Layout>
   )

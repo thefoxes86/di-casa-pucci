@@ -16,7 +16,9 @@ export default function Index({ data, preview }) {
         <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
       </Head>
       <Intro />
-      <BodyHome data={data?.posts} />
+      <Container>
+        <BodyHome data={data?.posts} />
+      </Container>
     </Layout>
   )
 }

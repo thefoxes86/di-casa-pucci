@@ -28,12 +28,12 @@ export default function News({ data, preview }) {
                     className="news_item"
                     key={index}
                     layout
-                    initial={{ transform: 'translateY(0)', opacity: 0 }}
-                    animate={{ transform: 'translateY(10px)', opacity: 1 }}
+                    initial={{ transform: 'translateY(10px)', opacity: 0 }}
+                    whileInView={{ opacity: 1, transform: 'translateY(0)' }}
                     exit={{ transform: 'translateY(0)', opacity: 0 }}
                     transition={{
                       type: 'spring',
-                      duration: 0.2,
+                      duration: 0.5,
                       delay: index * 0.05,
                     }}
                   >
@@ -42,7 +42,7 @@ export default function News({ data, preview }) {
                         <img
                           src={
                             item.node?.featuredImage?.node?.sourceUrl ||
-                            'https://www.dicasapucci.com/wp-content/themes/casapucci/img/placeholder-pedigree2.jpg'
+                            'https://www.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
                           }
                           alt="hero"
                         />

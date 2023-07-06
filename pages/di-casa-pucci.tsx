@@ -28,20 +28,20 @@ export default function About({ data, preview }) {
             dangerouslySetInnerHTML={{ __html: data.content }}
           ></p>
         </div>
-
-        <AnimateSection className="section__content__wrapper-line-full mt-16">
-          <ParallaxImage
-            src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Lallevalemto.png"
-            alt="hero"
-            height={400}
-          >
-            <div className="text-parallax-image">
-              <span className="font-light">L'ECCELLENZA DELLA RAZZA,</span>
-              <span className="font-bold">SI SENTE.</span>
-            </div>
-          </ParallaxImage>
-        </AnimateSection>
-        <ScrollParallaxComponent
+        <div className="section__content__wrapper__container">
+          <AnimateSection className="section__content section__content__wrapper-line-full mt-16">
+            <ParallaxImage
+              src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Lallevalemto.png"
+              alt="hero"
+              height={400}
+            >
+              <div className="text-parallax-image">
+                <span className="font-light">L'ECCELLENZA DELLA RAZZA,</span>
+                <span className="font-bold">SI SENTE.</span>
+              </div>
+            </ParallaxImage>
+          </AnimateSection>
+          {/* <ScrollParallaxComponent
           className="right-0"
           color="#2B2B2B"
           src={VirgoletteDestra}
@@ -52,24 +52,25 @@ export default function About({ data, preview }) {
           color="#2B2B2B"
           src={VirgoletteSinistra}
           offset={80}
-        />
-        <AnimateSection className="section__content">
-          <div className="section__content__wrapper-line bg-black">
-            <div className="section__content__wrapper-text">
-              <p>
-                Mi chiamo <span className="font-bold"> Dario Pucci</span> e sono
-                titolare Di Casa Pucci, azienda leader nel settore
-                dell’allevamento di cani di{' '}
-                <span className="font-bold"> razza Dobermann.</span>
-              </p>
+        /> */}
+          <AnimateSection className="section__content">
+            <div className="section__content__wrapper-line bg-black-content">
+              <div className="section__content__wrapper-text">
+                <p>
+                  Mi chiamo <span className="font-bold"> Dario Pucci</span> e
+                  sono titolare Di Casa Pucci, azienda leader nel settore
+                  dell’allevamento di cani di{' '}
+                  <span className="font-bold"> razza Dobermann.</span>
+                </p>
+              </div>
+              <div className="section__content__wrapper-cta">
+                <Button link="/dobermann" type="secondary">
+                  I NOSTRI DOBERMANN
+                </Button>
+              </div>
             </div>
-            <div className="section__content__wrapper-cta">
-              <Button link="/dobermann" type="secondary">
-                I NOSTRI DOBERMANN
-              </Button>
-            </div>
-          </div>
-        </AnimateSection>
+          </AnimateSection>
+        </div>
       </Container>
     </Layout>
   )

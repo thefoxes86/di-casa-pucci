@@ -81,7 +81,7 @@ export default function Post({ post, posts, preview }) {
                   </ParallaxImage>
                 </div>
               </AnimateSection>
-              <ScrollParallaxComponent
+              {/* <ScrollParallaxComponent
                 className="right-0"
                 color="#2B2B2B"
                 src={VirgoletteDestra}
@@ -92,9 +92,9 @@ export default function Post({ post, posts, preview }) {
                 color="#2B2B2B"
                 src={VirgoletteSinistra}
                 offset={80}
-              />
+              /> */}
               <AnimateSection className="section__content">
-                <div className="section__content__wrapper-line bg-black">
+                <div className="section__content__wrapper-line bg-black-content">
                   <div className="section__content__wrapper-text">
                     <p className="font-semibold">
                       Insieme al centro sportivo{' '}

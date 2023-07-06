@@ -8,18 +8,18 @@ import Scrivici from './scrivici'
 export default function Footer() {
   return (
     <>
-      <AnimateSection className="section__content mt-6">
-        <div className="section__content__wrapper-line-full py-6 bg-black">
+      <AnimateSection className="section__content bg-black mt-6">
+        <div className="section__content__wrapper-line-full py-6 bg-black-content-content">
           <Scrivici text="Siamo pronti a rispondere alle vostre domande e sempre disponibili a un incontro conoscitivo." />
         </div>
       </AnimateSection>
       <footer className=" bg-black footer">
-        <div className="pb-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-lg font-bold tracking-tighter leading-tight text-center lg:text-left mb-0 lg:pr-4 lg:w-1/2">
+        <div className="pb-28 flex flex-col items-center">
+          <h3 className="text-lg font-bold tracking-tighter leading-tight text-center  mb-0 md:my-10 ">
             LE CERTIFICAZIONI
           </h3>
           <div className="flex flex-wrap content__certificazioni p-4">
-            <div className="w-1/4 flex flex-col items-center justify-center px-4">
+            <AnimateSection className="w-1/4 flex flex-col items-center justify-center px-4">
               <img
                 src="https://www.dicasapucci.com/wp-content/uploads/2023/05/logo-hi@2x.png"
                 alt="certificazione 1"
@@ -27,8 +27,11 @@ export default function Footer() {
               <p className="font-thin py-3 text-center text-xs h-20 !mb-0">
                 Associazione Italiana Amatori Dobermann
               </p>
-            </div>
-            <div className="w-1/4 flex flex-col items-center justify-center px-4">
+            </AnimateSection>
+            <AnimateSection
+              delay={0.4}
+              className="w-1/4 flex flex-col items-center justify-center px-4"
+            >
               <img
                 src="https://www.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_IDC_Logo@2x@2x.png"
                 alt="certificazione 1"
@@ -36,8 +39,11 @@ export default function Footer() {
               <p className="font-thin py-3 text-center text-xs h-20 !mb-0">
                 Internationaler Dobermann Club
               </p>
-            </div>
-            <div className="w-1/4 flex flex-col items-center justify-center px-4">
+            </AnimateSection>
+            <AnimateSection
+              delay={0.8}
+              className="w-1/4 flex flex-col items-center justify-center px-4"
+            >
               <img
                 src="https://www.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_FCI_Logo@2x@2x.png"
                 alt="certificazione 1"
@@ -45,8 +51,11 @@ export default function Footer() {
               <p className="font-thin py-3 text-center text-xs h-20  !mb-0">
                 Federation Cynologique Internationale
               </p>
-            </div>
-            <div className="w-1/4 flex flex-col items-center justify-center px-4">
+            </AnimateSection>
+            <AnimateSection
+              delay={1.2}
+              className="w-1/4 flex flex-col items-center justify-center px-4"
+            >
               <img
                 src="https://www.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_ENCI_Logo@2x@2x.png"
                 alt="certificazione 1"
@@ -54,7 +63,7 @@ export default function Footer() {
               <p className="font-thin py-3 text-center text-xs h-20  !mb-0">
                 Ente Nazionale Cinofilia Italiana
               </p>
-            </div>
+            </AnimateSection>
           </div>
           <div className="w-100 flex flex-col items-center justify-center mt-10">
             <div className="flex justify-around mb-6">

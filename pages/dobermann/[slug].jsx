@@ -60,26 +60,26 @@ export default function Dobermann({ post, preview }) {
                 schedaDobermann={post?.schedaDobermann}
               />
 
-              <AnimateSection className="section__content__wrapper-cta bg-black !py-20 !mt-16">
+              <AnimateSection className="section__content__wrapper-cta bg-black-content !py-20 !mt-16">
                 <Button link="/allevamento" type="secondary">
                   TORNA ALL'ALLEVAMENTO
                 </Button>
               </AnimateSection>
+              <div className="section__content__wrapper__container__inverse">
+                <AnimateSection className="section__content section__content__wrapper-line-full">
+                  <ParallaxImage
+                    src="https://www.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
+                    alt="hero"
+                    height={400}
+                  >
+                    <div className="text-parallax-image">
+                      <span className="font-light">VINCENTI,</span>
+                      <span className="font-bold">SI DIVENTA.</span>
+                    </div>
+                  </ParallaxImage>
+                </AnimateSection>
 
-              <AnimateSection className="section__content__wrapper-line-full">
-                <ParallaxImage
-                  src="https://www.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
-                  alt="hero"
-                  height={400}
-                >
-                  <div className="text-parallax-image">
-                    <span className="font-light">VINCENTI,</span>
-                    <span className="font-bold">SI DIVENTA.</span>
-                  </div>
-                </ParallaxImage>
-              </AnimateSection>
-
-              <ScrollParallaxComponent
+                {/* <ScrollParallaxComponent
                 className="right-0"
                 color="#000"
                 src={VirgoletteDestra}
@@ -90,20 +90,21 @@ export default function Dobermann({ post, preview }) {
                 color="#000"
                 src={VirgoletteSinistra}
                 offset={80}
-              />
-              <AnimateSection className="section__content mt-20">
-                <p className="text-center mb-0 !font-bold !mb-0">
-                  Inseguiamo la perfezione
-                </p>
-                <p className="text-center mt-0">
-                  studiando attentamente ogni accoppiamento
-                </p>
-              </AnimateSection>
-              <AnimateSection className="section__content__wrapper-cta">
-                <Button link="/accoppiamento" type="secondary">
-                  L'ACCOPPIAMENGTO
-                </Button>
-              </AnimateSection>
+              /> */}
+                <AnimateSection className="section__content mt-20">
+                  <p className="text-center mb-0 !font-bold !mb-0">
+                    Inseguiamo la perfezione
+                  </p>
+                  <p className="text-center mt-0">
+                    studiando attentamente ogni accoppiamento
+                  </p>
+                  <div className="section__content__wrapper-cta">
+                    <Button link="/accoppiamento" type="secondary">
+                      L'ACCOPPIAMENGTO
+                    </Button>
+                  </div>
+                </AnimateSection>
+              </div>
 
               <PostBody content={post?.content} />
             </article>

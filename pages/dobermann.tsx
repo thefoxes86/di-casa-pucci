@@ -26,7 +26,7 @@ export default function Allevamento({ data, preview }) {
         <div className="section__content">
           <FilteringList type="dobermann" data={data.edges} />
         </div>
-        <ScrollParallaxComponent
+        {/* <ScrollParallaxComponent
           className="right-0"
           color="#2B2B2B"
           src={VirgoletteDestra}
@@ -37,7 +37,7 @@ export default function Allevamento({ data, preview }) {
           color="#2B2B2B"
           src={VirgoletteSinistra}
           offset={80}
-        />
+        /> */}
         <AnimateSection className="section__content">
           <div className="section__content__wrapper-line-full">
             <ParallaxImage
@@ -54,7 +54,7 @@ export default function Allevamento({ data, preview }) {
         </AnimateSection>
 
         <AnimateSection className="section__content">
-          <div className="section__content__wrapper-line bg-black">
+          <div className="section__content__wrapper-line bg-black-content">
             <div className="section__content__wrapper-cta">
               <Button link="/allevamento" type="secondary">
                 TORNA ALL'ALLEVAMENTO
