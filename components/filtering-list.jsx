@@ -52,21 +52,28 @@ const FilteringList = ({ data, type }) => {
             transition={{ type: 'spring', duration: 0.2, delay: i * 0.05 }}
           >
             <Link href={`/dobermann/${item?.node?.slug}`}>
-              <motion.img
-                src={
-                  item?.node?.featuredImage?.node?.sourceUrl ||
-                  'https://www.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
-                }
-                alt="nothing"
-                width="100%"
-              />
+              <motion.div>
+                <Image
+                  loading="lazy"
+                  loader={p => p.src}
+                  src={
+                    item?.node?.featuredImage?.node?.sourceUrl ||
+                    'https://www.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
+                  }
+                  alt="nothing"
+                  width={100}
+                  height={100}
+                />
+              </motion.div>
               <motion.p className="name">
                 {item?.node?.schedaDobermann?.dobNome || 'n/a'}
               </motion.p>
               <motion.p className="allevamento">
                 {item?.node?.schedaDobermann?.dobAllevatore || 'n/a'}
               </motion.p>
+
               <Image
+                loading="lazy"
                 src={
                   item?.node?.schedaDobermann?.dobSex?.name === 'Maschio'
                     ? IcoMaschio
@@ -76,6 +83,7 @@ const FilteringList = ({ data, type }) => {
                 alt="Sesso"
                 width={50}
                 height={50}
+                loader={p => p.src}
               />
             </Link>
           </motion.div>

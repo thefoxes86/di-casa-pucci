@@ -13,7 +13,7 @@ export default function Index({ data, preview }) {
   return (
     <Layout preview={preview}>
       <Head>
-        <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
+        <title>{`Di Casa Pucci - Il miglior Allevamento di Dobermann`}</title>
       </Head>
       <Intro />
       <Container>

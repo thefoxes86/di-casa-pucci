@@ -11,6 +11,7 @@ const DogThree = ({ schedaDobermann, primaryDog }) => {
     <div className="dog__three">
       <div className="primary-dog">
         <Image
+          loading="lazy"
           src={
             primaryDog?.image?.node?.sourceUrl ||
             'https://www.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
@@ -31,6 +32,7 @@ const DogThree = ({ schedaDobermann, primaryDog }) => {
           }}
         />
         <Image
+          loading="lazy"
           src={primaryDog?.sesso === 'Maschio' ? IcoMaschio : IcoFemmina}
           alt="Icona Maschio"
           width={50}

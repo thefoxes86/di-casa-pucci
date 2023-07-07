@@ -68,33 +68,34 @@ const Menu = () => {
         className="overlay_menu"
       ></motion.div>
       <motion.div className="menu_wrapper">
-        <Container>
-          <motion.div
-            className="menu_container"
-            animate={isOpen ? 'open' : 'closed'}
-          >
-            <span className="logo">
-              <Link href="/">
-                <Image
-                  src="https://www.dicasapucci.com/wp-content/uploads/2023/05/LOGO-DCP_Esteso@2x.png"
-                  width={210}
-                  height={100}
-                  alt="logo"
-                />
-              </Link>
-            </span>
+        <motion.div
+          className="menu_container container"
+          animate={isOpen ? 'open' : 'closed'}
+        >
+          <span className="logo">
+            <Link href="/">
+              <Image
+                loading="lazy"
+                src="https://www.dicasapucci.com/wp-content/uploads/2023/05/LOGO-DCP_Esteso@2x.png"
+                width={210}
+                height={100}
+                alt="logo"
+              />
+            </Link>
+          </span>
 
-            <MenuToggle toggle={() => toggleOpen()} />
-            <motion.div
-              className={`menu`}
-              initial={false}
-              animate={isOpen ? 'open' : 'closed'}
-              variants={navbar}
-            >
+          <MenuToggle toggle={() => toggleOpen()} />
+          <motion.div
+            className={`menu`}
+            initial={false}
+            animate={isOpen ? 'open' : 'closed'}
+            variants={navbar}
+          >
+            <div className="container">
               <MenuItem toggleOpen={toggleOpen} />
-            </motion.div>
+            </div>
           </motion.div>
-        </Container>
+        </motion.div>
       </motion.div>
     </>
   )

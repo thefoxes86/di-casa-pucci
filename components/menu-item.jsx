@@ -66,8 +66,8 @@ const MenuItem = ({ children, ...props }) => {
         <motion.div
           className="menu-item"
           variants={variantsItem}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ color: 'white' }}
+          whileTap={{ color: 'white' }}
           key={index}
           onClick={props.toggleOpen}
         >

@@ -21,9 +21,9 @@ export default function Intro() {
       <AnimatePresence>
         <motion.section
           className="hero_header_home"
-          initial={{ backgroundSize: 'auto 100%' }}
-          animate={{ backgroundSize: 'auto 120%' }}
-          transition={{ type: 'spring', duration: 50 }}
+          initial={{ transform: 'scale(1.2)', opacity: 0 }}
+          whileInView={{ opacity: 1, transform: 'scale(1)' }}
+          transition={{ type: 'spring', duration: 5 }}
         >
           <motion.div className="hero_header_home__content">
             <motion.div className="wrapper_line">
@@ -48,8 +48,20 @@ export default function Intro() {
             variants={variants}
             className="hero_header_home__arrow"
           >
-            <Image src={ArrowDown} alt="arrow" width={50} height={50} />
-            <Image src={ArrowDown} alt="arrow" width={50} height={50} />
+            <Image
+              loading="lazy"
+              src={ArrowDown}
+              alt="arrow"
+              width={50}
+              height={50}
+            />
+            <Image
+              loading="lazy"
+              src={ArrowDown}
+              alt="arrow"
+              width={50}
+              height={50}
+            />
           </motion.div>
         </motion.section>
       </AnimatePresence>

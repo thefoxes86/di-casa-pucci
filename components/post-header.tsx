@@ -17,6 +17,7 @@ export default function PostHeader({ title, coverImage, sesso, allevatore }) {
           width={50}
           height={50}
           className="header__zoom_detail__icon-sex"
+          loading="lazy"
         />
       </div>
     </div>

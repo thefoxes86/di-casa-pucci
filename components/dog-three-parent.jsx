@@ -9,6 +9,7 @@ const DogThreeParent = ({ data }) => {
     <div className="parents-dog__item">
       <Link href={link}>
         <Image
+          loading="lazy"
           src={
             data?.featuredImage?.node.sourceUrl ||
             'https://www.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
@@ -32,6 +33,7 @@ const DogThreeParent = ({ data }) => {
         />
 
         <Image
+          loading="lazy"
           src={
             data?.schedaDobermann?.dobSex?.name === 'Maschio'
               ? IcoMaschio

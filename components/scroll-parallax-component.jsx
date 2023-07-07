@@ -36,6 +36,7 @@ const ScrollParallaxComponent = ({
           priority
           src={src}
           alt="virgolette"
+          loading="lazy"
         />
       </motion.div>
     </AnimatePresence>

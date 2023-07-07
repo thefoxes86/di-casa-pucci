@@ -5,15 +5,15 @@ import { useEffect, useState } from 'react'
 
 const variants = {
   initialState: {
-    clipPath: 'inset(-100px)',
+    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
     opacity: 0,
   },
   animateState: {
-    clipPath: 'inset(-100px)',
+    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
     opacity: 1,
   },
   exitState: {
-    clipPath: 'inset(100% 0 100% 0)',
+    clipPath: 'polygon(50% 0, 50% 0, 50% 100%, 50% 100%)',
     opacity: 0,
   },
 }
@@ -23,7 +23,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {}, [])
   return (
-    <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
+    <AnimatePresence
+      mode="wait"
+      // onExitComplete={() => setTimeout(() => window.scrollTo(0, 0), 1000)}
+    >
       <motion.div
         key={Math.random() * 100}
         initial="initialState"

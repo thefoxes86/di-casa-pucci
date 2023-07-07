@@ -84,6 +84,7 @@ export default function Footer() {
                     alt="Facebook Link"
                     width={32}
                     height={32}
+                    loading="lazy"
                   />
                 </Link>
               </p>

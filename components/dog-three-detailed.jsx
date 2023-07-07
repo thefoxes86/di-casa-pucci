@@ -32,6 +32,7 @@ const DogThreeDetailed = ({ data }) => {
         <div className="dog__three">
           <div className="primary-dog">
             <Image
+              loading="lazy"
               src={
                 data.dobPadre?.featuredImage?.node?.sourceUrl ||
                 'https://www.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
@@ -54,6 +55,7 @@ const DogThreeDetailed = ({ data }) => {
               }}
             />
             <Image
+              loading="lazy"
               src={
                 data.dobPadre?.dobSex?.name === 'Maschio'
                   ? IcoMaschio
@@ -119,6 +121,7 @@ const DogThreeDetailed = ({ data }) => {
         <div className="dog__three">
           <div className="primary-dog">
             <Image
+              loading="lazy"
               src={
                 data.dobMadre?.featuredImage?.node?.sourceUrl ||
                 'https://www.dicasapucci.com/wp-content/uploads/2023/06/woocommerce-placeholder.png'
@@ -141,6 +144,7 @@ const DogThreeDetailed = ({ data }) => {
               }}
             />
             <Image
+              loading="lazy"
               src={
                 data.dobMadre?.dobSex?.name === 'Maschio'
                   ? IcoMaschio
