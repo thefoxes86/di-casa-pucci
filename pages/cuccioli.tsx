@@ -28,7 +28,7 @@ export default function Cuccioli({ data, preview }) {
               SONO <span className="font-bold"> DI CASA PUCCI</span>
             </span>
           </h2>
-          <p>
+          <p className="italic">
             Fin dalla nascita selezioniamo i Dobermann migliori secondo
             Benessere, Forza e Bellezza.
           </p>
@@ -40,7 +40,7 @@ export default function Cuccioli({ data, preview }) {
         <div className="section__content__wrapper__container">
           <AnimateSection className="section__content">
             <div className="section__content__wrapper-line bg-black-content">
-              <div className="section__content__wrapper-text">
+              <div className="section__content__wrapper-text italic">
                 <p>
                   Il Dobermann è la massima espressione dell’eleganza, della
                   fierezza e della equilibrio. Sempre pronto, disponibile,
@@ -82,7 +82,7 @@ export default function Cuccioli({ data, preview }) {
 
         <AnimateSection className="section__content">
           <div className="section__content__wrapper-line">
-            <div className="section__content__wrapper-text">
+            <div className="section__content__wrapper-text italic">
               <p>
                 <span className="font-bold"> Inseguiamo la perfezione</span>{' '}
                 studiando attentamente ogni accoppiamento.

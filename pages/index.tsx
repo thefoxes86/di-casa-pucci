@@ -16,9 +16,8 @@ export default function Index({ data, preview }) {
         <title>{`Di Casa Pucci - Il miglior Allevamento di Dobermann`}</title>
       </Head>
       <Intro />
-      <Container>
-        <BodyHome data={data?.posts} />
-      </Container>
+
+      <BodyHome data={data?.posts} />
     </Layout>
   )
 }

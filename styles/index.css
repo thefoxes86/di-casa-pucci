@@ -200,7 +200,7 @@ p {
 
 
 .section__content__wrapper-text {
-  @apply w-full text-center py-10 px-6 italic text-lg;
+  @apply w-full text-center py-10 px-6 text-lg;
 }
 
 .section__content__wrapper-text p {
@@ -231,7 +231,7 @@ p {
 }
 
 .page-content p {
-  @apply text-center text-base font-light mb-8 italic ;
+  @apply text-center text-base font-light mb-8 ;
 }
 
 .category-content {
@@ -495,7 +495,7 @@ label {
 }
 
 .dog__detail p {
-  @apply text-sm mb-0 not-italic;
+  @apply text-sm mb-0;
 }
 .dog__detail_general {
   @apply flex flex-wrap justify-center items-start gap-1 flex-col px-6 mb-3;

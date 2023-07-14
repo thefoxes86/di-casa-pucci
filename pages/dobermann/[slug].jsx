@@ -92,7 +92,7 @@ export default function Dobermann({ post, preview }) {
                 offset={80}
               /> */}
                 <AnimateSection className="section__content mt-20">
-                  <p className="text-center mb-0 !font-bold !mb-0">
+                  <p className="text-center mb-0 !font-bold !mb-0 italic">
                     Inseguiamo la perfezione
                   </p>
                   <p className="text-center mt-0">

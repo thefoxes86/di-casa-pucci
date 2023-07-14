@@ -61,7 +61,7 @@ export default function Addestramento({ data, preview }) {
         /> */}
           <AnimateSection className="section__content">
             <div className="section__content__wrapper-line bg-black-content">
-              <div className="section__content__wrapper-text">
+              <div className="section__content__wrapper-text italic">
                 <p>
                   Ricerchiamo la massima espressione dell’eleganza, della
                   fierezza e della bellezza,{' '}

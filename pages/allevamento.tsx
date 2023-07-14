@@ -111,7 +111,7 @@ export default function Allevamento({ data, preview }) {
         /> */}
           <AnimateSection className="section__content">
             <div className="section__content__wrapper-line bg-black-content">
-              <div className="section__content__wrapper-text">
+              <div className="section__content__wrapper-text italic">
                 <p className="font-semibold">
                   Insieme al centro sportivo{' '}
                   <span className="font-bold w-100 flex text-center justify-center">
