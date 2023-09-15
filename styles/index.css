@@ -224,7 +224,7 @@ p {
 
 
 .page-content h1 {
-  @apply text-center text-3xl uppercase font-light mb-8;
+  @apply text-center text-3xl uppercase font-light mb-8 mt-14 md:mt-auto;
 }
 .page-content h2 {
   @apply text-center text-xl uppercase font-light mb-8;

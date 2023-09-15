@@ -12,6 +12,7 @@ import VirgoletteSinistra from '../public/images/virgolette-sinistra.svg'
 import Slider from '../components/slider'
 import Scrivici from '../components/scrivici'
 import AnimateSection from '../components/animateSection'
+import { Suspense } from 'react'
 
 export default function Allevamento({ data, preview }) {
   return (
@@ -37,13 +38,15 @@ export default function Allevamento({ data, preview }) {
             {/* Dobermans */}
             <AnimateSection>
               <div className="content-image">
-                <Image
-                  loading="lazy"
-                  src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-28@2x.png"
-                  alt="Dobermans"
-                  layout="fill"
-                  objectFit="contain"
-                />
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Image
+                    loading="lazy"
+                    src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-28@2x.png"
+                    alt="Dobermans"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </Suspense>
               </div>
               <Button link="/dobermann" type="little">
                 DOBERMAN
@@ -52,13 +55,15 @@ export default function Allevamento({ data, preview }) {
             {/* ZTP */}
             <AnimateSection>
               <div className="content-image">
-                <Image
-                  loading="lazy"
-                  src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-29@2x.png"
-                  alt="ZTP"
-                  layout="fill"
-                  objectFit="contain"
-                />
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Image
+                    loading="lazy"
+                    src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-29@2x.png"
+                    alt="ZTP"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </Suspense>
               </div>
               <Button link="/ztp" type="little">
                 ZTP
@@ -67,13 +72,15 @@ export default function Allevamento({ data, preview }) {
             {/* KÖRUNG */}
             <AnimateSection>
               <div className="content-image">
-                <Image
-                  loading="lazy"
-                  src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-30@2x.png"
-                  alt="KÖRUNG"
-                  layout="fill"
-                  objectFit="contain"
-                />
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Image
+                    loading="lazy"
+                    src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-30@2x.png"
+                    alt="KÖRUNG"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </Suspense>
               </div>
               <Button link="/korung" type="little">
                 KÖRUNG

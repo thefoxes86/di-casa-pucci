@@ -1,5 +1,5 @@
 import FilteringButtons from './filtering-buttons'
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -53,17 +53,18 @@ const FilteringList = ({ data, type }) => {
           >
             <Link href={`/dobermann/${item?.node?.slug}`}>
               <motion.div>
-                <Image
-                  loading="lazy"
-                  loader={p => p.src}
-                  src={
-                    item?.node?.featuredImage?.node?.sourceUrl ||
-                    'https://www.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
-                  }
-                  alt="nothing"
-                  width={100}
-                  height={100}
-                />
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Image
+                    loading="eager"
+                    src={
+                      item?.node?.featuredImage?.node?.sourceUrl ||
+                      'https://www.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
+                    }
+                    alt="nothing"
+                    width={100}
+                    height={100}
+                  />
+                </Suspense>
               </motion.div>
               <motion.p className="name">
                 {item?.node?.schedaDobermann?.dobNome || 'n/a'}

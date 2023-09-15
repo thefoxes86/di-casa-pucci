@@ -35,9 +35,7 @@ export default function Dobermann({ post, preview }) {
           <>
             <article>
               <Head>
-                <title>
-                  {`${post.title} | Next.js Blog Example with ${CMS_NAME}`}
-                </title>
+                <title>{`${post.title} | ${CMS_NAME}`}</title>
                 <meta
                   property="og:image"
                   content={post?.featuredImage?.node?.sourceUrl}

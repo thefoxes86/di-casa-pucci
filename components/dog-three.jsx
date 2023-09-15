@@ -4,23 +4,26 @@ import IcoMaschio from '../public/images/ico_maschio.svg'
 import IcoFemmina from '../public/images/ico_femmina.svg'
 import DogThreeParent from './dog-three-parent'
 import DogThreeDetailed from './dog-three-detailed'
+import { Suspense } from 'react'
 
 const DogThree = ({ schedaDobermann, primaryDog }) => {
   console.log('schedaDobermann', schedaDobermann)
   return (
     <div className="dog__three">
       <div className="primary-dog">
-        <Image
-          loading="lazy"
-          src={
-            primaryDog?.image?.node?.sourceUrl ||
-            'https://www.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
-          }
-          className="primary-dog__image"
-          alt={primaryDog?.name}
-          width={100}
-          height={100}
-        />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Image
+            loading="lazy"
+            src={
+              primaryDog?.image?.node?.sourceUrl ||
+              'https://www.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
+            }
+            className="primary-dog__image"
+            alt={primaryDog?.name}
+            width={100}
+            height={100}
+          />
+        </Suspense>
         <p
           className="primary-dog__name"
           dangerouslySetInnerHTML={{ __html: primaryDog?.name || 'n/a' }}
