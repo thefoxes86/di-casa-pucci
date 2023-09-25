@@ -15,23 +15,6 @@ const Slider = ({ data }) => {
       <Swiper
         slidesPerView={1.5}
         initialSlide={1}
-        breakpoints={{
-          // when window width is >= 640px
-          640: {
-            width: 640,
-            slidesPerView: 1,
-          },
-          // when window width is >= 768px
-          768: {
-            width: 768,
-            slidesPerView: 2,
-          },
-          // when window width is >= 1024px
-          1024: {
-            width: 1024,
-            slidesPerView: 3,
-          },
-        }}
         spaceBetween={10}
         centeredSlides={true}
         className="mySwiper"
