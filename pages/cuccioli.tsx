@@ -35,7 +35,11 @@ export default function Cuccioli({ data, preview }) {
         </div>
 
         <AnimateSection className="section__content">
-          <FilteringList type="dobermann" data={data.edges} />
+          <FilteringList
+            type="dobermann"
+            data={data.edges}
+            category="cuccioli"
+          />
         </AnimateSection>
         <div className="section__content__wrapper__container">
           <AnimateSection className="section__content">

@@ -242,7 +242,7 @@ p {
 }
 
 .category-content .content-image {
-  @apply w-24 h-24 relative mb-4;
+  @apply md:w-44 w-24 md:h-36 h-44 relative mb-4;
 }
 
 .img_asterisco {

@@ -1,5 +1,5 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client'
-import {ctpDobermannFieldsFragment, dobParentsFieldsFragment, schedaDobermanFieldsFragment} from './fragments'
+import { ctpDobermannFieldsFragment, dobParentsFieldsFragment, schedaDobermanFieldsFragment} from './fragments'
 const API_URL = process.env.WORDPRESS_API_URL
 
 async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
@@ -142,6 +142,21 @@ export async function getAllDobermansWithSlug() {
   return data?.ctpDobermanns
 }
 
+export async function getAllCuccioliWithSlug() {
+  const data = await fetchAPI(`
+    {
+      cptCucciolis(first: 10000) {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `)
+  return data?.cptCucciolis
+}
+
 export async function getAllPosts(preview) {
   const data = await fetchAPI(
     `
@@ -208,6 +223,7 @@ export async function getAllDobermann(preview) {
                 sessoId
                 slug
               }
+              dobVisibile
             }
           }
         }
@@ -249,6 +265,7 @@ export async function getAllCuccioli(preview) {
                 slug
                 sessoId
               }
+              dobVisibile
             }
           }
         }
@@ -350,6 +367,78 @@ export async function getDobermanAndMorePosts(slug, preview, previewData) {
   }
   return data
 }
+
+export async function getCuccioliAndMorePosts(slug, preview, previewData) {
+  const postPreview = preview && previewData?.cptCuccioli
+  // The slug may be the id of an unpublished post
+  const isId = Number.isInteger(Number(slug))
+  const isSamePost = isId
+    ? Number(slug) === postPreview.id
+    : slug === postPreview.slug
+  const isDraft = isSamePost && postPreview?.status === 'draft'
+  const isRevision = isSamePost && postPreview?.status === 'publish'
+  const data = await fetchAPI(
+    `
+    
+    query CuccioliBySlug($id: ID!, $idType: Cpt_cuccioliIdType!) {
+      cptCuccioli(id: $id, idType: $idType) {
+        title
+        slug
+        date
+        content
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        schedaDobermann {
+          dobAllevatore
+          dobDob
+          dobNome
+          dobMicrochip
+          dobPedigree
+          dobPropietario
+          dobRiconoscimenti
+          dobSalute
+          dobShowScore
+          dobSuffisso
+          dobVisibile
+          dobWorkingCert
+          dobWorkingScore
+          dobGalleria {
+            sourceUrl(size: BLOCCO_GRIGLIA)
+          }
+          dobSex {
+            name
+            sessoId
+            slug
+          }
+        }
+        
+      }
+      
+    }
+  `,
+    {
+      variables: {
+        id: isDraft ? postPreview.id : slug,
+        idType: isDraft ? 'DATABASE_ID' : 'SLUG',
+      },
+    }
+  )
+
+  // Draft posts may not have an slug
+  if (isDraft) data.ctpDobermann.slug = postPreview.id
+  // Apply a revision (changes in a published post)
+  if (isRevision && data.ctpDobermann.revisions) {
+    const revision = data.ctpDobermann.revisions.edges[0]?.node
+
+    if (revision) Object.assign(data.ctpDobermann, revision)
+    delete data.ctpDobermann.revisions
+  }
+  return data
+}
+
 
 export async function getAllDobermansForHome(preview) {
   const data = await fetchAPI(

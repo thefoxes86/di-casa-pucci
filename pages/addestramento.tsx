@@ -29,11 +29,16 @@ export default function Addestramento({ data, preview }) {
           </h2>
           <p dangerouslySetInnerHTML={{ __html: data.content }}></p>
         </div>
-        <div className="section__content">
+        <div className="text-center">
+          <Button link="/contatti" type="secondary">
+            SCRIVICI
+          </Button>
+        </div>
+        {/* <div className="section__content">
           <div className="section__content__wrapper-line-full py-6 ">
             <Gallery />
           </div>
-        </div>
+        </div> */}
         <div className="section__content__wrapper__container__inverse">
           <AnimateSection className="section__content section__content__wrapper-line-full mt-16">
             <ParallaxImage
