@@ -40,7 +40,7 @@ export default function Accoppiamento({ data, preview }) {
             <div className="section__content__wrapper-line-full">
               <Container>
                 <ParallaxImage
-                  src="https://backend.dicasapucci.com/wp-content/uploads/2023/06/Accoppiamento.png"
+                  src="http://backend.dicasapucci.com/wp-content/uploads/2023/06/Accoppiamento.png"
                   alt="hero"
                   height={400}
                 >

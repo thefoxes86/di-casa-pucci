@@ -42,7 +42,7 @@ export default function News({ data, preview }) {
                         <img
                           src={
                             item.node?.featuredImage?.node?.sourceUrl ||
-                            'https://backend.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
+                            'http://backend.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
                           }
                           alt="hero"
                         />

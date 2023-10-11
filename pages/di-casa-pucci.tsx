@@ -31,7 +31,7 @@ export default function About({ data, preview }) {
         <div className="section__content__wrapper__container">
           <AnimateSection className="section__content section__content__wrapper-line-full mt-16">
             <ParallaxImage
-              src="https://backend.dicasapucci.com/wp-content/uploads/2023/06/Lallevalemto.png"
+              src="http://backend.dicasapucci.com/wp-content/uploads/2023/06/Lallevalemto.png"
               alt="hero"
               height={400}
             >

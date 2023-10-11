@@ -41,7 +41,7 @@ export default function Allevamento({ data, preview }) {
                 <Suspense fallback={<div>Loading...</div>}>
                   <Image
                     loading="lazy"
-                    src="https://backend.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-28@2x.png"
+                    src="http://backend.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-28@2x.png"
                     alt="Dobermans"
                     layout="fill"
                     objectFit="contain"
@@ -58,7 +58,7 @@ export default function Allevamento({ data, preview }) {
                 <Suspense fallback={<div>Loading...</div>}>
                   <Image
                     loading="lazy"
-                    src="https://backend.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-29@2x.png"
+                    src="http://backend.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-29@2x.png"
                     alt="ZTP"
                     layout="fill"
                     objectFit="contain"
@@ -75,7 +75,7 @@ export default function Allevamento({ data, preview }) {
                 <Suspense fallback={<div>Loading...</div>}>
                   <Image
                     loading="lazy"
-                    src="https://backend.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-30@2x.png"
+                    src="http://backend.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-30@2x.png"
                     alt="KÖRUNG"
                     layout="fill"
                     objectFit="contain"
@@ -93,7 +93,7 @@ export default function Allevamento({ data, preview }) {
           <AnimateSection className="section__content">
             <div className="section__content__wrapper-line-full">
               <ParallaxImage
-                src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
+                src="http://backend.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
                 alt="hero"
                 height={400}
               >

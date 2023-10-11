@@ -16,7 +16,7 @@ const DogThree = ({ schedaDobermann, primaryDog }) => {
             loading="lazy"
             src={
               primaryDog?.image?.node?.sourceUrl ||
-              'https://backend.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
+              'http://backend.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
             }
             className="primary-dog__image"
             alt={primaryDog?.name}

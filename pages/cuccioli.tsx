@@ -59,7 +59,7 @@ export default function Cuccioli({ data, preview }) {
           <AnimateSection className="section__content">
             <div className="section__content__wrapper-line-full">
               <ParallaxImage
-                src="https://backend.dicasapucci.com/wp-content/uploads/2023/06/Accoppiamento.png"
+                src="http://backend.dicasapucci.com/wp-content/uploads/2023/06/Accoppiamento.png"
                 alt="hero"
                 height={400}
               >
