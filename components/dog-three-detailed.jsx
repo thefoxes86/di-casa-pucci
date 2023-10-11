@@ -35,7 +35,7 @@ const DogThreeDetailed = ({ data }) => {
               loading="lazy"
               src={
                 data.dobPadre?.featuredImage?.node?.sourceUrl ||
-                'http://backend.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
+                'https://backend.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
               }
               className="primary-dog__image"
               alt={data.dobPadre?.schedaDobermann?.dobNome}
@@ -124,7 +124,7 @@ const DogThreeDetailed = ({ data }) => {
               loading="lazy"
               src={
                 data.dobMadre?.featuredImage?.node?.sourceUrl ||
-                'http://backend.dicasapucci.com/wp-content/uploads/2023/06/woocommerce-placeholder.png'
+                'https://backend.dicasapucci.com/wp-content/uploads/2023/06/woocommerce-placeholder.png'
               }
               className="primary-dog__image"
               alt={data.dobMadre?.schedaDobermann?.dobNome}

@@ -42,7 +42,7 @@ export default function Addestramento({ data, preview }) {
         <div className="section__content__wrapper__container__inverse">
           <AnimateSection className="section__content section__content__wrapper-line-full mt-16">
             <ParallaxImage
-              src="http://backend.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
+              src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
               alt="hero"
               height={400}
             >

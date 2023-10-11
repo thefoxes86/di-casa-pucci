@@ -140,7 +140,7 @@ p {
   @apply w-screen h-screen flex overflow-hidden;
 }
 .hero_header_home {
-  @apply w-screen h-screen md:bg-[url('http://backend.dicasapucci.com/wp-content/uploads/2023/07/REV_cane-di-razza-doberman-su-sfondo-nero-messa-a-fuoco-selettiva-scaled.jpg')] bg-[url('http://backend.dicasapucci.com/wp-content/uploads/2023/05/cane-di-razza-doberman-su-sfondo-nero-messa-a-fuoco-selettiva.png')] flex flex-wrap justify-center items-end !bg-cover bg-center overflow-hidden relative px-0 mx-0 pb-32;
+  @apply w-screen h-screen md:bg-[url('https://backend.dicasapucci.com/wp-content/uploads/2023/07/REV_cane-di-razza-doberman-su-sfondo-nero-messa-a-fuoco-selettiva-scaled.jpg')] bg-[url('https://backend.dicasapucci.com/wp-content/uploads/2023/05/cane-di-razza-doberman-su-sfondo-nero-messa-a-fuoco-selettiva.png')] flex flex-wrap justify-center items-end !bg-cover bg-center overflow-hidden relative px-0 mx-0 pb-32;
 }
 
 

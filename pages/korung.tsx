@@ -41,7 +41,7 @@ export default function Korung({ data, preview }) {
         <AnimateSection className="section__content">
           <div className="section__content__wrapper-line-full">
             <ParallaxImage
-              src="http://backend.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
+              src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
               alt="hero"
               height={400}
             >
