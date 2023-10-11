@@ -76,7 +76,7 @@ const Menu = () => {
             <Link href="/">
               <Image
                 loading="lazy"
-                src="https://www.dicasapucci.com/wp-content/uploads/2023/05/LOGO-DCP_Esteso@2x.png"
+                src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/LOGO-DCP_Esteso@2x.png"
                 width={210}
                 height={100}
                 alt="logo"

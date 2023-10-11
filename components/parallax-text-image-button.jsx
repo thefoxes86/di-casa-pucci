@@ -6,7 +6,7 @@ const ParallaxTextImageButton = ({ textButton, typeButton, text, image }) => {
       <div className="section__content">
         <div className="section__content__wrapper-line-full">
           <ParallaxImage
-            src="https://www.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
+            src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
             alt="hero"
             height={400}
           >

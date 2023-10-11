@@ -48,7 +48,7 @@ const BodyHome = ({ data }) => {
             <AnimateSection className="section__content section__content__wrapper-line-full">
               <Container>
                 <ParallaxImage
-                  src="https://www.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
+                  src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
                   alt="hero"
                   height={400}
                 >
@@ -84,7 +84,7 @@ const BodyHome = ({ data }) => {
               <div className="section__content__wrapper-line-full">
                 <Container>
                   <ParallaxImage
-                    src="https://www.dicasapucci.com/wp-content/uploads/2023/06/Accoppiamento.png"
+                    src="https://backend.dicasapucci.com/wp-content/uploads/2023/06/Accoppiamento.png"
                     alt="hero"
                     height={400}
                   >
@@ -122,7 +122,7 @@ const BodyHome = ({ data }) => {
               <div className="section__content__wrapper-line-full">
                 <Container>
                   <ParallaxImage
-                    src="https://www.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
+                    src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
                     alt="hero"
                     height={400}
                   >
@@ -165,7 +165,7 @@ const BodyHome = ({ data }) => {
           <AnimateSection className="section__content bg-black-content-content">
             <div className="section__content__wrapper-line py-6 text-center">
               <img
-                src="https://www.dicasapucci.com/wp-content/uploads/2023/05/three-nation-logo.png"
+                src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/three-nation-logo.png"
                 alt="quote"
               />
               <p className="font-thin py-3 !mb-0 italic">

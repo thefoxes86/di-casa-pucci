@@ -14,7 +14,7 @@ module.exports = {
       '1.gravatar.com',
       '2.gravatar.com',
       'secure.gravatar.com',
-      'www.dicasapucci.com',
+      'backend.dicasapucci.com',
       'placehold.co',
     ],
   },

@@ -49,9 +49,9 @@ module.exports = {
       },
       backgroundImage: {
         homedesktop:
-          "url('https://www.dicasapucci.com/wp-content/uploads/2023/07/REV_cane-di-razza-doberman-su-sfondo-nero-messa-a-fuoco-selettiva-scaled.jpg')",
+          "url('https://backend.dicasapucci.com/wp-content/uploads/2023/07/REV_cane-di-razza-doberman-su-sfondo-nero-messa-a-fuoco-selettiva-scaled.jpg')",
         homemobile:
-          "url('https://www.dicasapucci.com/wp-content/uploads/2023/05/cane-di-razza-doberman-su-sfondo-nero-messa-a-fuoco-selettiva.png')",
+          "url('https://backend.dicasapucci.com/wp-content/uploads/2023/05/cane-di-razza-doberman-su-sfondo-nero-messa-a-fuoco-selettiva.png')",
       },
     },
   },

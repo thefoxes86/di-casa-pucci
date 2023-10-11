@@ -21,7 +21,7 @@ export default function Footer() {
           <div className="flex flex-wrap content__certificazioni p-4">
             <AnimateSection className="w-1/4 flex flex-col items-center justify-center px-4">
               <img
-                src="https://www.dicasapucci.com/wp-content/uploads/2023/05/logo-hi@2x.png"
+                src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/logo-hi@2x.png"
                 alt="certificazione 1"
               />
               <p className="font-thin py-3 text-center text-xs h-20 !mb-0">
@@ -33,7 +33,7 @@ export default function Footer() {
               className="w-1/4 flex flex-col items-center justify-center px-4"
             >
               <img
-                src="https://www.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_IDC_Logo@2x@2x.png"
+                src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_IDC_Logo@2x@2x.png"
                 alt="certificazione 1"
               />
               <p className="font-thin py-3 text-center text-xs h-20 !mb-0">
@@ -45,7 +45,7 @@ export default function Footer() {
               className="w-1/4 flex flex-col items-center justify-center px-4"
             >
               <img
-                src="https://www.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_FCI_Logo@2x@2x.png"
+                src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_FCI_Logo@2x@2x.png"
                 alt="certificazione 1"
               />
               <p className="font-thin py-3 text-center text-xs h-20  !mb-0">
@@ -57,7 +57,7 @@ export default function Footer() {
               className="w-1/4 flex flex-col items-center justify-center px-4"
             >
               <img
-                src="https://www.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_ENCI_Logo@2x@2x.png"
+                src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_ENCI_Logo@2x@2x.png"
                 alt="certificazione 1"
               />
               <p className="font-thin py-3 text-center text-xs h-20  !mb-0">

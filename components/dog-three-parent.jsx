@@ -12,7 +12,7 @@ const DogThreeParent = ({ data }) => {
           loading="lazy"
           src={
             data?.featuredImage?.node.sourceUrl ||
-            'https://www.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
+            'https://backend.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
           }
           className="parents-dog__image"
           alt={data?.title}
