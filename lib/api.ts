@@ -170,7 +170,7 @@ export async function getAllPosts(preview) {
             date
             featuredImage {
               node {
-                sourceUrl
+                sourceUrl(size: THUMBNAIL)
               }
             }
             author {
@@ -211,7 +211,7 @@ export async function getAllDobermann(preview) {
             date
             featuredImage {
               node {
-                sourceUrl
+                sourceUrl(size: THUMBNAIL)
               }
             }
             schedaDobermann {
@@ -253,7 +253,7 @@ export async function getAllCuccioli(preview) {
             date
             featuredImage {
               node {
-                sourceUrl
+                sourceUrl(size: THUMBNAIL)
               }
             }
             schedaDobermann {
@@ -304,7 +304,7 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
         content
         featuredImage {
           node {
-            sourceUrl
+            sourceUrl(size: LARGE)
           }
         }
       }
@@ -388,7 +388,7 @@ export async function getCuccioliAndMorePosts(slug, preview, previewData) {
         content
         featuredImage {
           node {
-            sourceUrl
+            sourceUrl(size: LARGE)
           }
         }
         schedaDobermann {
@@ -452,7 +452,7 @@ export async function getAllDobermansForHome(preview) {
             date
             featuredImage {
               node {
-                sourceUrl
+                sourceUrl(size: THUMBNAIL)
               }
             }
           }
@@ -467,7 +467,7 @@ export async function getAllDobermansForHome(preview) {
             date
             featuredImage {
               node {
-                sourceUrl
+                sourceUrl(size: THUMBNAIL)
               }
             }
           }

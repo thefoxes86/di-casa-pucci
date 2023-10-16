@@ -38,22 +38,20 @@ const Slider = ({ data }) => {
         {data?.edges ? (
           data?.edges.map((item, index) => (
             <SwiperSlide>
-              <Link href={`/posts/${item.node?.slug}`}>
-                <div className="container_swiper_item">
-                  <img
-                    src={item.node?.featuredImage?.node?.sourceUrl || ''}
-                    alt="hero"
-                  />
-                  <span>{moment(item.node?.date).format('D-M-Y')}</span>
-                  <h3>{item.node?.title}</h3>
+              <div className="container_swiper_item">
+                <img
+                  src={item.node?.featuredImage?.node?.sourceUrl || ''}
+                  alt="hero"
+                />
+                <span>{moment(item.node?.date).format('D-M-Y')}</span>
+                <h3>{item.node?.title}</h3>
 
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: item.node?.excerpt.substring(0, 100) + ' ...',
-                    }}
-                  ></p>
-                </div>
-              </Link>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: item.node?.excerpt.substring(0, 100) + ' ...',
+                  }}
+                ></p>
+              </div>
             </SwiperSlide>
           ))
         ) : (

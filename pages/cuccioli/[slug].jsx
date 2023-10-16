@@ -68,7 +68,7 @@ export default function Cuccioli({ post, preview }) {
               <div className="section__content__wrapper__container__inverse">
                 <AnimateSection className="section__content section__content__wrapper-line-full">
                   <ParallaxImage
-                    src="http://backend.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
+                    src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
                     alt="hero"
                     height={400}
                   >
