@@ -304,7 +304,7 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
         content
         featuredImage {
           node {
-            sourceUrl(size: LARGE)
+            sourceUrl
           }
         }
       }
@@ -388,7 +388,7 @@ export async function getCuccioliAndMorePosts(slug, preview, previewData) {
         content
         featuredImage {
           node {
-            sourceUrl(size: LARGE)
+            sourceUrl
           }
         }
         schedaDobermann {
