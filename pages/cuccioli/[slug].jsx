@@ -7,21 +7,11 @@ import PostBody from '../../components/post-body'
 import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
 import PostTitle from '../../components/post-title'
-import {
-  getAllCuccioliWithSlug,
-  getAllDobermansWithSlug,
-  getCuccioliAndMorePosts,
-  getDobermanAndMorePosts,
-} from '../../lib/api'
+import { getAllCuccioliWithSlug, getCuccioliAndMorePosts } from '../../lib/api'
 import { CMS_NAME } from '../../lib/constants'
-import DogThree from '../../components/dog-three'
 import DogDetails from '../../components/dog-details'
-import ScrollParallaxComponent from '../../components/scroll-parallax-component'
-import VirgoletteDestra from '../../public/images/virgolette-destra.svg'
-import VirgoletteSinistra from '../../public/images/virgolette-sinistra.svg'
 import ParallaxImage from '../../components/parallax-image'
 import Button from '../../components/button'
-import Scrivici from '../../components/scrivici'
 import AnimateSection from '../../components/animateSection'
 import Gallery from '../../components/gallery'
 
