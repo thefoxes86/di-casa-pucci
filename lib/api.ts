@@ -1,5 +1,5 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client'
-import { ctpDobermannFieldsFragment, dobParentsFieldsFragment, schedaDobermanFieldsFragment} from './fragments'
+import { ctpDobermannFieldsFragment, dobParentsFieldsFragment, schedaDobermanFieldsFragment, ctpPastoreFieldsFragment, pasParentsFieldsFragment, schedaPastoreFieldsFragment} from './fragments'
 const API_URL = process.env.WORDPRESS_API_URL
 
 async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
@@ -142,6 +142,21 @@ export async function getAllDobermansWithSlug() {
   return data?.ctpDobermanns
 }
 
+export async function getAllPastoresWithSlug() {
+  const data = await fetchAPI(`
+    {
+      ctpPastores(first: 10000) {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `)
+  return data?.ctpPastores
+}
+
 export async function getAllCuccioliWithSlug() {
   const data = await fetchAPI(`
     {
@@ -240,6 +255,49 @@ export async function getAllDobermann(preview) {
 
   return data?.ctpDobermanns
 }
+
+export async function getAllPastori(preview) {
+  const data = await fetchAPI(
+    `
+    query AllPastores {
+      ctpPastores(where: {orderby: {field: DATE, order: DESC}}, first: 1000) {
+        edges {
+          node {
+            title
+            slug
+            date
+            featuredImage {
+              node {
+                sourceUrl(size: THUMBNAIL)
+              }
+            }
+            schedaPastore {
+              pasNome
+              pasAllevatore
+              pasRiconoscimenti
+              pasSex {
+                name
+                sessoId
+                slug
+              }
+              pasVisibile
+            }
+          }
+        }
+      }
+    }
+  `,
+    {
+      variables: {
+        onlyEnabled: !preview,
+        preview,
+      },
+    }
+  )
+
+  return data?.ctpPastores
+}
+
 
 export async function getAllCuccioli(preview) {
   const data = await fetchAPI(
@@ -364,6 +422,48 @@ export async function getDobermanAndMorePosts(slug, preview, previewData) {
 
     if (revision) Object.assign(data.ctpDobermann, revision)
     delete data.ctpDobermann.revisions
+  }
+  return data
+}
+
+export async function getPastoreAndMorePosts(slug, preview, previewData) {
+  const postPreview = preview && previewData?.ctpPastore
+  // The slug may be the id of an unpublished post
+  const isId = Number.isInteger(Number(slug))
+  const isSamePost = isId
+    ? Number(slug) === postPreview.id
+    : slug === postPreview.slug
+  const isDraft = isSamePost && postPreview?.status === 'draft'
+  const isRevision = isSamePost && postPreview?.status === 'publish'
+  const data = await fetchAPI(
+    `
+    ${ctpPastoreFieldsFragment}
+    ${schedaPastoreFieldsFragment}
+    ${pasParentsFieldsFragment}
+    query PastoreBySlug($id: ID!, $idType: Ctp_pastoreIdType!) {
+      ctpPastore(id: $id, idType: $idType) {
+        ...ctpPastoreFields
+        ...schedaPastoreFields
+        ...pasParentsFields
+      }
+    }
+  `,
+    {
+      variables: {
+        id: isDraft ? postPreview.id : slug,
+        idType: isDraft ? 'DATABASE_ID' : 'SLUG',
+      },
+    }
+  )
+
+  // Draft posts may not have an slug
+  if (isDraft) data.ctpPastore.slug = postPreview.id
+  // Apply a revision (changes in a published post)
+  if (isRevision && data.ctpPastore.revisions) {
+    const revision = data.ctpPastore.revisions.edges[0]?.node
+
+    if (revision) Object.assign(data.ctpPastore, revision)
+    delete data.ctpPastore.revisions
   }
   return data
 }

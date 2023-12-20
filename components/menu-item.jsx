@@ -19,6 +19,10 @@ const itemsMenu = [
     link: '/addestramento',
   },
   {
+    name: 'I Pastori',
+    link: '/pastori',
+  },
+  {
     name: 'Le News',
     link: '/news',
   },
