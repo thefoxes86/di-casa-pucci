@@ -38,30 +38,43 @@ export default function Ztp({ data, preview }) {
           src={VirgoletteSinistra}
           offset={80}
         /> */}
-        <AnimateSection className="section__content">
-          <div className="section__content__wrapper-line-full">
+
+        <div className="section__content__wrapper__container__inverse">
+          <AnimateSection className="section__content section__content__wrapper-line-full">
             <ParallaxImage
-              src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
+              src="https://backend.dicasapucci.com/wp-content/uploads/2023/12/cucciolo_pastore_2.jpeg"
               alt="hero"
-              height={400}
+              height={600}
             >
               <div className="text-parallax-image">
                 <span className="font-light">FORTI E SANI,</span>
                 <span className="font-bold">SI NASCE.</span>
               </div>
             </ParallaxImage>
-          </div>
-        </AnimateSection>
+          </AnimateSection>
 
-        <AnimateSection className="section__content">
-          <div className="section__content__wrapper-line bg-black-content">
-            <div className="section__content__wrapper-cta">
-              <Button link="/allevamento" type="secondary">
-                TORNA ALL'ALLEVAMENTO
-              </Button>
-            </div>
-          </div>
-        </AnimateSection>
+          {/* <ScrollParallaxComponent
+                className="right-0"
+                color="#000"
+                src={VirgoletteDestra}
+                offset={100}
+              />
+              <ScrollParallaxComponent
+                className="left-0"
+                color="#000"
+                src={VirgoletteSinistra}
+                offset={80}
+              /> */}
+          <AnimateSection className="section__content mt-20">
+            <p className="text-center !font-bold !mb-0 italic">
+              Inseguiamo la perfezione
+            </p>
+            <p className="text-center mt-0">
+              studiando attentamente ogni accoppiamento
+            </p>
+            <div className="section__content__wrapper-cta"></div>
+          </AnimateSection>
+        </div>
       </Container>
     </Layout>
   )

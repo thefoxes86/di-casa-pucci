@@ -66,7 +66,7 @@ export default function Pastore({ post, preview }) {
               <div className="section__content__wrapper__container__inverse">
                 <AnimateSection className="section__content section__content__wrapper-line-full">
                   <ParallaxImage
-                    src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
+                    src="https://backend.dicasapucci.com/wp-content/uploads/2023/12/pastore_adulto.jpeg"
                     alt="hero"
                     height={400}
                   >
@@ -96,11 +96,7 @@ export default function Pastore({ post, preview }) {
                   <p className="text-center mt-0">
                     studiando attentamente ogni accoppiamento
                   </p>
-                  <div className="section__content__wrapper-cta">
-                    <Button link="/accoppiamento" type="secondary">
-                      L'ACCOPPIAMENGTO
-                    </Button>
-                  </div>
+                  <div className="section__content__wrapper-cta"></div>
                 </AnimateSection>
               </div>
 
