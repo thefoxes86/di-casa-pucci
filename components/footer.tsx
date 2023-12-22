@@ -4,8 +4,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import AnimateSection from './animateSection'
 import Scrivici from './scrivici'
+import { usePathname } from 'next/navigation'
 
 export default function Footer() {
+  const pathname = usePathname()
+  console.log(pathname)
   return (
     <>
       <AnimateSection className="section__content bg-black mt-6">
@@ -18,28 +21,46 @@ export default function Footer() {
           <h3 className="text-lg font-bold tracking-tighter leading-tight text-center  mb-0 md:my-10 ">
             LE CERTIFICAZIONI
           </h3>
+
           <div className="flex flex-wrap content__certificazioni p-4">
-            <AnimateSection className="w-1/4 flex flex-col items-center justify-center px-4">
-              <img
-                src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/logo-hi@2x.png"
-                alt="certificazione 1"
-              />
-              <p className="font-thin py-3 text-center text-xs h-20 !mb-0">
-                Associazione Italiana Amatori Dobermann
-              </p>
-            </AnimateSection>
-            <AnimateSection
-              delay={0.4}
-              className="w-1/4 flex flex-col items-center justify-center px-4"
-            >
-              <img
-                src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_IDC_Logo@2x@2x.png"
-                alt="certificazione 1"
-              />
-              <p className="font-thin py-3 text-center text-xs h-20 !mb-0">
-                Internationaler Dobermann Club
-              </p>
-            </AnimateSection>
+            {pathname.includes('pastori') || pathname.includes('pastore') ? (
+              <AnimateSection
+                delay={0.4}
+                className="w-1/4 flex flex-col items-center justify-center px-4"
+              >
+                <img
+                  src="https://backend.dicasapucci.com/wp-content/uploads/2023/12/logo-pastori.png"
+                  alt="certificazione 1"
+                />
+                <p className="font-thin py-3 text-center text-xs h-20 !mb-0">
+                  Società Amatori Schäferhunde
+                </p>
+              </AnimateSection>
+            ) : (
+              <>
+                <AnimateSection className="w-1/4 flex flex-col items-center justify-center px-4">
+                  <img
+                    src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/logo-hi@2x.png"
+                    alt="certificazione 1"
+                  />
+                  <p className="font-thin py-3 text-center text-xs h-20 !mb-0">
+                    Associazione Italiana Amatori Dobermann
+                  </p>
+                </AnimateSection>
+                <AnimateSection
+                  delay={0.4}
+                  className="w-1/4 flex flex-col items-center justify-center px-4"
+                >
+                  <img
+                    src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_IDC_Logo@2x@2x.png"
+                    alt="certificazione 1"
+                  />
+                  <p className="font-thin py-3 text-center text-xs h-20 !mb-0">
+                    Internationaler Dobermann Club
+                  </p>
+                </AnimateSection>
+              </>
+            )}
             <AnimateSection
               delay={0.8}
               className="w-1/4 flex flex-col items-center justify-center px-4"
