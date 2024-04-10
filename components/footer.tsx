@@ -23,7 +23,7 @@ export default function Footer() {
           </h3>
 
           <div className="flex flex-wrap content__certificazioni p-4">
-            {pathname.includes('pastori') || pathname.includes('pastore') ? (
+            {pathname?.includes('pastori') || pathname?.includes('pastore') ? (
               <AnimateSection
                 delay={0.4}
                 className="w-1/4 flex flex-col items-center justify-center px-4"
