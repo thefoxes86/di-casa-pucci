@@ -2,6 +2,7 @@ import { SplitText } from '@cyriacbr/react-split-text'
 import { AnimatePresence, motion } from 'framer-motion'
 import ArrowDown from '../public/images/arrow-down.svg'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const variants = {
   animate: {
@@ -37,31 +38,39 @@ export default function Intro() {
                   duration: 2.5,
                 }}
               >
-                <span className="block w-100">L'ECCELLENZA</span>{' '}
-                <span className="block w-100">DELLA RAZZA,</span>
-                <span className="block w-100 font-bold">SI SENTE.</span>
+                <Link href="/pastori">
+                  <span className="block w-100">I NOSTRI</span>{' '}
+                  <span className="block w-100 font-bold">PASTORI</span>
+                </Link>
               </motion.span>
             </motion.div>
           </motion.div>
-          <motion.div
-            animate="animate"
-            variants={variants}
-            className="hero_header_home__arrow"
-          >
-            <Image
-              loading="lazy"
-              src={ArrowDown}
-              alt="arrow"
-              width={50}
-              height={50}
-            />
-            <Image
-              loading="lazy"
-              src={ArrowDown}
-              alt="arrow"
-              width={50}
-              height={50}
-            />
+        </motion.section>
+
+        <motion.section
+          className="hero_header_home"
+          initial={{ transform: 'scale(1.2)', opacity: 0 }}
+          whileInView={{ opacity: 1, transform: 'scale(1)' }}
+          transition={{ type: 'spring', duration: 5 }}
+        >
+          <motion.div className="hero_header_home__content">
+            <motion.div className="wrapper_line">
+              <motion.span
+                className="inline-block"
+                initial={{ y: 50 }}
+                animate={{ y: 0 }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 50,
+                  duration: 2.5,
+                }}
+              >
+                <Link href="/dobermann">
+                  <span className="block w-100">I NOSTRI</span>{' '}
+                  <span className="block w-100 font-bold">DOBERMANN</span>
+                </Link>
+              </motion.span>
+            </motion.div>
           </motion.div>
         </motion.section>
       </AnimatePresence>

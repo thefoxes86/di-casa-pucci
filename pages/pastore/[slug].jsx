@@ -47,7 +47,7 @@ export default function Pastore({ post, preview }) {
                 allevatore={post?.schedaPastore?.pasAllevatore}
                 coverImage={post?.featuredImage}
               />
-              <DogDetails data={post?.schedaPastore} />
+              <DogDetails data={post?.schedaPastore} type={'pastore'} />
               <DogThree
                 primaryDog={{
                   name: post?.schedaPastore?.pasNome,
