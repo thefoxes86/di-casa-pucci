@@ -17,6 +17,18 @@ export default function Ztp({ data, preview }) {
       <Head>
         <title>{`ZTP`}</title>
       </Head>
+      <div className="w-screen h-[100vh] bg-black">
+        <img
+          src="/images/interna_desk_pastore.jpg"
+          className="w-full h-full object-cover md:flex hidden"
+          alt="Dobermann"
+        />
+        <img
+          src="/images/interna_mobile_Pastore.jpg"
+          className="w-full h-full object-cover md:hidden flex"
+          alt="Dobermann"
+        />
+      </div>
 
       <Container>
         <div className="px-6">

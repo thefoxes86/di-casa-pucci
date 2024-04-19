@@ -19,6 +19,19 @@ export default function Allevamento({ data, preview }) {
         <title>{`DOBERMANN`}</title>
       </Head>
 
+      <div className="w-screen h-[100vh] bg-black">
+        <img
+          src="/images/interna_desk_Doberman.jpg"
+          className="w-full h-full object-cover md:flex hidden"
+          alt="Dobermann"
+        />
+        <img
+          src="/images/interna_mobile_Doberman.jpg"
+          className="w-full h-full object-cover md:hidden flex"
+          alt="Dobermann"
+        />
+      </div>
+
       <Container>
         <div className="px-6">
           <h1 dangerouslySetInnerHTML={{ __html: 'DOBERMANN' }}></h1>
