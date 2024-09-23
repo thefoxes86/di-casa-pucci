@@ -1,13 +1,13 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion } from "framer-motion";
 
-import Button from './button'
-import ParallaxImage from './parallax-image'
-import ScrollParallaxComponent from './scroll-parallax-component'
-import VirgoletteDestra from '../public/images/virgolette-destra.svg'
-import VirgoletteSinistra from '../public/images/virgolette-sinistra.svg'
-import Slider from './slider'
-import AnimateSection from './animateSection'
-import Container from './container'
+import Button from "./button";
+import ParallaxImage from "./parallax-image";
+import ScrollParallaxComponent from "./scroll-parallax-component";
+import VirgoletteDestra from "../public/images/virgolette-destra.svg";
+import VirgoletteSinistra from "../public/images/virgolette-sinistra.svg";
+import Slider from "./slider";
+import AnimateSection from "./animateSection";
+import Container from "./container";
 
 const BodyHome = ({ data }) => {
   return (
@@ -26,24 +26,47 @@ const BodyHome = ({ data }) => {
             src={VirgoletteSinistra}
             offset={50}
           /> */}
-
-          <AnimateSection className="section__content__wrapper-line-full md:bg-black">
-            <Container>
-              <div className="section__content__wrapper-line">
-                <div className="section__content__wrapper-text italic">
-                  <p>
-                    Mi chiamo Dario Pucci e sono titolare{' '}
-                    <span className="font-bold">Di Casa Pucci</span>, azienda
-                    leader nel settore dell’allevamento di cani di{' '}
-                    <span className="font-bold">razza Dobermann</span>.
-                  </p>
-                </div>
-                <div className="section__content__wrapper-cta">
-                  <Button link="/allevamento">I NOSTRI DOBERMANN</Button>
-                </div>
-              </div>
-            </Container>
+          <AnimateSection className="section__content">
+            <div className="section__content__wrapper-line-full py-6">
+              <Slider data={data} />
+            </div>
           </AnimateSection>
+          <div className="section__content__wrapper__container__inverse !mt-0">
+            <AnimateSection className="section__content__wrapper-line-full md:bg-black mt-0">
+              <Container>
+                <div className="section__content__wrapper-line">
+                  <div className="section__content__wrapper-text italic">
+                    <p>
+                      Mi chiamo Dario Pucci e sono titolare{" "}
+                      <span className="font-bold">Di Casa Pucci</span>, azienda
+                      leader nel settore dell’allevamento di cani di{" "}
+                      <span className="font-bold">razza Dobermann</span>.
+                    </p>
+                  </div>
+                  <div className="section__content__wrapper-cta">
+                    <Button link="/allevamento">I NOSTRI DOBERMANN</Button>
+                  </div>
+                </div>
+              </Container>
+            </AnimateSection>
+            <AnimateSection className="section__content__wrapper-line-full md:bg-black">
+              <Container>
+                <div className="section__content__wrapper-line">
+                  <div className="section__content__wrapper-text italic">
+                    <p>
+                      Mi chiamo Dario Pucci e sono titolare{" "}
+                      <span className="font-bold">Di Casa Pucci</span>, azienda
+                      leader nel settore dell’allevamento di cani di{" "}
+                      <span className="font-bold">razza Pastore</span>.
+                    </p>
+                  </div>
+                  <div className="section__content__wrapper-cta">
+                    <Button link="/pastori">I NOSTRI PASTORI</Button>
+                  </div>
+                </div>
+              </Container>
+            </AnimateSection>
+          </div>
           <div className="section__content__wrapper__container__inverse">
             <AnimateSection className="section__content section__content__wrapper-line-full">
               <Container>
@@ -66,7 +89,7 @@ const BodyHome = ({ data }) => {
                   <div className="section__content__wrapper-text italic">
                     <p>
                       Ricerchiamo la massima espressione dell’eleganza, della
-                      fierezza e della bellezza,{' '}
+                      fierezza e della bellezza,{" "}
                       <span className="font-bold"> fin dalla nascita</span>.
                     </p>
                   </div>
@@ -104,7 +127,7 @@ const BodyHome = ({ data }) => {
                     <p className="font-semibold">
                       <span className="font-bold">
                         Inseguiamo la perfezione
-                      </span>{' '}
+                      </span>{" "}
                       studiando attentamente ogni accoppiamento.
                     </p>
                   </div>
@@ -140,10 +163,10 @@ const BodyHome = ({ data }) => {
                 <Container>
                   <div className="section__content__wrapper-text italic">
                     <p className="font-semibold">
-                      Insieme al centro sportivo{' '}
+                      Insieme al centro sportivo{" "}
                       <span className="font-bold w-100 flex text-center justify-center">
                         ABC100 Working Dog Club
-                      </span>{' '}
+                      </span>{" "}
                       prepariamo i vostri cani alla vittoria.
                     </p>
                   </div>
@@ -157,11 +180,6 @@ const BodyHome = ({ data }) => {
             </AnimateSection>
           </div>
 
-          <AnimateSection className="section__content">
-            <div className="section__content__wrapper-line-full py-6 md:bg-black">
-              <Slider data={data} />
-            </div>
-          </AnimateSection>
           <AnimateSection className="section__content bg-black-content-content">
             <div className="section__content__wrapper-line py-6 text-center">
               <img
@@ -185,7 +203,7 @@ const BodyHome = ({ data }) => {
         </motion.section>
       </div>
     </AnimatePresence>
-  )
-}
+  );
+};
 
-export default BodyHome
+export default BodyHome;

@@ -1,42 +1,43 @@
-import Link from 'next/link'
-import { motion } from 'framer-motion'
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 const itemsMenu = [
   {
-    name: "L'Allevamento",
-    link: '/allevamento',
+    name: "I Dobermann",
+    link: "/allevamento",
   },
   {
-    name: 'I Cuccioli',
-    link: '/cuccioli',
+    name: "I Pastori",
+    link: "/pastori",
+  },
+  {
+    name: "I Cuccioli",
+    link: "/cuccioli",
   },
   {
     name: "L'Accoppiamento",
-    link: '/accoppiamento',
+    link: "/accoppiamento",
   },
   {
     name: "L'Addestramento",
-    link: '/addestramento',
-  },
-  {
-    name: 'I Pastori',
-    link: '/pastori',
-  },
-  {
-    name: 'Le News',
-    link: '/news',
+    link: "/addestramento",
   },
 
   {
-    name: 'Di Casa Pucci',
-    link: '/di-casa-pucci',
+    name: "Le News",
+    link: "/news",
   },
 
   {
-    name: 'Contatti',
-    link: '/contatti',
+    name: "Di Casa Pucci",
+    link: "/di-casa-pucci",
   },
-]
+
+  {
+    name: "Contatti",
+    link: "/contatti",
+  },
+];
 
 const variantsContainer = {
   open: {
@@ -45,7 +46,7 @@ const variantsContainer = {
   closed: {
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
   },
-}
+};
 
 const variantsItem = {
   open: {
@@ -62,7 +63,7 @@ const variantsItem = {
       y: { stiffness: 1000 },
     },
   },
-}
+};
 const MenuItem = ({ children, ...props }) => {
   return (
     <motion.div variants={variantsContainer}>
@@ -70,8 +71,8 @@ const MenuItem = ({ children, ...props }) => {
         <motion.div
           className="menu-item"
           variants={variantsItem}
-          whileHover={{ color: 'white' }}
-          whileTap={{ color: 'white' }}
+          whileHover={{ color: "white" }}
+          whileTap={{ color: "white" }}
           key={index}
           onClick={props.toggleOpen}
         >
@@ -83,7 +84,7 @@ const MenuItem = ({ children, ...props }) => {
         </motion.div>
       ))}
     </motion.div>
-  )
-}
+  );
+};
 
-export default MenuItem
+export default MenuItem;
