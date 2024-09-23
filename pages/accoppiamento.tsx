@@ -62,7 +62,7 @@ export default function Accoppiamento({ data, preview }) {
                 </div>
                 <div className="section__content__wrapper-cta">
                   <Button link="/pastori" type="secondary">
-                    I NOSTRI PASTORI
+                    I PASTORI
                   </Button>
                 </div>
               </Container>
