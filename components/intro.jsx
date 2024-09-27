@@ -1,20 +1,20 @@
-import { SplitText } from '@cyriacbr/react-split-text'
-import { AnimatePresence, motion } from 'framer-motion'
-import ArrowDown from '../public/images/arrow-down.svg'
-import Image from 'next/image'
-import Link from 'next/link'
+import { SplitText } from "@cyriacbr/react-split-text";
+import { AnimatePresence, motion } from "framer-motion";
+import ArrowDown from "../public/images/arrow-down.svg";
+import Image from "next/image";
+import Link from "next/link";
 
 const variants = {
   animate: {
-    bottom: '30px',
+    bottom: "30px",
     transition: {
-      repeat: 'infinite',
+      repeat: "infinite",
       duration: 1,
       delayChildren: 0.5,
-      type: 'spring',
+      type: "spring",
     },
   },
-}
+};
 
 export default function Intro() {
   return (
@@ -22,9 +22,9 @@ export default function Intro() {
       <AnimatePresence>
         <motion.section
           className="hero_header_home"
-          initial={{ transform: 'scale(1.2)', opacity: 0 }}
-          whileInView={{ opacity: 1, transform: 'scale(1)' }}
-          transition={{ type: 'spring', duration: 5 }}
+          initial={{ transform: "scale(1.2)", opacity: 0 }}
+          whileInView={{ opacity: 1, transform: "scale(1)" }}
+          transition={{ type: "spring", duration: 5 }}
         >
           <motion.div className="hero_header_home__content">
             <motion.div className="wrapper_line">
@@ -33,13 +33,13 @@ export default function Intro() {
                 initial={{ y: 50 }}
                 animate={{ y: 0 }}
                 transition={{
-                  type: 'spring',
+                  type: "spring",
                   stiffness: 50,
                   duration: 2.5,
                 }}
               >
-                <Link href="/pastori">
-                  <span className="block w-100">I NOSTRI</span>{' '}
+                <Link href="/cani-pastori-tedeschi/pastori">
+                  <span className="block w-100">I NOSTRI</span>{" "}
                   <span className="block w-100 font-bold">PASTORI</span>
                 </Link>
               </motion.span>
@@ -49,9 +49,9 @@ export default function Intro() {
 
         <motion.section
           className="hero_header_home"
-          initial={{ transform: 'scale(1.2)', opacity: 0 }}
-          whileInView={{ opacity: 1, transform: 'scale(1)' }}
-          transition={{ type: 'spring', duration: 5 }}
+          initial={{ transform: "scale(1.2)", opacity: 0 }}
+          whileInView={{ opacity: 1, transform: "scale(1)" }}
+          transition={{ type: "spring", duration: 5 }}
         >
           <motion.div className="hero_header_home__content">
             <motion.div className="wrapper_line">
@@ -60,13 +60,13 @@ export default function Intro() {
                 initial={{ y: 50 }}
                 animate={{ y: 0 }}
                 transition={{
-                  type: 'spring',
+                  type: "spring",
                   stiffness: 50,
                   duration: 2.5,
                 }}
               >
-                <Link href="/dobermann">
-                  <span className="block w-100">I NOSTRI</span>{' '}
+                <Link href="/cani-dobermann/dobermann">
+                  <span className="block w-100">I NOSTRI</span>{" "}
                   <span className="block w-100 font-bold">DOBERMANN</span>
                 </Link>
               </motion.span>
@@ -75,5 +75,5 @@ export default function Intro() {
         </motion.section>
       </AnimatePresence>
     </section>
-  )
+  );
 }

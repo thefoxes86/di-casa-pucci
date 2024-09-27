@@ -1,16 +1,16 @@
-import Head from 'next/head'
-import { GetStaticProps } from 'next'
-import Container from '../components/container'
-import Layout from '../components/layout'
-import { getAllDobermann, getAllPastori } from '../lib/api'
-import ParallaxImage from '../components/parallax-image'
-import ScrollParallaxComponent from '../components/scroll-parallax-component'
-import Button from '../components/button'
-import VirgoletteDestra from '../public/images/virgolette-destra.svg'
-import VirgoletteSinistra from '../public/images/virgolette-sinistra.svg'
-import Scrivici from '../components/scrivici'
-import FilteringListPastori from '../components/filtering-list-pastori'
-import AnimateSection from '../components/animateSection'
+import Head from "next/head";
+import { GetStaticProps } from "next";
+import Container from "../../components/container";
+import Layout from "../../components/layout";
+import { getAllDobermann, getAllPastori } from "../../lib/api";
+import ParallaxImage from "../../components/parallax-image";
+import ScrollParallaxComponent from "../../components/scroll-parallax-component";
+import Button from "../../components/button";
+import VirgoletteDestra from "../public/images/virgolette-destra.svg";
+import VirgoletteSinistra from "../public/images/virgolette-sinistra.svg";
+import Scrivici from "../../components/scrivici";
+import FilteringListPastori from "../../components/filtering-list-pastori";
+import AnimateSection from "../../components/animateSection";
 export default function Ztp({ data, preview }) {
   return (
     <Layout preview={false}>
@@ -32,7 +32,7 @@ export default function Ztp({ data, preview }) {
 
       <Container>
         <div className="px-6">
-          <h1 dangerouslySetInnerHTML={{ __html: 'PASTORI' }}></h1>
+          <h1 dangerouslySetInnerHTML={{ __html: "PASTORI" }}></h1>
         </div>
 
         <AnimateSection className="section__content">
@@ -89,16 +89,16 @@ export default function Ztp({ data, preview }) {
         </div>
       </Container>
     </Layout>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const dataFetch = await getAllPastori(preview)
+  const dataFetch = await getAllPastori(preview);
 
-  const data = dataFetch?.edges
+  const data = dataFetch?.edges;
 
   return {
     props: { data, preview },
     revalidate: 10,
-  }
-}
+  };
+};
