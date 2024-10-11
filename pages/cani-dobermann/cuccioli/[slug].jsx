@@ -51,7 +51,7 @@ export default function Cuccioli({ post, preview }) {
               </div>
 
               <AnimateSection className="section__content__wrapper-cta bg-black-content !py-20 !mt-16">
-                <Button link="/cuccioli" type="secondary">
+                <Button link="/cani-dobermann/cuccioli" type="secondary">
                   TORNA AI CUCCIOLI
                 </Button>
               </AnimateSection>
@@ -89,7 +89,10 @@ export default function Cuccioli({ post, preview }) {
                     studiando attentamente ogni accoppiamento
                   </p>
                   <div className="section__content__wrapper-cta">
-                    <Button link="/accoppiamento" type="secondary">
+                    <Button
+                      link="/cani-dobermann/accoppiamento"
+                      type="secondary"
+                    >
                       L'ACCOPPIAMENGTO
                     </Button>
                   </div>
@@ -129,7 +132,10 @@ export const getStaticPaths = async () => {
   const allPosts = await getAllCuccioliWithSlug();
 
   return {
-    paths: allPosts.edges.map(({ node }) => `/cuccioli/${node?.slug}`) || [],
+    paths:
+      allPosts.edges.map(
+        ({ node }) => `/cani-dobermann/cuccioli/${node?.slug}`
+      ) || [],
     fallback: true,
   };
 };
