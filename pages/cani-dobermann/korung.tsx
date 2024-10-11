@@ -1,30 +1,30 @@
-import Head from 'next/head'
-import { GetStaticProps } from 'next'
-import Container from '../components/container'
-import Layout from '../components/layout'
-import { getAllDobermann } from '../lib/api'
-import ParallaxImage from '../components/parallax-image'
-import ScrollParallaxComponent from '../components/scroll-parallax-component'
-import Button from '../components/button'
-import VirgoletteDestra from '../public/images/virgolette-destra.svg'
-import VirgoletteSinistra from '../public/images/virgolette-sinistra.svg'
-import Scrivici from '../components/scrivici'
-import FilteringList from '../components/filtering-list'
-import AnimateSection from '../components/animateSection'
-export default function Ztp({ data, preview }) {
+import Head from "next/head";
+import { GetStaticProps } from "next";
+import Container from "@/components/container";
+import Layout from "@/components/layout";
+import { getAllDobermann } from "@/lib/api";
+import ParallaxImage from "@/components/parallax-image";
+import ScrollParallaxComponent from "@/components/scroll-parallax-component";
+import Button from "@/components/button";
+import VirgoletteDestra from "@/public/images/virgolette-destra.svg";
+import VirgoletteSinistra from "@/public/images/virgolette-sinistra.svg";
+import Scrivici from "@/components/scrivici";
+import FilteringList from "@/components/filtering-list";
+import AnimateSection from "@/components/animateSection";
+export default function Korung({ data, preview }) {
   return (
-    <Layout preview={false}>
+    <Layout preview={false} section={"dobermann"}>
       <Head>
-        <title>{`ZTP`}</title>
+        <title>{`KORUNG`}</title>
       </Head>
 
       <Container>
         <div className="px-6">
-          <h1 dangerouslySetInnerHTML={{ __html: 'ZTP' }}></h1>
+          <h1 dangerouslySetInnerHTML={{ __html: "KORUNG" }}></h1>
         </div>
 
         <AnimateSection className="section__content">
-          <FilteringList type="ztp" data={data} />
+          <FilteringList type="korung" data={data} />
         </AnimateSection>
         {/* <ScrollParallaxComponent
           className="right-0"
@@ -56,7 +56,7 @@ export default function Ztp({ data, preview }) {
         <AnimateSection className="section__content">
           <div className="section__content__wrapper-line bg-black-content">
             <div className="section__content__wrapper-cta">
-              <Button link="/allevamento" type="secondary">
+              <Button link="/cani-dobermann/allevamento" type="secondary">
                 TORNA ALL'ALLEVAMENTO
               </Button>
             </div>
@@ -64,20 +64,20 @@ export default function Ztp({ data, preview }) {
         </AnimateSection>
       </Container>
     </Layout>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const dataFetch = await getAllDobermann(preview)
+  const dataFetch = await getAllDobermann(preview);
 
   const data = dataFetch?.edges?.filter(
-    item =>
-      item?.node?.schedaDobermann?.dobRiconoscimenti?.[0] === 'ztp' ||
-      item?.node?.schedaDobermann?.dobRiconoscimenti?.[1] === 'ztp'
-  )
+    (item) =>
+      item?.node?.schedaDobermann?.dobRiconoscimenti?.[0] === "korung" ||
+      item?.node?.schedaDobermann?.dobRiconoscimenti?.[1] === "korung"
+  );
 
   return {
     props: { data, preview },
     revalidate: 10,
-  }
-}
+  };
+};

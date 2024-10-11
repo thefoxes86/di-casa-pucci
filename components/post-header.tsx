@@ -1,9 +1,9 @@
-import Avatar from './avatar'
-import CoverImage from './cover-image'
-import PostTitle from './post-title'
-import Image from 'next/image'
-import IcoMaschio from '../public/images/ico_maschio.svg'
-import IcoFemmina from '../public/images/ico_femmina.svg'
+import Avatar from "./avatar";
+import CoverImage from "./cover-image";
+import PostTitle from "./post-title";
+import Image from "next/image";
+import IcoMaschio from "@/public/images/ico_maschio.svg";
+import IcoFemmina from "@/public/images/ico_femmina.svg";
 
 export default function PostHeader({ title, coverImage, sesso, allevatore }) {
   return (
@@ -12,7 +12,7 @@ export default function PostHeader({ title, coverImage, sesso, allevatore }) {
       <div className="text-sm font-thin">{allevatore}</div>
       <div className="text-xs font-thin ">
         <Image
-          src={sesso === 'Maschio' ? IcoMaschio : IcoFemmina}
+          src={sesso === "Maschio" ? IcoMaschio : IcoFemmina}
           alt="Icona"
           width={50}
           height={50}
@@ -21,5 +21,5 @@ export default function PostHeader({ title, coverImage, sesso, allevatore }) {
         />
       </div>
     </div>
-  )
+  );
 }

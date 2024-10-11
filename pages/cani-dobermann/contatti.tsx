@@ -1,17 +1,17 @@
-import Head from 'next/head'
-import { GetStaticProps } from 'next'
-import Container from '../components/container'
-import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
-import Layout from '../components/layout'
-import { sendMail, getContacts, client } from '../lib/api'
-import { CMS_NAME } from '../lib/constants'
-import { useForm } from 'react-hook-form'
-import { useState } from 'react'
-import { gql, useMutation } from '@apollo/client'
-import Button from '../components/button'
-import AnimateSection from '../components/animateSection'
+import Head from "next/head";
+import { GetStaticProps } from "next";
+import Container from "@/components/container";
+import MoreStories from "@/components/more-stories";
+import HeroPost from "@/components/hero-post";
+import Intro from "@/components/intro";
+import Layout from "@/components/layout";
+import { sendMail, getContacts, client } from "@/lib/api";
+import { CMS_NAME } from "@/lib/constants";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { gql, useMutation } from "@apollo/client";
+import Button from "@/components/button";
+import AnimateSection from "@/components/animateSection";
 
 const SEND_MAIL = gql`
   mutation SendEmail($input: SendEmailInput!) {
@@ -21,37 +21,37 @@ const SEND_MAIL = gql`
       sent
     }
   }
-`
+`;
 
 export default function Contacts({ data, preview }) {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [tel, setTel] = useState('')
-  const [message, setMessage] = useState('')
-  const handleSubmit = e => {
-    e.preventDefault()
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [tel, setTel] = useState("");
+  const [message, setMessage] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
     client
       .mutate({
         mutation: SEND_MAIL,
         variables: {
           input: {
-            clientMutationId: 'contact',
+            clientMutationId: "contact",
             from: email,
-            to: 'info@dicasapucci.com',
+            to: "info@dicasapucci.com",
             body: message,
-            subject: 'Mail from website',
+            subject: "Mail from website",
           },
         },
       })
-      .then(res => {
-        alert('Messaggio inviato')
+      .then((res) => {
+        alert("Messaggio inviato");
       })
-      .catch(err => {
-        alert('Errore')
-      })
-  }
+      .catch((err) => {
+        alert("Errore");
+      });
+  };
   return (
-    <Layout preview={false}>
+    <Layout preview={false} section={"dobermann"}>
       <Head>
         <title>{`${data.title}`}</title>
       </Head>
@@ -68,7 +68,7 @@ export default function Contacts({ data, preview }) {
                 className="input"
                 type="text"
                 value={name}
-                onChange={e => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
                 required
               />
             </div>
@@ -78,7 +78,7 @@ export default function Contacts({ data, preview }) {
                 className="input"
                 type="email"
                 value={email}
-                onChange={e => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
@@ -88,7 +88,7 @@ export default function Contacts({ data, preview }) {
                 className="input"
                 type="text"
                 value={tel}
-                onChange={e => setTel(e.target.value)}
+                onChange={(e) => setTel(e.target.value)}
               />
             </div>
             <div>
@@ -96,7 +96,7 @@ export default function Contacts({ data, preview }) {
               <textarea
                 className="textarea"
                 value={message}
-                onChange={e => setMessage(e.target.value)}
+                onChange={(e) => setMessage(e.target.value)}
               ></textarea>
             </div>
 
@@ -128,7 +128,7 @@ export default function Contacts({ data, preview }) {
           </div>
           <div className="section__content my-20">
             <div className="section__content__wrapper-line text-center">
-              <Button link="/" type="secondary">
+              <Button link="/cani-dobermann/dobermann" type="secondary">
                 Torna alla home
               </Button>
             </div>
@@ -136,14 +136,14 @@ export default function Contacts({ data, preview }) {
         </div>
       </Container>
     </Layout>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const data = await getContacts(preview)
+  const data = await getContacts(preview);
 
   return {
     props: { data, preview },
     revalidate: 10,
-  }
-}
+  };
+};

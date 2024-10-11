@@ -1,22 +1,19 @@
-import Head from 'next/head'
-import { GetStaticProps } from 'next'
-import Container from '../components/container'
-import Layout from '../components/layout'
-import { getAllevamento } from '../lib/api'
-import Image from 'next/image'
-import ParallaxImage from '../components/parallax-image'
-import ScrollParallaxComponent from '../components/scroll-parallax-component'
-import Button from '../components/button'
-import VirgoletteDestra from '../public/images/virgolette-destra.svg'
-import VirgoletteSinistra from '../public/images/virgolette-sinistra.svg'
-import Slider from '../components/slider'
-import Scrivici from '../components/scrivici'
-import AnimateSection from '../components/animateSection'
-import { Suspense } from 'react'
+import Head from "next/head";
+import { GetStaticProps } from "next";
+import Container from "@/components/container";
+import Layout from "@/components/layout";
+import { getAllevamento } from "@/lib/api";
+import Image from "next/image";
+import ParallaxImage from "@/components/parallax-image";
+import Button from "@/components/button";
+import Slider from "@/components/slider";
+
+import AnimateSection from "@/components/animateSection";
+import { Suspense } from "react";
 
 export default function Allevamento({ data, preview }) {
   return (
-    <Layout preview={false}>
+    <Layout preview={false} section={"pastori"}>
       <Head>
         <title>{`${data.title}`}</title>
       </Head>
@@ -29,13 +26,14 @@ export default function Allevamento({ data, preview }) {
             <span className="font-bold w-full block">DI CASA PUCCI</span>
           </h2>
           <p>
-            I Dobermann del nostro allevamento sono stati selezionati con amore
-            e devozione, sono il frutto della nostra esperienza professionale
+            I Pastori Tedeschi del nostro allevamento sono stati selezionati con
+            amore e devozione, sono il frutto della nostra esperienza
+            professionale
           </p>
         </div>
         <div className="section__content">
           <div className="category-content">
-            {/* Dobermans */}
+            {/* Pastori tedeschi */}
             <AnimateSection>
               <div className="content-image">
                 <Suspense fallback={<div>Loading...</div>}>
@@ -48,42 +46,8 @@ export default function Allevamento({ data, preview }) {
                   />
                 </Suspense>
               </div>
-              <Button link="/dobermann" type="little">
-                DOBERMAN
-              </Button>
-            </AnimateSection>
-            {/* ZTP */}
-            <AnimateSection>
-              <div className="content-image">
-                <Suspense fallback={<div>Loading...</div>}>
-                  <Image
-                    loading="lazy"
-                    src="https://backend.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-29@2x.png"
-                    alt="ZTP"
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </Suspense>
-              </div>
-              <Button link="/ztp" type="little">
-                ZTP
-              </Button>
-            </AnimateSection>
-            {/* KÖRUNG */}
-            <AnimateSection>
-              <div className="content-image">
-                <Suspense fallback={<div>Loading...</div>}>
-                  <Image
-                    loading="lazy"
-                    src="https://backend.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-30@2x.png"
-                    alt="KÖRUNG"
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </Suspense>
-              </div>
-              <Button link="/korung" type="little">
-                KÖRUNG
+              <Button link="/cani-pastori-tedeschi/pastori" type="little">
+                PASTORI TEDESCHI
               </Button>
             </AnimateSection>
           </div>
@@ -120,15 +84,15 @@ export default function Allevamento({ data, preview }) {
             <div className="section__content__wrapper-line bg-black-content">
               <div className="section__content__wrapper-text italic">
                 <p className="font-semibold">
-                  Insieme al centro sportivo{' '}
+                  Insieme al centro sportivo{" "}
                   <span className="font-bold w-100 flex text-center justify-center">
                     ABC100 Working Dog Club
-                  </span>{' '}
+                  </span>{" "}
                   prepariamo i vostri cani alla vittoria.
                 </p>
               </div>
               <div className="section__content__wrapper-cta">
-                <Button link="/cuccioli" type="secondary">
+                <Button link="/cani-pastori-tedeschi/cuccioli" type="secondary">
                   CUCCIOLI
                 </Button>
               </div>
@@ -142,14 +106,14 @@ export default function Allevamento({ data, preview }) {
         </AnimateSection>
       </Container>
     </Layout>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const data = await getAllevamento(preview)
+  const data = await getAllevamento(preview);
 
   return {
     props: { data, preview },
     revalidate: 10,
-  }
-}
+  };
+};

@@ -1,15 +1,23 @@
-import Button from './button'
+import Button from "./button";
 
-const Scrivici = props => {
+const Scrivici = ({ section, text }) => {
   return (
     <div className="section_block__scrivici px-6">
-      <p>{props.text}</p>
+      <p>{text}</p>
 
       <div className="section__content__wrapper-cta">
-        <Button link="/contatti">SCRIVICI</Button>
+        <Button
+          link={`${
+            section === "dobermann"
+              ? "/cani-dobermann"
+              : "/cani-pastori-tedeschi"
+          }/contatti`}
+        >
+          SCRIVICI
+        </Button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Scrivici
+export default Scrivici;

@@ -1,31 +1,31 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import IcoMaschio from '../public/images/ico_maschio.svg'
-import IcoFemmina from '../public/images/ico_femmina.svg'
-import DogThreeParent from './dog-three-parent'
-import { useCallback, useState } from 'react'
-import { motion } from 'framer-motion'
+import Link from "next/link";
+import Image from "next/image";
+import IcoMaschio from "@/public/images/ico_maschio.svg";
+import IcoFemmina from "@/public/images/ico_femmina.svg";
+import DogThreeParent from "./dog-three-parent";
+import { useCallback, useState } from "react";
+import { motion } from "framer-motion";
 
 const DogThreeDetailed = ({ data }) => {
-  const [openPadre, setOpenPadre] = useState(false)
-  const [openMadre, setOpenMadre] = useState(false)
+  const [openPadre, setOpenPadre] = useState(false);
+  const [openMadre, setOpenMadre] = useState(false);
 
   const handleClickPadre = () => {
-    setOpenPadre(!openPadre)
-    openMadre && setOpenMadre(false)
-  }
+    setOpenPadre(!openPadre);
+    openMadre && setOpenMadre(false);
+  };
   const handleClickMadre = () => {
-    setOpenMadre(!openMadre)
-    openPadre && setOpenPadre(false)
-  }
+    setOpenMadre(!openMadre);
+    openPadre && setOpenPadre(false);
+  };
   return (
     <>
       <div className="flex justify-around items-center w-full h-10 my-4 gap-1">
         <div className="icon-plus">
-          <span onClick={handleClickPadre}>{openPadre ? '-' : '+'}</span>
+          <span onClick={handleClickPadre}>{openPadre ? "-" : "+"}</span>
         </div>
         <div className="icon-plus">
-          <span onClick={handleClickMadre}>{openMadre ? '-' : '+'}</span>
+          <span onClick={handleClickMadre}>{openMadre ? "-" : "+"}</span>
         </div>
       </div>
       {openPadre && (
@@ -35,7 +35,7 @@ const DogThreeDetailed = ({ data }) => {
               loading="lazy"
               src={
                 data.dobPadre?.featuredImage?.node?.sourceUrl ||
-                'https://backend.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
+                "https://backend.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png"
               }
               className="primary-dog__image"
               alt={data.dobPadre?.schedaDobermann?.dobNome}
@@ -45,19 +45,19 @@ const DogThreeDetailed = ({ data }) => {
             <p
               className="primary-dog__name"
               dangerouslySetInnerHTML={{
-                __html: data.dobPadre?.schedaDobermann?.dobNome || 'n/a',
+                __html: data.dobPadre?.schedaDobermann?.dobNome || "n/a",
               }}
             />
             <p
               className="primary-dog__allevatore"
               dangerouslySetInnerHTML={{
-                __html: data.dobPadre?.schedaDobermann?.dobAllevatore || 'n/a',
+                __html: data.dobPadre?.schedaDobermann?.dobAllevatore || "n/a",
               }}
             />
             <Image
               loading="lazy"
               src={
-                data.dobPadre?.dobSex?.name === 'Maschio'
+                data.dobPadre?.dobSex?.name === "Maschio"
                   ? IcoMaschio
                   : IcoFemmina
               }
@@ -124,7 +124,7 @@ const DogThreeDetailed = ({ data }) => {
               loading="lazy"
               src={
                 data.dobMadre?.featuredImage?.node?.sourceUrl ||
-                'https://backend.dicasapucci.com/wp-content/uploads/2023/06/woocommerce-placeholder.png'
+                "https://backend.dicasapucci.com/wp-content/uploads/2023/06/woocommerce-placeholder.png"
               }
               className="primary-dog__image"
               alt={data.dobMadre?.schedaDobermann?.dobNome}
@@ -134,19 +134,19 @@ const DogThreeDetailed = ({ data }) => {
             <p
               className="primary-dog__name"
               dangerouslySetInnerHTML={{
-                __html: data.dobMadre?.schedaDobermann?.dobNome || 'n/a',
+                __html: data.dobMadre?.schedaDobermann?.dobNome || "n/a",
               }}
             />
             <p
               className="primary-dog__allevatore"
               dangerouslySetInnerHTML={{
-                __html: data.dobMadre?.schedaDobermann?.dobAllevatore || 'n/a',
+                __html: data.dobMadre?.schedaDobermann?.dobAllevatore || "n/a",
               }}
             />
             <Image
               loading="lazy"
               src={
-                data.dobMadre?.dobSex?.name === 'Maschio'
+                data.dobMadre?.dobSex?.name === "Maschio"
                   ? IcoMaschio
                   : IcoFemmina
               }
@@ -204,7 +204,7 @@ const DogThreeDetailed = ({ data }) => {
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
-export default DogThreeDetailed
+export default DogThreeDetailed;

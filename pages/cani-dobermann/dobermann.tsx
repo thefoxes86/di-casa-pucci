@@ -1,20 +1,20 @@
 import Head from "next/head";
 import { GetStaticProps } from "next";
-import Container from "../../components/container";
-import Layout from "../../components/layout";
-import { getAllDobermann } from "../../lib/api";
-import ParallaxImage from "../../components/parallax-image";
-import ScrollParallaxComponent from "../../components/scroll-parallax-component";
-import Button from "../../components/button";
-import VirgoletteDestra from "../public/images/virgolette-destra.svg";
-import VirgoletteSinistra from "../public/images/virgolette-sinistra.svg";
-import Scrivici from "../../components/scrivici";
-import FilteringList from "../../components/filtering-list";
-import AnimateSection from "../../components/animateSection";
+import Container from "@/components/container";
+import Layout from "@/components/layout";
+import { getAllDobermann } from "@/lib/api";
+import ParallaxImage from "@/components/parallax-image";
+import ScrollParallaxComponent from "@/components/scroll-parallax-component";
+import Button from "@/components/button";
+import VirgoletteDestra from "@/public/images/virgolette-destra.svg";
+import VirgoletteSinistra from "@/public/images/virgolette-sinistra.svg";
+import Scrivici from "@/components/scrivici";
+import FilteringList from "@/components/filtering-list";
+import AnimateSection from "@/components/animateSection";
 
 export default function Allevamento({ data, preview }) {
   return (
-    <Layout preview={false}>
+    <Layout preview={false} section={"dobermann"}>
       <Head>
         <title>{`DOBERMANN`}</title>
       </Head>
@@ -69,7 +69,7 @@ export default function Allevamento({ data, preview }) {
         <AnimateSection className="section__content">
           <div className="section__content__wrapper-line bg-black-content">
             <div className="section__content__wrapper-cta">
-              <Button link="/allevamento" type="secondary">
+              <Button link="/cani-dobermann/allevamento" type="secondary">
                 TORNA ALL'ALLEVAMENTO
               </Button>
             </div>

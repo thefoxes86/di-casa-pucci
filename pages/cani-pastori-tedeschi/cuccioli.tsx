@@ -1,35 +1,32 @@
-import Head from 'next/head'
-import { GetStaticProps } from 'next'
-import Container from '../components/container'
-import Layout from '../components/layout'
-import { getAllCuccioli } from '../lib/api'
-import ParallaxImage from '../components/parallax-image'
-import ScrollParallaxComponent from '../components/scroll-parallax-component'
-import Button from '../components/button'
-import VirgoletteDestra from '../public/images/virgolette-destra.svg'
-import VirgoletteSinistra from '../public/images/virgolette-sinistra.svg'
-import Scrivici from '../components/scrivici'
-import FilteringList from '../components/filtering-list'
-import AnimateSection from '../components/animateSection'
+import Head from "next/head";
+import { GetStaticProps } from "next";
+import Container from "@/components/container";
+import Layout from "@/components/layout";
+import { getAllCuccioli } from "@/lib/api";
+import ParallaxImage from "@/components/parallax-image";
+import Button from "@/components/button";
+
+import FilteringList from "@/components/filtering-list";
+import AnimateSection from "@/components/animateSection";
 export default function Cuccioli({ data, preview }) {
   return (
-    <Layout preview={false}>
+    <Layout preview={false} section="pastori">
       <Head>
         <title>{`CUCCIOLI`}</title>
       </Head>
 
       <Container>
         <div className="px-6">
-          <h1 dangerouslySetInnerHTML={{ __html: 'CUCCIOLI' }}></h1>
+          <h1 dangerouslySetInnerHTML={{ __html: "CUCCIOLI" }}></h1>
           <h2>
-            {' '}
+            {" "}
             LA FORZA E IL BENESSERE
             <span className="block w-100">
               SONO <span className="font-bold"> DI CASA PUCCI</span>
             </span>
           </h2>
           <p className="italic">
-            Fin dalla nascita selezioniamo i Dobermann migliori secondo
+            Fin dalla nascita selezioniamo i Pastori tedeschi migliori secondo
             Benessere, Forza e Bellezza.
           </p>
         </div>
@@ -46,11 +43,12 @@ export default function Cuccioli({ data, preview }) {
             <div className="section__content__wrapper-line bg-black-content">
               <div className="section__content__wrapper-text italic">
                 <p>
-                  Il Dobermann è la massima espressione dell’eleganza, della
-                  fierezza e della equilibrio. Sempre pronto, disponibile,
-                  gioioso e tenero. Sempre sicuro di sé, esuberante e pieno di
-                  energia. Sempre sincero, coccolone e amico. Un vero compagno
-                  di vita.
+                  Il Pastore Tedesco è la perfetta incarnazione di forza,
+                  intelligenza e lealtà. Sempre vigile, affidabile e protettivo,
+                  ma anche affettuoso e giocoso. Pieno di coraggio e dedizione,
+                  un compagno instancabile e premuroso. Sempre al tuo fianco, un
+                  amico sincero e fedele, pronto a condividere ogni momento
+                  della tua vita.
                 </p>
               </div>
             </div>
@@ -88,12 +86,15 @@ export default function Cuccioli({ data, preview }) {
           <div className="section__content__wrapper-line">
             <div className="section__content__wrapper-text italic">
               <p>
-                <span className="font-bold"> Inseguiamo la perfezione</span>{' '}
+                <span className="font-bold"> Inseguiamo la perfezione</span>{" "}
                 studiando attentamente ogni accoppiamento.
               </p>
             </div>
             <div className="section__content__wrapper-cta">
-              <Button link="/accoppiamento" type="secondary">
+              <Button
+                link="/cani-pastori-tedeschi/accoppiamento"
+                type="secondary"
+              >
                 L'ACCOPPIAMENTO
               </Button>
             </div>
@@ -101,14 +102,14 @@ export default function Cuccioli({ data, preview }) {
         </AnimateSection>
       </Container>
     </Layout>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const data = await getAllCuccioli(preview)
+  const data = await getAllCuccioli(preview);
 
   return {
     props: { data, preview },
     revalidate: 10,
-  }
-}
+  };
+};

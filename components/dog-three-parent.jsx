@@ -1,10 +1,10 @@
-import Image from 'next/image'
-import IcoMaschio from '../public/images/ico_maschio.svg'
-import IcoFemmina from '../public/images/ico_femmina.svg'
-import Link from 'next/link'
+import Image from "next/image";
+import IcoMaschio from "@/public/images/ico_maschio.svg";
+import IcoFemmina from "@/public/images/ico_femmina.svg";
+import Link from "next/link";
 
 const DogThreeParent = ({ data }) => {
-  const link = data?.slug.length > 0 ? `/dobermann/${data?.slug}` : '#'
+  const link = data?.slug.length > 0 ? `/dobermann/${data?.slug}` : "#";
   return (
     <div className="parents-dog__item">
       <Link href={link}>
@@ -12,7 +12,7 @@ const DogThreeParent = ({ data }) => {
           loading="lazy"
           src={
             data?.featuredImage?.node.sourceUrl ||
-            'https://backend.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
+            "https://backend.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png"
           }
           className="parents-dog__image"
           alt={data?.title}
@@ -22,20 +22,20 @@ const DogThreeParent = ({ data }) => {
         <p
           className="parents-dog__name"
           dangerouslySetInnerHTML={{
-            __html: data?.schedaDobermann?.dobNome || 'n/a',
+            __html: data?.schedaDobermann?.dobNome || "n/a",
           }}
         />
         <p
           className="parents-dog__allevatore"
           dangerouslySetInnerHTML={{
-            __html: data?.schedaDobermann?.dobAllevatore || 'n/a',
+            __html: data?.schedaDobermann?.dobAllevatore || "n/a",
           }}
         />
 
         <Image
           loading="lazy"
           src={
-            data?.schedaDobermann?.dobSex?.name === 'Maschio'
+            data?.schedaDobermann?.dobSex?.name === "Maschio"
               ? IcoMaschio
               : IcoFemmina
           }
@@ -46,7 +46,7 @@ const DogThreeParent = ({ data }) => {
         />
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default DogThreeParent
+export default DogThreeParent;

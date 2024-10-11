@@ -1,19 +1,22 @@
-import Container from './container'
-import { EXAMPLE_PATH } from '../lib/constants'
-import Image from 'next/image'
-import Link from 'next/link'
-import AnimateSection from './animateSection'
-import Scrivici from './scrivici'
-import { usePathname } from 'next/navigation'
+import Container from "./container";
+import { EXAMPLE_PATH } from "@/lib/constants";
+import Image from "next/image";
+import Link from "next/link";
+import AnimateSection from "./animateSection";
+import Scrivici from "./scrivici";
+import { usePathname } from "next/navigation";
 
-export default function Footer() {
-  const pathname = usePathname()
-  console.log(pathname)
+export default function Footer({ section }) {
+  const pathname = usePathname();
+
   return (
     <>
       <AnimateSection className="section__content bg-black mt-6">
         <div className="section__content__wrapper-line-full py-6 bg-black-content-content">
-          <Scrivici text="Siamo pronti a rispondere alle vostre domande e sempre disponibili a un incontro conoscitivo." />
+          <Scrivici
+            section={section}
+            text="Siamo pronti a rispondere alle vostre domande e sempre disponibili a un incontro conoscitivo."
+          />
         </div>
       </AnimateSection>
       <footer className=" bg-black footer">
@@ -23,7 +26,7 @@ export default function Footer() {
           </h3>
 
           <div className="flex flex-wrap content__certificazioni p-4">
-            {pathname?.includes('pastori') || pathname?.includes('pastore') ? (
+            {pathname?.includes("pastori") || pathname?.includes("pastore") ? (
               <AnimateSection
                 delay={0.4}
                 className="w-1/4 flex flex-col items-center justify-center px-4"
@@ -91,7 +94,7 @@ export default function Footer() {
               <p className="pr-2 text-right">
                 <Link href="https://www.facebook.com/dicasapucci/">
                   <Image
-                    src={'/images/icon-facebook.svg'}
+                    src={"/images/icon-facebook.svg"}
                     alt="Facebook Link"
                     width={32}
                     height={32}
@@ -101,7 +104,7 @@ export default function Footer() {
               <p className="pl-2 text-left">
                 <Link href="https://www.instagram.com/dicasapucci/">
                   <Image
-                    src={'/images/icon-instagram.svg'}
+                    src={"/images/icon-instagram.svg"}
                     alt="Facebook Link"
                     width={32}
                     height={32}
@@ -136,5 +139,5 @@ export default function Footer() {
         </div>
       </footer>
     </>
-  )
+  );
 }

@@ -1,21 +1,21 @@
-import Head from 'next/head'
-import { GetStaticProps } from 'next'
-import Container from '../components/container'
-import Gallery from '../components/gallery'
-import Layout from '../components/layout'
-import { getAddestramento } from '../lib/api'
-import { motion } from 'framer-motion'
-import ParallaxImage from '../components/parallax-image'
-import ScrollParallaxComponent from '../components/scroll-parallax-component'
-import VirgoletteDestra from '../public/images/virgolette-destra.svg'
-import VirgoletteSinistra from '../public/images/virgolette-sinistra.svg'
-import Button from '../components/button'
-import Scrivici from '../components/scrivici'
-import AnimateSection from '../components/animateSection'
+import Head from "next/head";
+import { GetStaticProps } from "next";
+import Container from "@/components/container";
+import Gallery from "@/components/gallery";
+import Layout from "@/components/layout";
+import { getAddestramento } from "@/lib/api";
+import { motion } from "framer-motion";
+import ParallaxImage from "@/components/parallax-image";
+import ScrollParallaxComponent from "@/components/scroll-parallax-component";
+import VirgoletteDestra from "@/public/images/virgolette-destra.svg";
+import VirgoletteSinistra from "@/public/images/virgolette-sinistra.svg";
+import Button from "@/components/button";
+import Scrivici from "@/components/scrivici";
+import AnimateSection from "@/components/animateSection";
 
 export default function Addestramento({ data, preview }) {
   return (
-    <Layout preview={false}>
+    <Layout preview={false} section={"pastori"}>
       <Head>
         <title>{`${data.title}`}</title>
       </Head>
@@ -30,7 +30,7 @@ export default function Addestramento({ data, preview }) {
           <p dangerouslySetInnerHTML={{ __html: data.content }}></p>
         </div>
         <div className="text-center">
-          <Button link="/contatti" type="secondary">
+          <Button link="/cani-pastori-tedeschi/contatti" type="secondary">
             SCRIVICI
           </Button>
         </div>
@@ -69,12 +69,12 @@ export default function Addestramento({ data, preview }) {
               <div className="section__content__wrapper-text italic">
                 <p>
                   Ricerchiamo la massima espressione dell’eleganza, della
-                  fierezza e della bellezza,{' '}
+                  fierezza e della bellezza,{" "}
                   <span className="font-bold"> fin dalla nascita</span>.
                 </p>
               </div>
               <div className="section__content__wrapper-cta">
-                <Button link="/cuccioli" type="secondary">
+                <Button link="/cani-pastori-tedeschi/cuccioli" type="secondary">
                   I NOSTRI CUCCIOLI
                 </Button>
               </div>
@@ -83,14 +83,14 @@ export default function Addestramento({ data, preview }) {
         </div>
       </Container>
     </Layout>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const data = await getAddestramento(preview)
+  const data = await getAddestramento(preview);
 
   return {
     props: { data, preview },
     revalidate: 10,
-  }
-}
+  };
+};

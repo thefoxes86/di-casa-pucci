@@ -1,28 +1,28 @@
-import { useRouter } from 'next/router'
-import ErrorPage from 'next/error'
-import Head from 'next/head'
-import Container from '../../components/container'
-import PostBody from '../../components/post-body'
-import PostHeader from '../../components/post-header'
-import Layout from '../../components/layout'
-import PostTitle from '../../components/post-title'
-import { getAllDobermansWithSlug, getDobermanAndMorePosts } from '../../lib/api'
-import { CMS_NAME } from '../../lib/constants'
-import DogThree from '../../components/dog-three'
-import DogDetails from '../../components/dog-details'
-import ParallaxImage from '../../components/parallax-image'
-import Button from '../../components/button'
-import AnimateSection from '../../components/animateSection'
+import { useRouter } from "next/router";
+import ErrorPage from "next/error";
+import Head from "next/head";
+import Container from "@/components/container";
+import PostBody from "@/components/post-body";
+import PostHeader from "@/components/post-header";
+import Layout from "@/components/layout";
+import PostTitle from "@/components/post-title";
+import { getAllDobermansWithSlug, getDobermanAndMorePosts } from "@/lib/api";
+import { CMS_NAME } from "@/lib/constants";
+import DogThree from "@/components/dog-three";
+import DogDetails from "@/components/dog-details";
+import ParallaxImage from "@/components/parallax-image";
+import Button from "@/components/button";
+import AnimateSection from "@/components/animateSection";
 
 export default function Dobermann({ post, preview }) {
-  const router = useRouter()
+  const router = useRouter();
 
   if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />
+    return <ErrorPage statusCode={404} />;
   }
 
   return (
-    <Layout preview={preview}>
+    <Layout preview={preview} section={"dobermann"}>
       <Container>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
@@ -54,7 +54,7 @@ export default function Dobermann({ post, preview }) {
               />
 
               <AnimateSection className="section__content__wrapper-cta bg-black-content !py-20 !mt-16">
-                <Button link="/allevamento" type="secondary">
+                <Button link="/cani-dobermann/allevamento" type="secondary">
                   TORNA ALL'ALLEVAMENTO
                 </Button>
               </AnimateSection>
@@ -92,7 +92,10 @@ export default function Dobermann({ post, preview }) {
                     studiando attentamente ogni accoppiamento
                   </p>
                   <div className="section__content__wrapper-cta">
-                    <Button link="/accoppiamento" type="secondary">
+                    <Button
+                      link="/cani-dobermann/accoppiamento"
+                      type="secondary"
+                    >
                       L'ACCOPPIAMENGTO
                     </Button>
                   </div>
@@ -105,7 +108,7 @@ export default function Dobermann({ post, preview }) {
         )}
       </Container>
     </Layout>
-  )
+  );
 }
 
 export const getStaticProps = async ({
@@ -113,22 +116,29 @@ export const getStaticProps = async ({
   preview = false,
   previewData,
 }) => {
-  const data = await getDobermanAndMorePosts(params?.slug, preview, previewData)
-  console.log('SERIALIZAING', data)
+  const data = await getDobermanAndMorePosts(
+    params?.slug,
+    preview,
+    previewData
+  );
+  console.log("SERIALIZAING", data);
   return {
     props: {
       preview,
       post: data?.ctpDobermann,
     },
     revalidate: 10,
-  }
-}
+  };
+};
 
 export const getStaticPaths = async () => {
-  const allPosts = await getAllDobermansWithSlug()
+  const allPosts = await getAllDobermansWithSlug();
 
   return {
-    paths: allPosts.edges.map(({ node }) => `/dobermann/${node?.slug}`) || [],
+    paths:
+      allPosts.edges.map(
+        ({ node }) => `/cani-dobermann/dobermann/${node?.slug}`
+      ) || [],
     fallback: true,
-  }
-}
+  };
+};

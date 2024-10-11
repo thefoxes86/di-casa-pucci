@@ -1,6 +1,6 @@
 import { SplitText } from "@cyriacbr/react-split-text";
 import { AnimatePresence, motion } from "framer-motion";
-import ArrowDown from "../public/images/arrow-down.svg";
+import ArrowDown from "@/public/images/arrow-down.svg";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -73,6 +73,49 @@ export default function Intro() {
             </motion.div>
           </motion.div>
         </motion.section>
+        <motion.div className="flex flex-col items-center justify-center absolute bottom-0 h-12 w-screen">
+          <div className="flex justify-center items-center">
+            <motion.p
+              className="pr-2 text-right !mb-0"
+              initial={{ y: 50 }}
+              animate={{ y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 50,
+                duration: 2.5,
+              }}
+            >
+              <Link href="https://www.facebook.com/dicasapucci/">
+                <Image
+                  src={"/images/icon-facebook.svg"}
+                  alt="Facebook Link"
+                  width={32}
+                  height={32}
+                />
+              </Link>
+            </motion.p>
+            <motion.p
+              className="pl-2 text-left !mb-0"
+              initial={{ y: 50 }}
+              animate={{ y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 50,
+                duration: 3,
+              }}
+            >
+              <Link href="https://www.instagram.com/dicasapucci/">
+                <Image
+                  src={"/images/icon-instagram.svg"}
+                  alt="Facebook Link"
+                  width={32}
+                  height={32}
+                  loading="lazy"
+                />
+              </Link>
+            </motion.p>
+          </div>
+        </motion.div>
       </AnimatePresence>
     </section>
   );

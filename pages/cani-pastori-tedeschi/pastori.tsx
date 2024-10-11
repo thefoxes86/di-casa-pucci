@@ -1,19 +1,16 @@
 import Head from "next/head";
 import { GetStaticProps } from "next";
-import Container from "../../components/container";
-import Layout from "../../components/layout";
-import { getAllDobermann, getAllPastori } from "../../lib/api";
-import ParallaxImage from "../../components/parallax-image";
-import ScrollParallaxComponent from "../../components/scroll-parallax-component";
-import Button from "../../components/button";
-import VirgoletteDestra from "../public/images/virgolette-destra.svg";
-import VirgoletteSinistra from "../public/images/virgolette-sinistra.svg";
-import Scrivici from "../../components/scrivici";
-import FilteringListPastori from "../../components/filtering-list-pastori";
-import AnimateSection from "../../components/animateSection";
+import Container from "@/components/container";
+import Layout from "@/components/layout";
+import { getAllDobermann, getAllPastori } from "@/lib/api";
+import ParallaxImage from "@/components/parallax-image";
+
+import FilteringListPastori from "@/components/filtering-list-pastori";
+import AnimateSection from "@/components/animateSection";
+import Button from "@/components/button";
 export default function Ztp({ data, preview }) {
   return (
-    <Layout preview={false}>
+    <Layout preview={false} section={"pastori"}>
       <Head>
         <title>{`ZTP`}</title>
       </Head>
@@ -87,6 +84,15 @@ export default function Ztp({ data, preview }) {
             <div className="section__content__wrapper-cta"></div>
           </AnimateSection>
         </div>
+        <AnimateSection className="section__content">
+          <div className="section__content__wrapper-line bg-black-content">
+            <div className="section__content__wrapper-cta">
+              <Button link="allevamento" type="secondary">
+                TORNA ALL'ALLEVAMENTO
+              </Button>
+            </div>
+          </div>
+        </AnimateSection>
       </Container>
     </Layout>
   );

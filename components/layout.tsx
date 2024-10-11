@@ -3,8 +3,15 @@ import Meta from "./meta";
 import { motion } from "framer-motion";
 import Menu from "./menu";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
+import { FC } from "react";
 
-export default function Layout({ preview, children }) {
+interface LayoutProps {
+  preview?: boolean;
+  children: any;
+  section: "pastori" | "dobermann";
+}
+
+const Layout: FC<LayoutProps> = ({ preview, children, section }) => {
   return (
     <>
       <Meta />
@@ -17,11 +24,13 @@ export default function Layout({ preview, children }) {
         avatar="/images/dario.png"
       />
       <div className="min-h-screen">
-        <Menu />
+        <Menu section={section} />
 
         <main>{children}</main>
       </div>
-      <Footer />
+      <Footer section={section} />
     </>
   );
-}
+};
+
+export default Layout;
