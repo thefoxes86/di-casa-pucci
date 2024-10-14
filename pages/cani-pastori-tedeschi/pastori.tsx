@@ -2,7 +2,7 @@ import Head from "next/head";
 import { GetStaticProps } from "next";
 import Container from "@/components/container";
 import Layout from "@/components/layout";
-import { getAllDobermann, getAllPastori } from "@/lib/api";
+import { getAllPastori } from "@/lib/api";
 import ParallaxImage from "@/components/parallax-image";
 
 import FilteringListPastori from "@/components/filtering-list-pastori";

@@ -66,7 +66,7 @@ export default function Ztp({ data, preview }) {
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const dataFetch = await getAllDobermann(preview);
 
-  const data = dataFetch?.edges?.filter(
+  const data = dataFetch?.ctpDobermanns?.edges?.filter(
     (item) =>
       item?.node?.schedaDobermann?.dobRiconoscimenti?.[0] === "ztp" ||
       item?.node?.schedaDobermann?.dobRiconoscimenti?.[1] === "ztp"

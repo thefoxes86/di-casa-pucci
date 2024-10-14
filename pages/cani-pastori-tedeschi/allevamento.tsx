@@ -99,11 +99,6 @@ export default function Allevamento({ data, preview }) {
             </div>
           </AnimateSection>
         </div>
-        <AnimateSection className="section__content">
-          <div className="section__content__wrapper-line-full py-6 ">
-            <Slider data={data} />
-          </div>
-        </AnimateSection>
       </Container>
     </Layout>
   );
