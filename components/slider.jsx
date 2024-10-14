@@ -1,20 +1,21 @@
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react'
-import Link from 'next/link'
-import { Navigation } from 'swiper'
-import moment from 'moment'
+import { Swiper, SwiperSlide } from "swiper/react";
+import Link from "next/link";
+import { Navigation } from "swiper";
+import moment from "moment";
 
 // Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/navigation'
-import Button from './button'
+import "swiper/css";
+import "swiper/css/navigation";
+import Button from "./button";
 
 const Slider = ({ data }) => {
+  console.info("DATA POSTS", data);
   return (
     <>
       <Swiper
         slidesPerView={1.5}
-        initialSlide={1}
+        initialSlide={0}
         spaceBetween={10}
         centeredSlides={true}
         className="mySwiper"
@@ -40,15 +41,15 @@ const Slider = ({ data }) => {
             <SwiperSlide>
               <div className="container_swiper_item">
                 <img
-                  src={item.node?.featuredImage?.node?.sourceUrl || ''}
+                  src={item.node?.featuredImage?.node?.sourceUrl || ""}
                   alt="hero"
                 />
-                <span>{moment(item.node?.date).format('D-M-Y')}</span>
+                <span>{moment(item.node?.date).format("D-M-Y")}</span>
                 <h3>{item.node?.title}</h3>
 
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: item.node?.excerpt.substring(0, 100) + ' ...',
+                    __html: item.node?.excerpt?.substring(0, 100) + " ...",
                   }}
                 ></p>
               </div>
@@ -66,7 +67,7 @@ const Slider = ({ data }) => {
         </div>
       ) : null}
     </>
-  )
-}
+  );
+};
 
-export default Slider
+export default Slider;

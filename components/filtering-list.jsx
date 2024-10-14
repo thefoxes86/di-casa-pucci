@@ -43,7 +43,6 @@ const FilteringList = ({ data, type, category = "dobermann" }) => {
       <div className="filtering__list">
         {displayData?.map((item, i) => (
           <>
-            {console.log(item.node.schedaDobermann)}
             {item.node.schedaDobermann.dobVisibile ? (
               <motion.div
                 className="filtering__list__item"

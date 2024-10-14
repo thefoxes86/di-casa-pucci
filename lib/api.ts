@@ -1,35 +1,42 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client'
-import { ctpDobermannFieldsFragment, dobParentsFieldsFragment, schedaDobermanFieldsFragment, ctpPastoreFieldsFragment, pasParentsFieldsFragment, schedaPastoreFieldsFragment} from './fragments'
-const API_URL = process.env.WORDPRESS_API_URL
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import {
+  ctpDobermannFieldsFragment,
+  dobParentsFieldsFragment,
+  schedaDobermanFieldsFragment,
+  ctpPastoreFieldsFragment,
+  pasParentsFieldsFragment,
+  schedaPastoreFieldsFragment,
+} from "./fragments";
+const API_URL = process.env.WORDPRESS_API_URL;
 
-async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
-  const headers = { 'Content-Type': 'application/json' }
+async function fetchAPI(query = "", { variables }: Record<string, any> = {}) {
+  const headers = { "Content-Type": "application/json" };
 
   if (process.env.WORDPRESS_AUTH_REFRESH_TOKEN) {
     headers[
-      'Authorization'
-    ] = `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`
+      "Authorization"
+    ] = `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`;
   }
 
   // WPGraphQL Plugin must be enabled
   const res = await fetch(API_URL, {
     headers,
-    method: 'POST',
+    method: "POST",
     body: JSON.stringify({
       query,
       variables,
     }),
-  })
+  });
 
-  const json = await res.json()
+  const json = await res.json();
   if (json.errors) {
-    console.error(json.errors)
-    throw new Error('Failed to fetch API')
+    console.error(json.errors);
+    throw new Error("Failed to fetch API");
   }
-  return json.data
+  return json.data;
 }
 
-export async function getPreviewPost(id, idType = 'DATABASE_ID') {
+export async function getPreviewPost(id, idType = "DATABASE_ID") {
   const data = await fetchAPI(
     `
     query PreviewPost($id: ID!, $idType: PostIdType!) {
@@ -42,8 +49,8 @@ export async function getPreviewPost(id, idType = 'DATABASE_ID') {
     {
       variables: { id, idType },
     }
-  )
-  return data.post
+  );
+  return data.post;
 }
 
 export async function getContacts(preview) {
@@ -55,8 +62,8 @@ export async function getContacts(preview) {
       slug
     }
   }
-  `)
-  return data?.page
+  `);
+  return data?.page;
 }
 
 export async function getAbout(preview) {
@@ -68,8 +75,8 @@ export async function getAbout(preview) {
       slug
     }
   }
-  `)
-  return data?.page
+  `);
+  return data?.page;
 }
 
 export async function getAllevamento(preview) {
@@ -81,8 +88,8 @@ export async function getAllevamento(preview) {
       slug
     }
   }
-  `)
-  return data?.page
+  `);
+  return data?.page;
 }
 
 export async function getAddestramento(preview) {
@@ -94,8 +101,8 @@ export async function getAddestramento(preview) {
       slug
     }
   }
-  `)
-  return data?.page
+  `);
+  return data?.page;
 }
 
 export async function getAccoppiamento(preview) {
@@ -107,10 +114,9 @@ export async function getAccoppiamento(preview) {
       slug
     }
   }
-  `)
-  return data?.page
+  `);
+  return data?.page;
 }
-
 
 export async function getAllPostsWithSlug() {
   const data = await fetchAPI(`
@@ -123,8 +129,8 @@ export async function getAllPostsWithSlug() {
         }
       }
     }
-  `)
-  return data?.posts
+  `);
+  return data?.posts;
 }
 
 export async function getAllDobermansWithSlug() {
@@ -138,8 +144,8 @@ export async function getAllDobermansWithSlug() {
         }
       }
     }
-  `)
-  return data?.ctpDobermanns
+  `);
+  return data?.ctpDobermanns;
 }
 
 export async function getAllPastoresWithSlug() {
@@ -153,8 +159,8 @@ export async function getAllPastoresWithSlug() {
         }
       }
     }
-  `)
-  return data?.ctpPastores
+  `);
+  return data?.ctpPastores;
 }
 
 export async function getAllCuccioliWithSlug() {
@@ -168,8 +174,8 @@ export async function getAllCuccioliWithSlug() {
         }
       }
     }
-  `)
-  return data?.cptCucciolis
+  `);
+  return data?.cptCucciolis;
 }
 
 export async function getAllPosts(preview) {
@@ -209,9 +215,9 @@ export async function getAllPosts(preview) {
         preview,
       },
     }
-  )
+  );
 
-  return data?.posts
+  return data?.posts;
 }
 
 export async function getAllDobermann(preview) {
@@ -243,6 +249,21 @@ export async function getAllDobermann(preview) {
           }
         }
       }
+      posts(first: 10) {
+        edges {
+          node {
+            content
+            title
+            featuredImage {
+              node {
+                sourceUrl(size: MEDIUM)
+              }
+            }
+            date
+            excerpt
+          }
+        }
+      }
     }
   `,
     {
@@ -251,9 +272,9 @@ export async function getAllDobermann(preview) {
         preview,
       },
     }
-  )
+  );
 
-  return data?.ctpDobermanns
+  return data;
 }
 
 export async function getAllPastori(preview) {
@@ -285,6 +306,21 @@ export async function getAllPastori(preview) {
           }
         }
       }
+      posts(first: 10) {
+        edges {
+          node {
+            content
+            title
+            featuredImage {
+              node {
+                sourceUrl(size: MEDIUM)
+              }
+            }
+            date
+            excerpt
+          }
+        }
+      }
     }
   `,
     {
@@ -293,11 +329,10 @@ export async function getAllPastori(preview) {
         preview,
       },
     }
-  )
+  );
 
-  return data?.ctpPastores
+  return data;
 }
-
 
 export async function getAllCuccioli(preview) {
   const data = await fetchAPI(
@@ -336,21 +371,20 @@ export async function getAllCuccioli(preview) {
         preview,
       },
     }
-  )
+  );
 
-  return data?.cptCucciolis
+  return data?.cptCucciolis;
 }
 
-
 export async function getPostAndMorePosts(slug, preview, previewData) {
-  const postPreview = preview && previewData?.post
+  const postPreview = preview && previewData?.post;
   // The slug may be the id of an unpublished post
-  const isId = Number.isInteger(Number(slug))
+  const isId = Number.isInteger(Number(slug));
   const isSamePost = isId
     ? Number(slug) === postPreview.id
-    : slug === postPreview.slug
-  const isDraft = isSamePost && postPreview?.status === 'draft'
-  
+    : slug === postPreview.slug;
+  const isDraft = isSamePost && postPreview?.status === "draft";
+
   const data = await fetchAPI(
     ` 
     query PostBySlug($id: ID!, $idType: PostIdType!) {
@@ -371,27 +405,26 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
     {
       variables: {
         id: isDraft ? postPreview.id : slug,
-        idType: isDraft ? 'DATABASE_ID' : 'SLUG',
+        idType: isDraft ? "DATABASE_ID" : "SLUG",
       },
     }
-  )
+  );
 
   // Draft posts may not have an slug
-  if (isDraft) data.post.slug = postPreview.id
+  if (isDraft) data.post.slug = postPreview.id;
   // Apply a revision (changes in a published post)
-  return data
+  return data;
 }
 
-
 export async function getDobermanAndMorePosts(slug, preview, previewData) {
-  const postPreview = preview && previewData?.ctpDobermann
+  const postPreview = preview && previewData?.ctpDobermann;
   // The slug may be the id of an unpublished post
-  const isId = Number.isInteger(Number(slug))
+  const isId = Number.isInteger(Number(slug));
   const isSamePost = isId
     ? Number(slug) === postPreview.id
-    : slug === postPreview.slug
-  const isDraft = isSamePost && postPreview?.status === 'draft'
-  const isRevision = isSamePost && postPreview?.status === 'publish'
+    : slug === postPreview.slug;
+  const isDraft = isSamePost && postPreview?.status === "draft";
+  const isRevision = isSamePost && postPreview?.status === "publish";
   const data = await fetchAPI(
     `
     ${ctpDobermannFieldsFragment}
@@ -409,32 +442,32 @@ export async function getDobermanAndMorePosts(slug, preview, previewData) {
     {
       variables: {
         id: isDraft ? postPreview.id : slug,
-        idType: isDraft ? 'DATABASE_ID' : 'SLUG',
+        idType: isDraft ? "DATABASE_ID" : "SLUG",
       },
     }
-  )
+  );
 
   // Draft posts may not have an slug
-  if (isDraft) data.ctpDobermann.slug = postPreview.id
+  if (isDraft) data.ctpDobermann.slug = postPreview.id;
   // Apply a revision (changes in a published post)
   if (isRevision && data.ctpDobermann.revisions) {
-    const revision = data.ctpDobermann.revisions.edges[0]?.node
+    const revision = data.ctpDobermann.revisions.edges[0]?.node;
 
-    if (revision) Object.assign(data.ctpDobermann, revision)
-    delete data.ctpDobermann.revisions
+    if (revision) Object.assign(data.ctpDobermann, revision);
+    delete data.ctpDobermann.revisions;
   }
-  return data
+  return data;
 }
 
 export async function getPastoreAndMorePosts(slug, preview, previewData) {
-  const postPreview = preview && previewData?.ctpPastore
+  const postPreview = preview && previewData?.ctpPastore;
   // The slug may be the id of an unpublished post
-  const isId = Number.isInteger(Number(slug))
+  const isId = Number.isInteger(Number(slug));
   const isSamePost = isId
     ? Number(slug) === postPreview.id
-    : slug === postPreview.slug
-  const isDraft = isSamePost && postPreview?.status === 'draft'
-  const isRevision = isSamePost && postPreview?.status === 'publish'
+    : slug === postPreview.slug;
+  const isDraft = isSamePost && postPreview?.status === "draft";
+  const isRevision = isSamePost && postPreview?.status === "publish";
   const data = await fetchAPI(
     `
     ${ctpPastoreFieldsFragment}
@@ -451,32 +484,32 @@ export async function getPastoreAndMorePosts(slug, preview, previewData) {
     {
       variables: {
         id: isDraft ? postPreview.id : slug,
-        idType: isDraft ? 'DATABASE_ID' : 'SLUG',
+        idType: isDraft ? "DATABASE_ID" : "SLUG",
       },
     }
-  )
+  );
 
   // Draft posts may not have an slug
-  if (isDraft) data.ctpPastore.slug = postPreview.id
+  if (isDraft) data.ctpPastore.slug = postPreview.id;
   // Apply a revision (changes in a published post)
   if (isRevision && data.ctpPastore.revisions) {
-    const revision = data.ctpPastore.revisions.edges[0]?.node
+    const revision = data.ctpPastore.revisions.edges[0]?.node;
 
-    if (revision) Object.assign(data.ctpPastore, revision)
-    delete data.ctpPastore.revisions
+    if (revision) Object.assign(data.ctpPastore, revision);
+    delete data.ctpPastore.revisions;
   }
-  return data
+  return data;
 }
 
 export async function getCuccioliAndMorePosts(slug, preview, previewData) {
-  const postPreview = preview && previewData?.cptCuccioli
+  const postPreview = preview && previewData?.cptCuccioli;
   // The slug may be the id of an unpublished post
-  const isId = Number.isInteger(Number(slug))
+  const isId = Number.isInteger(Number(slug));
   const isSamePost = isId
     ? Number(slug) === postPreview.id
-    : slug === postPreview.slug
-  const isDraft = isSamePost && postPreview?.status === 'draft'
-  const isRevision = isSamePost && postPreview?.status === 'publish'
+    : slug === postPreview.slug;
+  const isDraft = isSamePost && postPreview?.status === "draft";
+  const isRevision = isSamePost && postPreview?.status === "publish";
   const data = await fetchAPI(
     `
     
@@ -522,23 +555,22 @@ export async function getCuccioliAndMorePosts(slug, preview, previewData) {
     {
       variables: {
         id: isDraft ? postPreview.id : slug,
-        idType: isDraft ? 'DATABASE_ID' : 'SLUG',
+        idType: isDraft ? "DATABASE_ID" : "SLUG",
       },
     }
-  )
+  );
 
   // Draft posts may not have an slug
-  if (isDraft) data.ctpDobermann.slug = postPreview.id
+  if (isDraft) data.ctpDobermann.slug = postPreview.id;
   // Apply a revision (changes in a published post)
   if (isRevision && data.ctpDobermann.revisions) {
-    const revision = data.ctpDobermann.revisions.edges[0]?.node
+    const revision = data.ctpDobermann.revisions.edges[0]?.node;
 
-    if (revision) Object.assign(data.ctpDobermann, revision)
-    delete data.ctpDobermann.revisions
+    if (revision) Object.assign(data.ctpDobermann, revision);
+    delete data.ctpDobermann.revisions;
   }
-  return data
+  return data;
 }
-
 
 export async function getAllDobermansForHome(preview) {
   const data = await fetchAPI(
@@ -581,14 +613,14 @@ export async function getAllDobermansForHome(preview) {
         preview,
       },
     }
-  )
+  );
 
-  return data
+  return data;
 }
 
-export async function sendMail(subject, body, mutationId = 'contact') {
-  const fromAddress = 'noreply@yourwebsite.com';
-  const toAddress = 'nicola.volpi86@gmail.com';
+export async function sendMail(subject, body, mutationId = "contact") {
+  const fromAddress = "noreply@yourwebsite.com";
+  const toAddress = "nicola.volpi86@gmail.com";
   const data = await fetchAPI(
     `
 		mutation SendEmail($input: SendEmailInput!) {
@@ -618,4 +650,4 @@ export async function sendMail(subject, body, mutationId = 'contact') {
 export const client = new ApolloClient({
   uri: API_URL,
   cache: new InMemoryCache(),
-})
+});

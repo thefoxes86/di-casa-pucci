@@ -11,15 +11,17 @@ import VirgoletteSinistra from "@/public/images/virgolette-sinistra.svg";
 import Scrivici from "@/components/scrivici";
 import FilteringList from "@/components/filtering-list";
 import AnimateSection from "@/components/animateSection";
+import Slider from "@/components/slider";
 
 export default function Allevamento({ data, preview }) {
+  console.log("POSTS", data);
   return (
     <Layout preview={false} section={"dobermann"}>
       <Head>
         <title>{`DOBERMANN`}</title>
       </Head>
 
-      <div className="w-screen h-[100vh] bg-black">
+      {/* <div className="w-screen h-[100vh] bg-black">
         <img
           src="/images/interna_desk_Doberman.jpg"
           className="w-full h-full object-cover md:flex hidden"
@@ -30,15 +32,28 @@ export default function Allevamento({ data, preview }) {
           className="w-full h-full object-cover md:hidden flex"
           alt="Dobermann"
         />
-      </div>
+      </div> */}
 
+      <AnimateSection className="section__content bg-black">
+        <div className="px-6">
+          <h1
+            dangerouslySetInnerHTML={{
+              __html: "LE ULTIME NEWS DI CASA PUCCI",
+            }}
+          ></h1>
+        </div>
+        <div className="section__content__wrapper-line-full py-6 ">
+          <Slider data={data.posts} />
+        </div>
+      </AnimateSection>
       <Container>
         <div className="px-6">
           <h1 dangerouslySetInnerHTML={{ __html: "DOBERMANN" }}></h1>
         </div>
         <div className="section__content">
-          <FilteringList type="dobermann" data={data.edges} />
+          <FilteringList type="dobermann" data={data?.ctpDobermanns?.edges} />
         </div>
+
         {/* <ScrollParallaxComponent
           className="right-0"
           color="#2B2B2B"
@@ -70,7 +85,7 @@ export default function Allevamento({ data, preview }) {
           <div className="section__content__wrapper-line bg-black-content">
             <div className="section__content__wrapper-cta">
               <Button link="/cani-dobermann/allevamento" type="secondary">
-                TORNA ALL'ALLEVAMENTO
+                VAI ALL'ALLEVAMENTO
               </Button>
             </div>
           </div>

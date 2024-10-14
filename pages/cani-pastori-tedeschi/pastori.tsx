@@ -8,24 +8,26 @@ import ParallaxImage from "@/components/parallax-image";
 import FilteringListPastori from "@/components/filtering-list-pastori";
 import AnimateSection from "@/components/animateSection";
 import Button from "@/components/button";
+import Slider from "@/components/slider";
 export default function Ztp({ data, preview }) {
   return (
     <Layout preview={false} section={"pastori"}>
       <Head>
         <title>{`ZTP`}</title>
       </Head>
-      <div className="w-screen h-[100vh] bg-black">
-        <img
-          src="/images/interna_desk_pastore.jpg"
-          className="w-full h-full object-cover md:flex hidden"
-          alt="Dobermann"
-        />
-        <img
-          src="/images/interna_mobile_Pastore.jpg"
-          className="w-full h-full object-cover md:hidden flex"
-          alt="Dobermann"
-        />
-      </div>
+
+      <AnimateSection className="section__content bg-black">
+        <div className="px-6">
+          <h1
+            dangerouslySetInnerHTML={{
+              __html: "LE ULTIME NEWS DI CASA PUCCI",
+            }}
+          ></h1>
+        </div>
+        <div className="section__content__wrapper-line-full py-6 ">
+          <Slider data={data?.posts} />
+        </div>
+      </AnimateSection>
 
       <Container>
         <div className="px-6">
@@ -33,7 +35,10 @@ export default function Ztp({ data, preview }) {
         </div>
 
         <AnimateSection className="section__content">
-          <FilteringListPastori type="pastori" data={data} />
+          <FilteringListPastori
+            type="pastori"
+            data={data?.ctpPastores?.edges}
+          />
         </AnimateSection>
         {/* <ScrollParallaxComponent
           className="right-0"
@@ -99,9 +104,7 @@ export default function Ztp({ data, preview }) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const dataFetch = await getAllPastori(preview);
-
-  const data = dataFetch?.edges;
+  const data = await getAllPastori(preview);
 
   return {
     props: { data, preview },
