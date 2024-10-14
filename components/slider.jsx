@@ -9,8 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Button from "./button";
 
-const Slider = ({ data }) => {
-  console.info("DATA POSTS", data);
+const Slider = ({ data, section }) => {
   return (
     <>
       <Swiper
@@ -38,22 +37,26 @@ const Slider = ({ data }) => {
       >
         {data?.edges ? (
           data?.edges.map((item, index) => (
-            <SwiperSlide>
-              <div className="container_swiper_item">
-                <img
-                  src={item.node?.featuredImage?.node?.sourceUrl || ""}
-                  alt="hero"
-                />
-                <span>{moment(item.node?.date).format("D-M-Y")}</span>
-                <h3>{item.node?.title}</h3>
+            <>
+              {section === item?.sezione?.sezione ? (
+                <SwiperSlide>
+                  <div className="container_swiper_item">
+                    <img
+                      src={item.node?.featuredImage?.node?.sourceUrl || ""}
+                      alt="hero"
+                    />
+                    <span>{moment(item.node?.date).format("D-M-Y")}</span>
+                    <h3>{item.node?.title}</h3>
 
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: item.node?.excerpt?.substring(0, 100) + " ...",
-                  }}
-                ></p>
-              </div>
-            </SwiperSlide>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: item.node?.excerpt?.substring(0, 100) + " ...",
+                      }}
+                    ></p>
+                  </div>
+                </SwiperSlide>
+              ) : null}
+            </>
           ))
         ) : (
           <div className="text-center"></div>

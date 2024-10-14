@@ -12,9 +12,32 @@ import Scrivici from "@/components/scrivici";
 import FilteringList from "@/components/filtering-list";
 import AnimateSection from "@/components/animateSection";
 import Slider from "@/components/slider";
+import { useEffect } from "react";
+import { enqueueSnackbar } from "notistack";
 
 export default function Allevamento({ data, preview }) {
-  console.log("POSTS", data);
+  useEffect(() => {
+    if (data?.page?.avvisi?.avviso) {
+      enqueueSnackbar({
+        message: data?.page?.avvisi?.message,
+        anchorOrigin: { vertical: "bottom", horizontal: "center" },
+        variant: "default",
+        autoHideDuration: 10000,
+
+        preventDuplicate: true,
+
+        style: {
+          background: "red",
+          backgroundImage: `linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)`,
+          textAlign: "center",
+          fontWeight: "bold",
+          justifyContent: "center",
+          padding: "10px 20px",
+          fontSize: "1.1rem",
+        },
+      });
+    }
+  }, [data]);
   return (
     <Layout preview={false} section={"dobermann"}>
       <Head>
@@ -43,7 +66,7 @@ export default function Allevamento({ data, preview }) {
           ></h1>
         </div>
         <div className="section__content__wrapper-line-full py-6 ">
-          <Slider data={data.posts} />
+          <Slider data={data.posts} section={"dobermann"} />
         </div>
       </AnimateSection>
       <Container>

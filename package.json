@@ -19,6 +19,7 @@
     "graphql": "^16.7.1",
     "moment": "^2.29.4",
     "next": "latest",
+    "notistack": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-floating-whatsapp": "^5.0.8",

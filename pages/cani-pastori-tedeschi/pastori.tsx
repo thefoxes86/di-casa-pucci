@@ -9,7 +9,32 @@ import FilteringListPastori from "@/components/filtering-list-pastori";
 import AnimateSection from "@/components/animateSection";
 import Button from "@/components/button";
 import Slider from "@/components/slider";
+import { useEffect } from "react";
+import { enqueueSnackbar } from "notistack";
 export default function Ztp({ data, preview }) {
+  useEffect(() => {
+    console.info("MESSAGE", data);
+    if (data?.page?.avvisi?.avviso) {
+      enqueueSnackbar({
+        message: data?.page?.avvisi?.message,
+        anchorOrigin: { vertical: "bottom", horizontal: "center" },
+        variant: "default",
+        autoHideDuration: 10000,
+
+        preventDuplicate: true,
+
+        style: {
+          background: "red",
+          backgroundImage: `linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)`,
+          textAlign: "center",
+          fontWeight: "bold",
+          justifyContent: "center",
+          padding: "10px 20px",
+          fontSize: "1.1rem",
+        },
+      });
+    }
+  }, [data]);
   return (
     <Layout preview={false} section={"pastori"}>
       <Head>
@@ -25,7 +50,7 @@ export default function Ztp({ data, preview }) {
           ></h1>
         </div>
         <div className="section__content__wrapper-line-full py-6 ">
-          <Slider data={data?.posts} />
+          <Slider data={data?.posts} section={"pastori"} />
         </div>
       </AnimateSection>
 

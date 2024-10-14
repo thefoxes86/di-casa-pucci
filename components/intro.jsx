@@ -40,7 +40,9 @@ export default function Intro() {
               >
                 <Link href="/cani-pastori-tedeschi/pastori">
                   <span className="block w-100">I NOSTRI</span>{" "}
-                  <span className="block w-100 font-bold">PASTORI</span>
+                  <span className="block w-100 font-bold">
+                    PASTORI TEDESCHI
+                  </span>
                 </Link>
               </motion.span>
             </motion.div>

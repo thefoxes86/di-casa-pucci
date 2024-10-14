@@ -32,7 +32,6 @@ const FilteringList = ({ data, type, category = "dobermann" }) => {
   };
 
   useEffect(() => {
-    console.log("RENDER LIST");
     setDisplayData(data);
   }, [data]);
 

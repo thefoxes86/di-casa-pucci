@@ -118,7 +118,7 @@ export const getStaticProps = async ({
     preview,
     previewData
   );
-  console.log("SERIALIZAING", data);
+
   return {
     props: {
       preview,

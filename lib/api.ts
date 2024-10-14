@@ -224,6 +224,12 @@ export async function getAllDobermann(preview) {
   const data = await fetchAPI(
     `
     query AllDobermans {
+      page(id: "4199", idType: DATABASE_ID) {
+        avvisi {
+          avviso
+          message
+        }
+      }
       ctpDobermanns(where: {orderby: {field: DATE, order: DESC}}, first: 1000) {
         edges {
           node {
@@ -261,6 +267,9 @@ export async function getAllDobermann(preview) {
             }
             date
             excerpt
+            sezione {
+              sezione
+            }
           }
         }
       }
@@ -281,6 +290,12 @@ export async function getAllPastori(preview) {
   const data = await fetchAPI(
     `
     query AllPastores {
+      page(id: "4033", idType: DATABASE_ID) {
+        avvisi {
+          avviso
+          message
+        }
+      }
       ctpPastores(where: {orderby: {field: DATE, order: DESC}}, first: 1000) {
         edges {
           node {
@@ -318,6 +333,9 @@ export async function getAllPastori(preview) {
             }
             date
             excerpt
+            sezione {
+              sezione
+            }
           }
         }
       }

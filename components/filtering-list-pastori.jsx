@@ -32,7 +32,6 @@ const FilteringListPastori = ({ data, type, category = "pastore" }) => {
   };
 
   useEffect(() => {
-    console.log("RENDER LIST");
     setDisplayData(data);
   }, [data]);
 
@@ -43,7 +42,6 @@ const FilteringListPastori = ({ data, type, category = "pastore" }) => {
       <div className="filtering__list">
         {displayData?.map((item, i) => (
           <>
-            {console.log(item.node.schedaPastore)}
             {item.node.schedaPastore.pasVisibile ? (
               <motion.div
                 className="filtering__list__item"

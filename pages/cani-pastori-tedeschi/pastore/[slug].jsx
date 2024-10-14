@@ -115,7 +115,7 @@ export const getStaticProps = async ({
   previewData,
 }) => {
   const data = await getPastoreAndMorePosts(params?.slug, preview, previewData);
-  console.log("SERIALIZAING", data);
+
   return {
     props: {
       preview,

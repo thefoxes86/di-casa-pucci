@@ -7,7 +7,6 @@ import DogThreeDetailed from "./dog-three-detailed";
 import { Suspense } from "react";
 
 const DogThree = ({ schedaDobermann, primaryDog }) => {
-  console.log("schedaDobermann", schedaDobermann);
   return (
     <div className="dog__three">
       <div className="primary-dog">
