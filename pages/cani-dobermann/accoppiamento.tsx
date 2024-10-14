@@ -32,7 +32,7 @@ export default function Accoppiamento({ data, preview }) {
         </div>
         <AnimateSection className="section__content">
           <div className="section__content__wrapper-line-full py-6 ">
-            <Slider data={data} />
+            <Slider data={data} section={"dobermann"} />
           </div>
         </AnimateSection>
 
