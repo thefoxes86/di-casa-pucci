@@ -13,7 +13,7 @@ import { useEffect } from "react";
 import { enqueueSnackbar } from "notistack";
 export default function Ztp({ data, preview }) {
   useEffect(() => {
-    console.info("MESSAGE", data);
+    
     if (data?.page?.avvisi?.avviso) {
       enqueueSnackbar({
         message: data?.page?.avvisi?.message,
