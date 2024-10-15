@@ -18,9 +18,15 @@ import { enqueueSnackbar } from "notistack";
 export default function Allevamento({ data, preview }) {
   useEffect(() => {
     if (data?.page?.avvisi?.avviso) {
+      let positionBar;
+      if (window.innerWidth > 768) {
+        positionBar = "bottom";
+      } else {
+        positionBar = "top";
+      }
       enqueueSnackbar({
         message: data?.page?.avvisi?.message,
-        anchorOrigin: { vertical: "bottom", horizontal: "center" },
+        anchorOrigin: { vertical: positionBar, horizontal: "center" },
         variant: "default",
         autoHideDuration: 10000,
 
@@ -34,6 +40,7 @@ export default function Allevamento({ data, preview }) {
           justifyContent: "center",
           padding: "10px 20px",
           fontSize: "1.1rem",
+          marginTop: "40px",
         },
       });
     }
