@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import Button from "./button";
 
 const Slider = ({ data, section }) => {
+  console.info("NEWS", data);
   return (
     <>
       <Swiper
@@ -38,7 +39,7 @@ const Slider = ({ data, section }) => {
         {data?.edges ? (
           data?.edges.map((item, index) => (
             <>
-              {section === item?.sezione?.sezione ? (
+              {section === item?.node?.sezione?.sezione ? (
                 <SwiperSlide>
                   <div className="container_swiper_item">
                     <img
