@@ -255,6 +255,7 @@ export async function getAllDobermann(preview) {
               dobNome
               dobAllevatore
               dobRiconoscimenti
+              tipoDiCucciolo
               dobSex {
                 name
                 sessoId
@@ -559,6 +560,7 @@ export async function getCuccioliAndMorePosts(slug, preview, previewData) {
           dobNome
           dobMicrochip
           dobPedigree
+          tipoDiCucciolo
           dobPropietario
           dobRiconoscimenti
           dobSalute
