@@ -6,7 +6,7 @@ import DogThreeParent from "./dog-three-parent";
 import DogThreeDetailed from "./dog-three-detailed";
 import { Suspense } from "react";
 
-const DogThree = ({ schedaDobermann, primaryDog }) => {
+const DogThree = ({ schedaDobermann, primaryDog, section }) => {
   return (
     <div className="dog__three">
       <div className="primary-dog">
@@ -47,8 +47,8 @@ const DogThree = ({ schedaDobermann, primaryDog }) => {
         <div className="three-line__item-horizontal"></div>
       </div>
       <div className="parents-dog">
-        <DogThreeParent data={schedaDobermann?.dobPadre} />
-        <DogThreeParent data={schedaDobermann?.dobMadre} />
+        <DogThreeParent data={schedaDobermann?.dobPadre} section={section} />
+        <DogThreeParent data={schedaDobermann?.dobMadre} section={section} />
       </div>
 
       <DogThreeDetailed data={schedaDobermann} />

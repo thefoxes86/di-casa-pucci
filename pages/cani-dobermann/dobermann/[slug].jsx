@@ -51,6 +51,7 @@ export default function Dobermann({ post, preview }) {
                   allevatore: post?.schedaDobermann?.dobAllevatore,
                 }}
                 schedaDobermann={post?.schedaDobermann}
+                section={"dobermann"}
               />
 
               <AnimateSection className="section__content__wrapper-cta bg-black-content !py-20 !mt-16">

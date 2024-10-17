@@ -3,8 +3,15 @@ import IcoMaschio from "@/public/images/ico_maschio.svg";
 import IcoFemmina from "@/public/images/ico_femmina.svg";
 import Link from "next/link";
 
-const DogThreeParent = ({ data }) => {
-  const link = data?.slug.length > 0 ? `/dobermann/${data?.slug}` : "#";
+const DogThreeParent = ({ data, section }) => {
+  const link =
+    data?.slug.length > 0
+      ? `${
+          section === "dobermann"
+            ? "/cani-dobermann/dobermann/"
+            : "/cani-pastori-tedeschi/pastore/"
+        }${data?.slug}`
+      : "#";
   return (
     <div className="parents-dog__item">
       <Link href={link}>
