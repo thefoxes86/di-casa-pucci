@@ -38,7 +38,7 @@ export default function Allevamento({ data, preview }) {
                   <Image
                     loading="lazy"
                     src="https://backend.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-28@2x.png"
-                    alt="Dobermans"
+                    alt="Dobermann"
                     layout="fill"
                     objectFit="contain"
                   />

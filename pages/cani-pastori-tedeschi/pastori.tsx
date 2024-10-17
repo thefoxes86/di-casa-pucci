@@ -67,7 +67,7 @@ export default function Ztp({ data, preview }) {
 
         <AnimateSection className="section__content">
           <FilteringListPastori
-            type="pastori"
+            type="pastore"
             data={data?.ctpPastores?.edges}
           />
         </AnimateSection>

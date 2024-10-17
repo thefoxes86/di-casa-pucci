@@ -42,7 +42,8 @@ const FilteringList = ({ data, type, category = "dobermann" }) => {
       <div className="filtering__list">
         {displayData?.map((item, i) => (
           <>
-            {item.node.schedaDobermann.dobVisibile ? (
+            {item.node.schedaDobermann.dobVisibile &&
+            item?.node?.schedaDobermann?.tipoDiCucciolo === type ? (
               <motion.div
                 className="filtering__list__item"
                 key={i}

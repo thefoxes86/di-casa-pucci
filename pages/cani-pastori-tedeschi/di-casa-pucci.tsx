@@ -2,7 +2,7 @@ import Head from "next/head";
 import { GetStaticProps } from "next";
 import Container from "@/components/container";
 import Layout from "@/components/layout";
-import { getAbout } from "@/lib/api";
+import { getPage } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import Scrivici from "@/components/scrivici";
 
@@ -17,7 +17,7 @@ export default function About({ data, preview }) {
   return (
     <Layout preview={false} section={"pastori"}>
       <Head>
-        <title>{`${data.title}`}</title>
+        <title>{`${data?.title}`}</title>
       </Head>
 
       <Container>
@@ -31,9 +31,9 @@ export default function About({ data, preview }) {
         <div className="section__content__wrapper__container">
           <AnimateSection className="section__content section__content__wrapper-line-full mt-16">
             <ParallaxImage
-              src="https://backend.dicasapucci.com/wp-content/uploads/2023/06/Lallevalemto.png"
+              src="https://backend.dicasapucci.com/wp-content/uploads/2024/10/IMG_3785-scaled.jpg"
               alt="hero"
-              height={400}
+              height={700}
             >
               <div className="text-parallax-image">
                 <span className="font-light">L'ECCELLENZA DELLA RAZZA,</span>
@@ -65,7 +65,8 @@ export default function About({ data, preview }) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const data = await getAbout(preview);
+  const pageId = 4233;
+  const data = await getPage(pageId);
 
   return {
     props: { data, preview },

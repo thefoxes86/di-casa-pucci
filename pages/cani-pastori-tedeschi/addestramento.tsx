@@ -3,7 +3,7 @@ import { GetStaticProps } from "next";
 import Container from "@/components/container";
 import Gallery from "@/components/gallery";
 import Layout from "@/components/layout";
-import { getAddestramento } from "@/lib/api";
+import { getAddestramento, getPage } from "@/lib/api";
 import { motion } from "framer-motion";
 import ParallaxImage from "@/components/parallax-image";
 import ScrollParallaxComponent from "@/components/scroll-parallax-component";
@@ -17,17 +17,17 @@ export default function Addestramento({ data, preview }) {
   return (
     <Layout preview={false} section={"pastori"}>
       <Head>
-        <title>{`${data.title}`}</title>
+        <title>{`${data?.title}`}</title>
       </Head>
 
       <Container>
         <div className="px-6">
-          <h1 dangerouslySetInnerHTML={{ __html: data.title }}></h1>
+          <h1 dangerouslySetInnerHTML={{ __html: data?.title }}></h1>
           <h2>
             <span className="block w-100"> LA VITTORIA È</span>
             <span className="font-bold"> DI CASA PUCCI</span>
           </h2>
-          <p dangerouslySetInnerHTML={{ __html: data.content }}></p>
+          <p dangerouslySetInnerHTML={{ __html: data?.content }}></p>
         </div>
         <div className="text-center">
           <Button link="/cani-pastori-tedeschi/contatti" type="secondary">
@@ -42,9 +42,9 @@ export default function Addestramento({ data, preview }) {
         <div className="section__content__wrapper__container__inverse">
           <AnimateSection className="section__content section__content__wrapper-line-full mt-16">
             <ParallaxImage
-              src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/CUCCIOLI@2x.png"
+              src="https://backend.dicasapucci.com/wp-content/uploads/2024/10/IMG_3820-scaled.jpg"
               alt="hero"
-              height={400}
+              height={550}
             >
               <div className="text-parallax-image">
                 <span className="font-light">FORTI E SANI,</span>
@@ -87,7 +87,8 @@ export default function Addestramento({ data, preview }) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const data = await getAddestramento(preview);
+  const pageId = 4252;
+  const data = await getPage(pageId);
 
   return {
     props: { data, preview },

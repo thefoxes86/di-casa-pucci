@@ -10,7 +10,6 @@ import "swiper/css/navigation";
 import Button from "./button";
 
 const Slider = ({ data, section }) => {
-  console.info("NEWS", data);
   return (
     <>
       <Swiper

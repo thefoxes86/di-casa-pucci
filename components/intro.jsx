@@ -106,7 +106,7 @@ export default function Intro() {
                 duration: 3,
               }}
             >
-              <Link href="https://www.instagram.com/dicasapucci/">
+              <Link href="https://www.instagram.com/utilitydog_dicasapucci/">
                 <Image
                   src={"/images/icon-instagram.svg"}
                   alt="Facebook Link"

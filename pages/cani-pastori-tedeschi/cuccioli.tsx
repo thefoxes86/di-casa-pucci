@@ -32,11 +32,7 @@ export default function Cuccioli({ data, preview }) {
         </div>
 
         <AnimateSection className="section__content">
-          <FilteringList
-            type="dobermann"
-            data={data.edges}
-            category="cuccioli"
-          />
+          <FilteringList type="pastore" data={data.edges} category="cuccioli" />
         </AnimateSection>
         <div className="section__content__wrapper__container">
           <AnimateSection className="section__content">
@@ -57,9 +53,9 @@ export default function Cuccioli({ data, preview }) {
           <AnimateSection className="section__content">
             <div className="section__content__wrapper-line-full">
               <ParallaxImage
-                src="https://backend.dicasapucci.com/wp-content/uploads/2023/06/Accoppiamento.png"
+                src="https://backend.dicasapucci.com/wp-content/uploads/2024/04/2B3E54D2-E9CE-491B-AD4A-F681273FBD7C.jpeg"
                 alt="hero"
-                height={400}
+                height={600}
               >
                 <div className="text-parallax-image">
                   <span className="font-light">LA PERFEZIONE,</span>

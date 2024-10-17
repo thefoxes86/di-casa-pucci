@@ -2,7 +2,7 @@ import Head from "next/head";
 import { GetStaticProps } from "next";
 import Container from "@/components/container";
 import Layout from "@/components/layout";
-import { getAccoppiamento } from "@/lib/api";
+import { getAccoppiamento, getPage } from "@/lib/api";
 import Slider from "@/components/slider";
 import AnimateSection from "@/components/animateSection";
 import ParallaxImage from "@/components/parallax-image";
@@ -12,19 +12,19 @@ export default function Accoppiamento({ data, preview }) {
   return (
     <Layout preview={false} section="pastori">
       <Head>
-        <title>{`${data.title}`}</title>
+        <title>{`${data?.title}`}</title>
       </Head>
 
       <Container>
         <div className="px-6">
-          <h1 dangerouslySetInnerHTML={{ __html: data.title }}></h1>
+          <h1 dangerouslySetInnerHTML={{ __html: data?.title }}></h1>
           <h2>
             <span className="block w-100"> LA PERFEZIONE È</span>
             <span className="font-bold"> DI CASA PUCCI</span>
           </h2>
           <p
             dangerouslySetInnerHTML={{
-              __html: data.content,
+              __html: data?.content,
             }}
           ></p>
         </div>
@@ -76,7 +76,8 @@ export default function Accoppiamento({ data, preview }) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const data = await getAccoppiamento(preview);
+  const pageId = 4240;
+  const data = await getPage(pageId);
 
   return {
     props: { data, preview },

@@ -2,7 +2,7 @@ import Head from "next/head";
 import { GetStaticProps } from "next";
 import Container from "@/components/container";
 import Layout from "@/components/layout";
-import { getAllevamento } from "@/lib/api";
+import { getAllevamento, getPage } from "@/lib/api";
 import Image from "next/image";
 import ParallaxImage from "@/components/parallax-image";
 import Button from "@/components/button";
@@ -15,12 +15,12 @@ export default function Allevamento({ data, preview }) {
   return (
     <Layout preview={false} section={"pastori"}>
       <Head>
-        <title>{`${data.title}`}</title>
+        <title>{`${data?.title}`}</title>
       </Head>
 
       <Container>
         <div className="px-6">
-          <h1 dangerouslySetInnerHTML={{ __html: data.title }}></h1>
+          <h1 dangerouslySetInnerHTML={{ __html: data?.title }}></h1>
           <h2>
             L'ECCELLENZA DELLA RAZZA È
             <span className="font-bold w-full block">DI CASA PUCCI</span>
@@ -39,8 +39,8 @@ export default function Allevamento({ data, preview }) {
                 <Suspense fallback={<div>Loading...</div>}>
                   <Image
                     loading="lazy"
-                    src="https://backend.dicasapucci.com/wp-content/uploads/2023/06/Rettangolo-28@2x.png"
-                    alt="Dobermans"
+                    src="https://backend.dicasapucci.com/wp-content/uploads/2024/04/C0DC3531-B6C8-42C6-9673-F38126AEA425-scaled.jpeg"
+                    alt="Pastori Tedeschi"
                     layout="fill"
                     objectFit="contain"
                   />
@@ -51,13 +51,13 @@ export default function Allevamento({ data, preview }) {
               </Button>
             </AnimateSection>
           </div>
-          <p dangerouslySetInnerHTML={{ __html: data.content }}></p>
+          <p dangerouslySetInnerHTML={{ __html: data?.content }}></p>
         </div>
         <div className="section__content__wrapper__container">
           <AnimateSection className="section__content">
             <div className="section__content__wrapper-line-full">
               <ParallaxImage
-                src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/Laddestramento@2x.png"
+                src="https://backend.dicasapucci.com/wp-content/uploads/2024/05/5F9F3A5A-7473-4477-9E54-51EFC62B5069-scaled.jpeg"
                 alt="hero"
                 height={400}
               >
@@ -105,7 +105,8 @@ export default function Allevamento({ data, preview }) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const data = await getAllevamento(preview);
+  const pageId = 4033;
+  const data = await getPage(pageId);
 
   return {
     props: { data, preview },

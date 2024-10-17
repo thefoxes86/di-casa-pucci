@@ -66,16 +66,23 @@ export async function getContacts(preview) {
   return data?.page;
 }
 
-export async function getAbout(preview) {
-  const data = await fetchAPI(`
-  {
-    page(id: 4048, idType: DATABASE_ID) {
-      content(format: RENDERED)
-      title(format: RENDERED)
-      slug
+export async function getPage(id) {
+  const data = await fetchAPI(
+    `
+    query Page($id: ID!) {
+      page(id: $id, idType: DATABASE_ID) {
+        content(format: RENDERED)
+        title(format: RENDERED)
+        slug
+      }
+    }`,
+    {
+      variables: {
+        id,
+      },
     }
-  }
-  `);
+  );
+
   return data?.page;
 }
 
@@ -193,6 +200,9 @@ export async function getAllPosts(preview) {
               node {
                 sourceUrl(size: THUMBNAIL)
               }
+            }
+            sezione {
+              sezione
             }
             author {
               node {
@@ -370,6 +380,7 @@ export async function getAllCuccioli(preview) {
             schedaDobermann {
               dobNome
               dobAllevatore
+              tipoDiCucciolo
               dobRiconoscimenti
               dobSex {
                 name

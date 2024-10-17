@@ -2,14 +2,9 @@ import Head from "next/head";
 import { GetStaticProps } from "next";
 import Container from "@/components/container";
 import Layout from "@/components/layout";
-import { getAbout } from "@/lib/api";
-import { CMS_NAME } from "@/lib/constants";
-import Scrivici from "@/components/scrivici";
+import { getPage } from "@/lib/api";
 
 import ParallaxImage from "@/components/parallax-image";
-import ScrollParallaxComponent from "@/components/scroll-parallax-component";
-import VirgoletteDestra from "@/public/images/virgolette-destra.svg";
-import VirgoletteSinistra from "@/public/images/virgolette-sinistra.svg";
 import Button from "@/components/button";
 import AnimateSection from "@/components/animateSection";
 
@@ -65,7 +60,8 @@ export default function About({ data, preview }) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const data = await getAbout(preview);
+  const pageId = 4048;
+  const data = await getPage(pageId);
 
   return {
     props: { data, preview },
