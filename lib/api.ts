@@ -189,7 +189,7 @@ export async function getAllPosts(preview) {
   const data = await fetchAPI(
     `
     query AllPosts {
-      posts(first: 20, where: { orderby: { field: DATE, order: DESC } }) {
+      posts( where: { orderby: { field: DATE, order: DESC } }) {
         edges {
           node {
             title
@@ -406,18 +406,10 @@ export async function getAllCuccioli(preview) {
   return data?.cptCucciolis;
 }
 
-export async function getPostAndMorePosts(slug, preview, previewData) {
-  const postPreview = preview && previewData?.post;
-  // The slug may be the id of an unpublished post
-  const isId = Number.isInteger(Number(slug));
-  const isSamePost = isId
-    ? Number(slug) === postPreview.id
-    : slug === postPreview.slug;
-  const isDraft = isSamePost && postPreview?.status === "draft";
-
+export async function getPostBySlug(slug) {
   const data = await fetchAPI(
     ` 
-    query PostBySlug($id: ID!, $idType: PostIdType!) {
+    query PostBySlug($id: ID = "", $idType: PostIdType = SLUG) {
       post(id: $id, idType: $idType) {
         title
         excerpt
@@ -426,7 +418,7 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
         content
         featuredImage {
           node {
-            sourceUrl
+            sourceUrl(size: LARGE)
           }
         }
       }
@@ -434,14 +426,14 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
   `,
     {
       variables: {
-        id: isDraft ? postPreview.id : slug,
-        idType: isDraft ? "DATABASE_ID" : "SLUG",
+        id: slug,
+        idType: "SLUG",
       },
     }
   );
 
   // Draft posts may not have an slug
-  if (isDraft) data.post.slug = postPreview.id;
+
   // Apply a revision (changes in a published post)
   return data;
 }

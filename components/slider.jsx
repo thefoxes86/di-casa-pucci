@@ -39,22 +39,31 @@ const Slider = ({ data, section }) => {
           data?.edges.map((item, index) => (
             <>
               {section === item?.node?.sezione?.sezione ? (
-                <SwiperSlide>
-                  <div className="container_swiper_item">
-                    <img
-                      src={item.node?.featuredImage?.node?.sourceUrl || ""}
-                      alt="hero"
-                    />
-                    <span>{moment(item.node?.date).format("D-M-Y")}</span>
-                    <h3>{item.node?.title}</h3>
+                <Link
+                  href={`${
+                    section === "dobermann"
+                      ? "/cani-dobermann/news/"
+                      : "/cani-pastori-tedeschi/news/"
+                  }${item?.node?.slug}`}
+                >
+                  <SwiperSlide>
+                    <div className="container_swiper_item">
+                      <img
+                        src={item.node?.featuredImage?.node?.sourceUrl || ""}
+                        alt="hero"
+                      />
+                      <span>{moment(item.node?.date).format("D-M-Y")}</span>
+                      <h3>{item.node?.title}</h3>
 
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: item.node?.excerpt?.substring(0, 100) + " ...",
-                      }}
-                    ></p>
-                  </div>
-                </SwiperSlide>
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html:
+                            item.node?.excerpt?.substring(0, 100) + " ...",
+                        }}
+                      ></p>
+                    </div>
+                  </SwiperSlide>
+                </Link>
               ) : null}
             </>
           ))
@@ -64,7 +73,14 @@ const Slider = ({ data, section }) => {
       </Swiper>
       {data?.edges ? (
         <div className="py-6 text-center">
-          <Button type="primary" link="/news">
+          <Button
+            type="primary"
+            link={`${
+              section === "dobermann"
+                ? "/cani-dobermann/news"
+                : "/cani-pastori-tedeschi/news"
+            }`}
+          >
             TUTTE LE NEWS
           </Button>
         </div>

@@ -16,7 +16,7 @@ const Layout: FC<LayoutProps> = ({ preview, children, section }) => {
     <>
       <Meta />
       <FloatingWhatsApp
-        phoneNumber="+39 389 673 4987"
+        phoneNumber="+393484395808"
         accountName="Dario"
         statusMessage={"online"}
         chatMessage="Ciao, di cosa hai bisogno ?"

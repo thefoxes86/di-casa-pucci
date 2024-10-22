@@ -30,8 +30,14 @@ export default function News({ data, preview }) {
                         className="news_item"
                         key={index}
                         layout
-                        initial={{ transform: "translateY(10px)", opacity: 0 }}
-                        whileInView={{ opacity: 1, transform: "translateY(0)" }}
+                        initial={{
+                          transform: "translateY(10px)",
+                          opacity: 0,
+                        }}
+                        whileInView={{
+                          opacity: 1,
+                          transform: "translateY(0)",
+                        }}
                         exit={{ transform: "translateY(0)", opacity: 0 }}
                         transition={{
                           type: "spring",
@@ -39,17 +45,21 @@ export default function News({ data, preview }) {
                           delay: index * 0.05,
                         }}
                       >
-                        <div className="">
-                          <img
-                            src={
-                              item.node?.featuredImage?.node?.sourceUrl ||
-                              "https://backend.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png"
-                            }
-                            alt="hero"
-                          />
-                          <span>{moment(item.node?.date).format("D-M-Y")}</span>
-                          <h3>{item.node?.title}</h3>
-                        </div>
+                        <Link href={`/cani-dobermann/news/${item?.node?.slug}`}>
+                          <div className="">
+                            <img
+                              src={
+                                item.node?.featuredImage?.node?.sourceUrl ||
+                                "https://backend.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png"
+                              }
+                              alt="hero"
+                            />
+                            <span>
+                              {moment(item.node?.date).format("D-M-Y")}
+                            </span>
+                            <h3>{item.node?.title}</h3>
+                          </div>
+                        </Link>
                       </motion.div>
                     ) : null}
                   </>

@@ -6,7 +6,6 @@ import { getAllevamento, getPage } from "@/lib/api";
 import Image from "next/image";
 import ParallaxImage from "@/components/parallax-image";
 import Button from "@/components/button";
-import Slider from "@/components/slider";
 
 import AnimateSection from "@/components/animateSection";
 import { Suspense } from "react";
