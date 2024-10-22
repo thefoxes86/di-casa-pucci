@@ -39,7 +39,7 @@ export default function Dobermann({ post, preview }) {
                   src={post?.featuredImage?.node?.sourceUrl}
                   width={1000}
                   height={200}
-                  className="w-1/2 object-cover object-center"
+                  className=" md:w-1/2 w-full object-cover object-center"
                 />
               </div>
               <PostBody content={post?.content} />

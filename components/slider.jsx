@@ -39,14 +39,14 @@ const Slider = ({ data, section }) => {
           data?.edges.map((item, index) => (
             <>
               {section === item?.node?.sezione?.sezione ? (
-                <Link
-                  href={`${
-                    section === "dobermann"
-                      ? "/cani-dobermann/news/"
-                      : "/cani-pastori-tedeschi/news/"
-                  }${item?.node?.slug}`}
-                >
-                  <SwiperSlide>
+                <SwiperSlide>
+                  <Link
+                    href={`${
+                      section === "dobermann"
+                        ? "/cani-dobermann/news/"
+                        : "/cani-pastori-tedeschi/news/"
+                    }${item?.node?.slug}`}
+                  >
                     <div className="container_swiper_item">
                       <img
                         src={item.node?.featuredImage?.node?.sourceUrl || ""}
@@ -62,8 +62,8 @@ const Slider = ({ data, section }) => {
                         }}
                       ></p>
                     </div>
-                  </SwiperSlide>
-                </Link>
+                  </Link>
+                </SwiperSlide>
               ) : null}
             </>
           ))

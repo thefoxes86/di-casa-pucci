@@ -278,6 +278,7 @@ export async function getAllDobermann(preview) {
             }
             date
             excerpt
+            slug
             sezione {
               sezione
             }
@@ -344,6 +345,7 @@ export async function getAllPastori(preview) {
             }
             date
             excerpt
+            slug
             sezione {
               sezione
             }
