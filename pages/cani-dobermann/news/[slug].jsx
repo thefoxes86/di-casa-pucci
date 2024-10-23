@@ -18,7 +18,7 @@ export default function Dobermann({ post, preview }) {
   }
 
   return (
-    <Layout preview={preview} section={"pastori"}>
+    <Layout preview={preview} section={"dobermann"}>
       <Container>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
@@ -43,6 +43,17 @@ export default function Dobermann({ post, preview }) {
                 />
               </div>
               <PostBody content={post?.content} />
+              <div className="flex flex-wrap gap-2 mx-14 justify-center">
+                {post?.schedaArticolo?.articoloGalleria?.map((img) => (
+                  <Image
+                    loading="lazy"
+                    src={img?.sourceUrl}
+                    width={1000}
+                    height={200}
+                    className="w-auto h-60 object-cover object-center"
+                  />
+                ))}
+              </div>
             </article>
           </>
         )}

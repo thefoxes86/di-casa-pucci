@@ -423,6 +423,11 @@ export async function getPostBySlug(slug) {
             sourceUrl(size: LARGE)
           }
         }
+          schedaArticolo {
+            articoloGalleria {
+              sourceUrl(size: LARGE)
+            }
+          }
       }
     }
   `,
