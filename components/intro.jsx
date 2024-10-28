@@ -20,13 +20,29 @@ export default function Intro() {
   return (
     <section className="hero_header_home_container">
       <AnimatePresence>
+      <span className="fixed top-10 h-16 w-screen flex justify-center items-center">
+            <span className="">
+
+            <Link href="/">
+              <Image
+                loading="lazy"
+                src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/LOGO-DCP_Esteso@2x.png"
+                width={310}
+                height={100}
+                alt="logo"
+                />
+            </Link>
+                </span>
+          </span>
         <motion.section
           className="hero_header_home"
           initial={{ transform: "scale(1.2)", opacity: 0 }}
           whileInView={{ opacity: 1, transform: "scale(1)" }}
           transition={{ type: "spring", duration: 5 }}
         >
+          
           <motion.div className="hero_header_home__content">
+            
             <motion.div className="wrapper_line">
               <motion.span
                 className="inline-block"

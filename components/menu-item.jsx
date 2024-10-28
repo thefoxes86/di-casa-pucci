@@ -127,6 +127,14 @@ const MenuItem = ({ children, section, ...props }) => {
           : "/cani-pastori-tedeschi/contatti"
       }`,
     },
+    {
+      name: "La Foresta di Casa Pucci",
+      link: `${
+        section === "dobermann"
+          ? "/cani-dobermann/news/la-foresta-di-casa-pucci"
+          : "/cani-pastori-tedeschi/news/la-foresta-di-casa-pucci"
+      }`,
+    },
   ];
   return (
     <motion.div variants={variantsContainer}>
