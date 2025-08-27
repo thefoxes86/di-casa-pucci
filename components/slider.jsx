@@ -8,6 +8,7 @@ import moment from 'moment'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import Button from './button'
+import Image from 'next/image'
 
 const Slider = ({ data }) => {
   return (
@@ -39,9 +40,11 @@ const Slider = ({ data }) => {
           data?.edges.map((item, index) => (
             <SwiperSlide>
               <div className="container_swiper_item">
-                <img
+                <Image
                   src={item.node?.featuredImage?.node?.sourceUrl || ''}
                   alt="hero"
+                  width={300}
+                  height={100}
                 />
                 <span>{moment(item.node?.date).format('D-M-Y')}</span>
                 <h3>{item.node?.title}</h3>

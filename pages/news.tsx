@@ -6,6 +6,7 @@ import { getAllPosts } from '../lib/api'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import moment from 'moment'
+import Image from 'next/image'
 
 export default function News({ data, preview }) {
   return (
@@ -39,12 +40,14 @@ export default function News({ data, preview }) {
                   >
                     <Link href={`/posts/${item.node?.slug}`}>
                       <div className="">
-                        <img
+                        <Image
                           src={
                             item.node?.featuredImage?.node?.sourceUrl ||
                             'https://backend.dicasapucci.com/wp-content/uploads/2023/07/placeholder_dobermann_dicasapucci.png'
                           }
                           alt="hero"
+                          width={500}
+                          height={500}
                         />
                         <span>{moment(item.node?.date).format('D-M-Y')}</span>
                         <h3>{item.node?.title}</h3>

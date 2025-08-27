@@ -28,9 +28,11 @@ export default function Footer() {
                 delay={0.4}
                 className="w-1/4 flex flex-col items-center justify-center px-4"
               >
-                <img
+                <Image
                   src="https://backend.dicasapucci.com/wp-content/uploads/2023/12/logo-pastori.png"
                   alt="certificazione 1"
+                  width={100}
+                  height={100}
                 />
                 <p className="font-thin py-3 text-center text-xs h-20 !mb-0">
                   Società Amatori Schäferhunde
@@ -39,9 +41,11 @@ export default function Footer() {
             ) : (
               <>
                 <AnimateSection className="w-1/4 flex flex-col items-center justify-center px-4">
-                  <img
+                  <Image
                     src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/logo-hi@2x.png"
                     alt="certificazione 1"
+                    width={100}
+                    height={100}
                   />
                   <p className="font-thin py-3 text-center text-xs h-20 !mb-0">
                     Associazione Italiana Amatori Dobermann
@@ -51,9 +55,11 @@ export default function Footer() {
                   delay={0.4}
                   className="w-1/4 flex flex-col items-center justify-center px-4"
                 >
-                  <img
+                  <Image
                     src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_IDC_Logo@2x@2x.png"
                     alt="certificazione 1"
+                    width={100}
+                    height={100}
                   />
                   <p className="font-thin py-3 text-center text-xs h-20 !mb-0">
                     Internationaler Dobermann Club
@@ -65,9 +71,11 @@ export default function Footer() {
               delay={0.8}
               className="w-1/4 flex flex-col items-center justify-center px-4"
             >
-              <img
+              <Image
                 src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_FCI_Logo@2x@2x.png"
                 alt="certificazione 1"
+                width={100}
+                height={100}
               />
               <p className="font-thin py-3 text-center text-xs h-20  !mb-0">
                 Federation Cynologique Internationale
@@ -77,9 +85,11 @@ export default function Footer() {
               delay={1.2}
               className="w-1/4 flex flex-col items-center justify-center px-4"
             >
-              <img
+              <Image
                 src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/DicasaPucci_ENCI_Logo@2x@2x.png"
                 alt="certificazione 1"
+                width={100}
+                height={100}
               />
               <p className="font-thin py-3 text-center text-xs h-20  !mb-0">
                 Ente Nazionale Cinofilia Italiana

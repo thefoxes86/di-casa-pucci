@@ -1,13 +1,14 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from 'framer-motion'
 
-import Button from "./button";
-import ParallaxImage from "./parallax-image";
-import ScrollParallaxComponent from "./scroll-parallax-component";
-import VirgoletteDestra from "../public/images/virgolette-destra.svg";
-import VirgoletteSinistra from "../public/images/virgolette-sinistra.svg";
-import Slider from "./slider";
-import AnimateSection from "./animateSection";
-import Container from "./container";
+import Button from './button'
+import ParallaxImage from './parallax-image'
+import ScrollParallaxComponent from './scroll-parallax-component'
+import VirgoletteDestra from '../public/images/virgolette-destra.svg'
+import VirgoletteSinistra from '../public/images/virgolette-sinistra.svg'
+import Slider from './slider'
+import AnimateSection from './animateSection'
+import Container from './container'
+import Image from 'next/image'
 
 const BodyHome = ({ data }) => {
   return (
@@ -37,9 +38,9 @@ const BodyHome = ({ data }) => {
                 <div className="section__content__wrapper-line">
                   <div className="section__content__wrapper-text italic">
                     <p>
-                      Mi chiamo Dario Pucci e sono titolare{" "}
+                      Mi chiamo Dario Pucci e sono titolare{' '}
                       <span className="font-bold">Di Casa Pucci</span>, azienda
-                      leader nel settore dell’allevamento di cani di{" "}
+                      leader nel settore dell’allevamento di cani di{' '}
                       <span className="font-bold">razza Dobermann</span>.
                     </p>
                   </div>
@@ -54,9 +55,9 @@ const BodyHome = ({ data }) => {
                 <div className="section__content__wrapper-line">
                   <div className="section__content__wrapper-text italic">
                     <p>
-                      Mi chiamo Dario Pucci e sono titolare{" "}
+                      Mi chiamo Dario Pucci e sono titolare{' '}
                       <span className="font-bold">Di Casa Pucci</span>, azienda
-                      leader nel settore dell’allevamento di cani di{" "}
+                      leader nel settore dell’allevamento di cani di{' '}
                       <span className="font-bold">razza Pastore</span>.
                     </p>
                   </div>
@@ -89,7 +90,7 @@ const BodyHome = ({ data }) => {
                   <div className="section__content__wrapper-text italic">
                     <p>
                       Ricerchiamo la massima espressione dell’eleganza, della
-                      fierezza e della bellezza,{" "}
+                      fierezza e della bellezza,{' '}
                       <span className="font-bold"> fin dalla nascita</span>.
                     </p>
                   </div>
@@ -127,7 +128,7 @@ const BodyHome = ({ data }) => {
                     <p className="font-semibold">
                       <span className="font-bold">
                         Inseguiamo la perfezione
-                      </span>{" "}
+                      </span>{' '}
                       studiando attentamente ogni accoppiamento.
                     </p>
                   </div>
@@ -163,10 +164,10 @@ const BodyHome = ({ data }) => {
                 <Container>
                   <div className="section__content__wrapper-text italic">
                     <p className="font-semibold">
-                      Insieme al centro sportivo{" "}
+                      Insieme al centro sportivo{' '}
                       <span className="font-bold w-100 flex text-center justify-center">
                         ABC100 Working Dog Club
-                      </span>{" "}
+                      </span>{' '}
                       prepariamo i vostri cani alla vittoria.
                     </p>
                   </div>
@@ -182,9 +183,11 @@ const BodyHome = ({ data }) => {
 
           <AnimateSection className="section__content bg-black-content-content">
             <div className="section__content__wrapper-line py-6 text-center">
-              <img
+              <Image
                 src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/three-nation-logo.png"
                 alt="quote"
+                width={300}
+                height={100}
               />
               <p className="font-thin py-3 !mb-0 italic">
                 Amiamo i nostri cani come il nostro pianeta, per questo
@@ -203,7 +206,7 @@ const BodyHome = ({ data }) => {
         </motion.section>
       </div>
     </AnimatePresence>
-  );
-};
+  )
+}
 
-export default BodyHome;
+export default BodyHome

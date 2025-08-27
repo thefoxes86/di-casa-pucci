@@ -5,6 +5,7 @@ import { Navigation } from 'swiper'
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/navigation'
+import Image from 'next/image'
 
 const Gallery = ({ images }) => {
   return (
@@ -38,7 +39,12 @@ const Gallery = ({ images }) => {
         {images?.map((image, i) => (
           <SwiperSlide>
             <div className="container_swiper_item">
-              <img src={image.sourceUrl} alt="hero" />
+              <Image
+                src={image.sourceUrl}
+                alt="hero"
+                width={300}
+                height={100}
+              />
             </div>
           </SwiperSlide>
         ))}

@@ -4,13 +4,13 @@ import Container from '../components/container'
 import Layout from '../components/layout'
 import { getAllDobermann } from '../lib/api'
 import ParallaxImage from '../components/parallax-image'
-import ScrollParallaxComponent from '../components/scroll-parallax-component'
 import Button from '../components/button'
-import VirgoletteDestra from '../public/images/virgolette-destra.svg'
-import VirgoletteSinistra from '../public/images/virgolette-sinistra.svg'
-import Scrivici from '../components/scrivici'
+
 import FilteringList from '../components/filtering-list'
 import AnimateSection from '../components/animateSection'
+import Image from 'next/image'
+import DobermanDesktop from '../public/images/interna_desk_Doberman.jpg'
+import DobermanMobile from '../public/images/interna_mobile_Doberman.jpg'
 
 export default function Allevamento({ data, preview }) {
   return (
@@ -20,13 +20,13 @@ export default function Allevamento({ data, preview }) {
       </Head>
 
       <div className="w-screen h-[100vh] bg-black">
-        <img
-          src="/images/interna_desk_Doberman.jpg"
+        <Image
+          src={DobermanDesktop}
           className="w-full h-full object-cover md:flex hidden"
           alt="Dobermann"
         />
-        <img
-          src="/images/interna_mobile_Doberman.jpg"
+        <Image
+          src={DobermanMobile}
           className="w-full h-full object-cover md:hidden flex"
           alt="Dobermann"
         />

@@ -2,15 +2,15 @@ import Head from 'next/head'
 import { GetStaticProps } from 'next'
 import Container from '../components/container'
 import Layout from '../components/layout'
-import { getAllDobermann, getAllPastori } from '../lib/api'
+import { getAllPastori } from '../lib/api'
 import ParallaxImage from '../components/parallax-image'
-import ScrollParallaxComponent from '../components/scroll-parallax-component'
-import Button from '../components/button'
-import VirgoletteDestra from '../public/images/virgolette-destra.svg'
-import VirgoletteSinistra from '../public/images/virgolette-sinistra.svg'
-import Scrivici from '../components/scrivici'
+
 import FilteringListPastori from '../components/filtering-list-pastori'
 import AnimateSection from '../components/animateSection'
+import PastoriDesktop from '../public/images/interna_desk_pastore.jpg'
+import PastoriMobile from '../public/images/interna_mobile_Pastore.jpg'
+import Image from 'next/image'
+
 export default function Ztp({ data, preview }) {
   return (
     <Layout preview={false}>
@@ -18,13 +18,13 @@ export default function Ztp({ data, preview }) {
         <title>{`ZTP`}</title>
       </Head>
       <div className="w-screen h-[100vh] bg-black">
-        <img
-          src="/images/interna_desk_pastore.jpg"
+        <Image
+          src={PastoriDesktop}
           className="w-full h-full object-cover md:flex hidden"
           alt="Dobermann"
         />
-        <img
-          src="/images/interna_mobile_Pastore.jpg"
+        <Image
+          src={PastoriMobile}
           className="w-full h-full object-cover md:hidden flex"
           alt="Dobermann"
         />
