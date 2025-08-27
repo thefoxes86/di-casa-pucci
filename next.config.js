@@ -17,5 +17,11 @@ module.exports = {
       'backend.dicasapucci.com',
       'placehold.co',
     ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'backend.dicasapucci.com',
+      },
+    ],
   },
 }
