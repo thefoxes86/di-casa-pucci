@@ -42,13 +42,13 @@ export default function Footer() {
               <>
                 <AnimateSection className="w-1/4 flex flex-col items-center justify-center px-4">
                   <Image
-                    src="https://backend.dicasapucci.com/wp-content/uploads/2023/05/logo-hi@2x.png"
+                    src="/images/logo-andi.jpeg"
                     alt="certificazione 1"
                     width={100}
                     height={100}
                   />
                   <p className="font-thin py-3 text-center text-xs h-20 !mb-0">
-                    Associazione Italiana Amatori Dobermann
+                    Associazione Nazionale del Dobermann Italiano
                   </p>
                 </AnimateSection>
                 <AnimateSection
